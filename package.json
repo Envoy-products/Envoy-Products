@@ -1,5 +1,5 @@
 {
-  "name": "envoy-products",
+  "name": "envoy",
   "version": "1.0.0",
   "description": "Go green!",
   "main": "server.js",

@@ -1,4 +1,4 @@
-const { Model, DataTypes, BOOLEAN } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
@@ -36,11 +36,10 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                // this means the password must be at least four characters long
                 len: [8]
             }
         },
-       first_name: {
+        first_name: {
             type: DataTypes.STRING,
             allowNull:false
         },
@@ -55,7 +54,7 @@ User.init(
                 key: 'id'
             }
         },
-        avatar: {
+        avatar_img: {
             type: DataTypes.STRING     
         },  
         admin: {

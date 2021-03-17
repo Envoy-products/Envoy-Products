@@ -1,11 +1,11 @@
-const { Model, DataTypes, BOOLEAN } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Region extends Model {
+class Retailer extends Model {
 }
 
 //define table columns and configuration
-Region.init(
+Retailer.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,25 +13,25 @@ Region.init(
             primaryKey: true,
             autoIncrement: true
         },
-        region_name: {
+        ret_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        country_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'country',
-                key: 'id'
-            }
-        }     
+        ret_site: {
+            type: DataTypes.STRING,
+            validate: {
+                isUrl: true
+            }   
+        }
+          
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'region'
+        modelName: 'retailer'
     }
 )
 
-module.exports = Region;
+module.exports = Retailer;

@@ -135,8 +135,13 @@ body {
   }
   footer .glyphicon {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #63a87c;
+  }
+
+  .footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   .slideanim {visibility:hidden;}
   .slide {

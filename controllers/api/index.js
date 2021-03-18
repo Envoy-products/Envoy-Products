@@ -11,15 +11,4 @@ router.use('/categories', categoryRoutes);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;

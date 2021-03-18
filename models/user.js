@@ -51,7 +51,7 @@ User.init(
         region_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'reqion',
+                model: 'region',
                 key: 'id'
             }
         },

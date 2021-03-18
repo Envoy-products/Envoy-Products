@@ -36,8 +36,9 @@ Post.init(
         }
       },
       post_status: {
-        type: BOOLEAN,
-        allowNull: false
+        type: DataTypes.INTEGER, // 0: "pending approval", 1: "approved, not featured", 2: "approved and featured"
+        allowNull: false,
+        defaultValue: 0
         }
      },
     {

@@ -19,11 +19,6 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
-            type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
-        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -51,7 +46,7 @@ User.init(
         region_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'reqion',
+                model: 'region',
                 key: 'id'
             }
         },
@@ -76,7 +71,6 @@ User.init(
                 return updatedUserData
             }
         },
-
 
         sequelize,
         timestamps: false,

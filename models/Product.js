@@ -34,9 +34,9 @@ Product.init(
             allowNull: false
         },
         status: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.INTEGER, // 0: "pending approval", 1: "approved, not featured", 2: "approved and featured"
             allowNull: false,
-            defaultValue: false
+            defaultValue: 0
         },
         user_id: {
             type: DataTypes.INTEGER,

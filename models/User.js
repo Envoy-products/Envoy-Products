@@ -20,11 +20,11 @@ User.init(
             autoIncrement: true
         },
 
-        username: {
-            type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
-        },
+        // username: {
+        //     type: DataTypes.STRING,
+        //     unique: true,
+        //     allowNull: false
+        // },
 
         email: {
             type: DataTypes.STRING,

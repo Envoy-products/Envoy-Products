@@ -35,7 +35,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Stationary'),(2,'Computers/Electronics'),(3,'Vehicles'),(4,'Laundry'),(5,'Cleaning Products'),(6,'Personal Hygiene'),(7,'Clothing');
+INSERT INTO `category` VALUES (1,'Stationary'),(2,'Computers/Electronics'),(3,'Vehicles'),(4,'Laundry'),(5,'Cleaning Products'),(6,'Personal Hygiene'),(7,'Fashion');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 

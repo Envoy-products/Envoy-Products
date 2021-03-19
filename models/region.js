@@ -1,4 +1,4 @@
-const { Model, DataTypes, BOOLEAN } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Region extends Model {

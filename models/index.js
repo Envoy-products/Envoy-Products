@@ -6,7 +6,7 @@ const Post = require('./Post');
 const Product = require('./Product');
 const ProductRet = require('./ProductRet');
 const Rating = require('./Rating');
-const Region = require('./Region');
+const Region = require('./region');
 const RegionRet = require('./RegionRet');
 const Retailer = require('./Retailer');
 const Review = require('./Review');
@@ -129,14 +129,14 @@ ProductRet.belongsTo(Retailer, {
 
 Product.belongsToMany(Retailer, {
     through: ProductRet,
-    as: 'retailers',
-    foreignKey: 'product_id'
+    // as: 'products',
+    // foreignKey: 'product_id'
 });
 
 Retailer.belongsToMany(Product, {
     through: ProductRet,
-    as: 'products',
-    foreignKey: 'retailer_id'
+    // as: 'retailers',
+    // foreignKey: 'retailer_id'
 });
 
 // Associations between Product and Review

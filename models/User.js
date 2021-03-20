@@ -46,9 +46,7 @@ User.init(
         region_id: {
             type: DataTypes.INTEGER,
             references: {
-
                 model: 'region',
-
                 key: 'id'
             }
         },
@@ -73,7 +71,6 @@ User.init(
                 return updatedUserData
             }
         },
-
 
         sequelize,
         timestamps: false,

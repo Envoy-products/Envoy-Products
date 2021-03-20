@@ -1,6 +1,6 @@
 const router = require('express').Router();
 //const sequelize = require('../../config/connection');
-const { Post, User, Comment } = require('../../models');
+const { Post, User, Comment, Product } = require('../../models');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -14,13 +14,15 @@ router.get('/', (req, res) => {
           include: {
           model: User,
           attributes: ['first_name', 'last_name']
-          },
-        //   model: Product,
-        //   attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id','created_at'],
-        //   include: {
-        //   model: User,
-        //   attributes: ['first_name', 'last_name']
-        //   }
+            }
+        },
+          {
+          model: Product,
+          attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id'],
+          include: {
+          model: User,
+          attributes: ['first_name', 'last_name']
+            }
         },
         {
           model: User,
@@ -43,6 +45,22 @@ router.get('/:id', (req, res) => {
     },
     attributes: ['id', 'title', 'post_content', 'post_url', 'post_status', 'created_at'],
     include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
+        include: {
+        model: User,
+        attributes: ['first_name', 'last_name']
+          }
+      },
+        {
+        model: Product,
+        attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id'],
+        include: {
+        model: User,
+        attributes: ['first_name', 'last_name']
+          }
+      },  
       {
         model: User,
         attributes: ['first_name', 'last_name']

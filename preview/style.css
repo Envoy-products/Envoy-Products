@@ -457,3 +457,13 @@ input[type=text]:placeholder {
 }
 
 /* LOG IN/SIGN UP STYLE ENDS */
+
+.addproduct {
+  margin: auto;
+  width: 70%;
+}
+
+.add {
+  background-color: #086d38;
+
+}

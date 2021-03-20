@@ -458,12 +458,19 @@ input[type=text]:placeholder {
 
 /* LOG IN/SIGN UP STYLE ENDS */
 
+/* dashboard form */
 .addproduct {
   margin: auto;
   width: 70%;
 }
 
+/* blog and dashboard button */
 .add {
   background-color: #086d38;
+}
 
+/* blog form */
+.new-blog-form {
+  margin: auto;
+  width: 70%;
 }

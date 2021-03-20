@@ -15,7 +15,7 @@ const userdata = [
     password: 'password123',
     first_name: 'Mac',
     last_name: 'Kunz',
-    region_id: 1,
+    region_id: 2,
     avatar: "",
     admin: false
   },
@@ -24,7 +24,7 @@ const userdata = [
     password: 'password123',
     first_name: 'Joe',
     last_name: 'Smith',
-    region_id: 2,
+    region_id: 10,
     avatar: "",
     admin: false
   },
@@ -33,7 +33,7 @@ const userdata = [
     password: 'password123',
     first_name: 'Michael',
     last_name: 'Slater',
-    region_id: 2,
+    region_id: 10,
     avatar: "",
     admin: false
   }

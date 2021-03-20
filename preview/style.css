@@ -465,5 +465,9 @@ input[type=text]:placeholder {
 
 .add {
   background-color: #086d38;
+}
 
+.new-blog-form {
+  margin: auto;
+  width: 70%;
 }

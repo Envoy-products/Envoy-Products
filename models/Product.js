@@ -34,23 +34,24 @@ Product.init(
             allowNull: false
         },
         status: {
-            type: DataTypes.INTEGER, // 0: "pending approval", 1: "approved, not featured", 2: "approved and featured"
-            allowNull: false,
-            defaultValue: 0
+            type: DataTypes.ENUM(['pending', 'approved', 'featured']),
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
-            }
+            },
+            allowNull: false
         },
         category_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'category',
                 key: 'id'
-            }
+            },
+            allowNull: false
         }     
     },
     {

@@ -25,7 +25,7 @@ margin-bottom: 30px;
 }  
 
 .jumbotron {
-background-image:url('./library/images/pexels-felix-mittermeier-957024.jpg');
+background-image:url('../images/pexels-felix-mittermeier-957024.jpg');
 background-size: cover;
 background-position: center;
 color: #fff;

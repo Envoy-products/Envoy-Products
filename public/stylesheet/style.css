@@ -172,16 +172,23 @@ top: -16px;
   font-style: italic;
   padding-top: 14px;
 }
+
+.meta img {
+  border-radius: 50%;
+  border: #63a87c solid 1px;
+}
+
 .post .content {
   clear: both;
 }
 .post {
-  margin: 70px 50px 0 50px;
+  margin: 70px 0 0;
   color: #303030;
 }
 .comments {
-  margin: 25px 50px 25px 50px;
-  color: #303030;
+  margin: 220px 0 25px 10px;
+  color: #767b76;
+  line-height: 1.9rem;
 }
 .post h2 {
   padding-left: 0;
@@ -190,12 +197,22 @@ top: -16px;
   font-size: 2rem;
 }
 
+.comments .comment {
+  border-bottom:  1px dashed #cccfcc;
+  margin-bottom: 20px;
+}
+
+.comments .further-reading {
+  padding-bottom: 20px;
+  border-bottom: 3px solid #a3d6b6;
+}
+
 .post h3, .comments h3 {
   color: #086d38;
   font-size: 1.8rem;
   font-weight: bold;
   padding-bottom: 0;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
 }
 .post-list {
   border-bottom: #63a87c 1px solid;
@@ -205,6 +222,8 @@ top: -16px;
 
 .credit {
   font-style: italic;
+  margin: 7px 0 20px;
+  line-height: 2.2rem;
 }
 
 .author {
@@ -614,4 +633,10 @@ input.login-submit-btn, input.signup-submit-btn {
 .blog {
   margin: auto;
   width: 70%;
+}
+@media screen and (max-width: 768px) {
+
+  .comments {
+    margin: 0;
+  }
 }

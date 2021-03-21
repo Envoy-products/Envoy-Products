@@ -106,7 +106,7 @@ router.get('/signup', async (req, res) => {
 
 
 // get all posts
-router.get('/blogs', (req, res) => {
+router.get('/articles', (req, res) => {
     Post.findAll({
         where: sequelize.literal('post_status != "pending"'),
         attributes: [
@@ -118,14 +118,6 @@ router.get('/blogs', (req, res) => {
             'created_at'
         ],
         include: [
-            // {
-            //   model: Comment,
-            //   attributes: ['id', 'comment_text', 'post_id', 'user_id','created_at'],
-            //   include: {
-            //     model: User,
-            //     attributes: ['username']
-            //   }
-            // },
             {
             model: User,
             attributes: ['first_name', 'last_name']
@@ -148,7 +140,7 @@ router.get('/blogs', (req, res) => {
   });
 
 // Single post view
-router.get('/blog/:id', (req, res) => {
+router.get('/article/:id', (req, res) => {
     Post.findOne({
       where: {
         id: req.params.id
@@ -178,7 +170,6 @@ router.get('/blog/:id', (req, res) => {
       ]
     })
     .then(dbPostData => {
-      console.log(dbPostData);
       if(!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;

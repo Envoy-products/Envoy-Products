@@ -5,7 +5,7 @@ const blogPageRoutes = require('./blogpage-routes');
 const productPageRoutes = require('./productpage-routes');
 
 router.use('/', homePageRoutes);
-router.use('/blogs', blogPageRoutes);
+router.use('/articles', blogPageRoutes);
 router.use('/products', productPageRoutes);
 router.use('/api', apiRoutes);
 

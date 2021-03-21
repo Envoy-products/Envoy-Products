@@ -62,5 +62,30 @@ router.get('/', (req, res) => {
         });
 });
 
+// about page
+router.get('/about', (req, res) => {
+    res.render('about');
+});
+
+// login request
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('login');
+});
+
+// signup request
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('signup');
+});
+
 
 module.exports = router;

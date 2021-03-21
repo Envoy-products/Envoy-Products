@@ -1,6 +1,15 @@
-<div class="container">
-<h2>FEATURED PRODUCTS</h2>
-<h4>Some featured products chosen by our admins</h4><br>
+  <section class="post">
+  <h2>Products</h2>
+  {{#each products as |product|}}
+{{product.name}}
+{{product.description}}
+  {{/each}}
+  <p>&nbsp;</p>
+  </section>
+
+{{!-- <div class="container">
+<h2>PRODUCTS</h2>
+<h4>All products</h4><br>
 <div class="media">
   <div class="media-left media-middle">
     <img src="https://picsum.photos/200" class="media-object" style="width:300px">{{product_img}}
@@ -14,4 +23,4 @@
     <p>{{status}}</p>
   </div>
 </div>
-<hr>
+<hr> --}}

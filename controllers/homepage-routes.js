@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, Product, User, Category } = require('../models');
+const { Post, Product, User, Category, Region, Country } = require('../models');
 const sequelize = require('../config/connection');
 
 
@@ -64,7 +64,7 @@ router.get('/', (req, res) => {
 
 // about page
 router.get('/about', (req, res) => {
-    res.render('about');
+    res.render('about', { loggedIn: req.session.loggedIn });
 });
 
 // login request
@@ -78,13 +78,30 @@ router.get('/login', (req, res) => {
 });
 
 // signup request
-router.get('/signup', (req, res) => {
+router.get('/signup', async (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
 
-    res.render('signup');
+    try{
+        const dbRegionData = await Region.findAll({
+            attributes: ['id', 'region_name'],
+            include: [
+                {
+                    model: Country,
+                    attributes: [
+                        'country_name'
+                    ]
+                }
+            ]
+        });
+        const regions = dbRegionData.map(region => region.get({ plain: true })); // serialize data
+        res.render('signup', { regions });
+    } catch(err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 

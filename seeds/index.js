@@ -4,6 +4,7 @@ const seedRegions = require('./region-seeds');
 const seedUsers = require('./user-seeds');
 const seedPosts = require('./post-seeds');
 const seedRetailers = require('./retailer-seeds');
+const seedProducts = require('./product-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -26,6 +27,9 @@ const seedAll = async () => {
 
   console.log('===================');
   await seedRetailers();
+
+  console.log('===================');
+  await seedProducts();
 
   process.exit(0);
 };

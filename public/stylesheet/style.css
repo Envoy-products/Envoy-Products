@@ -2,8 +2,8 @@ body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.8;
   color: #818181;
-  height: 100vh;
 }
+
 .logo1 {
   width: 40px;
 }
@@ -481,6 +481,18 @@ input[type=text]:placeholder {
 
 /* blog form */
 .new-blog-form {
+  margin: auto;
+  width: 70%;
+}
+
+/* about us glyphicons */
+.logo-small {
+  color: #086d38;
+  font-size: 50px;
+}
+
+/* featured blog on homepage */
+.blog {
   margin: auto;
   width: 70%;
 }

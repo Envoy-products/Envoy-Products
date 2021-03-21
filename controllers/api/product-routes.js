@@ -132,7 +132,67 @@ router.post('/', (req, res) => {
         });
 });
 
-// // Update a post
+router.put('/:id', (req, res) => {
+    // create a new product
+    // expects from req.body: {name:'sample name', description:'sample description', website: 'https://example.com', product_img: 'https://example.com', status: "pending", category_id: 1} 
+    let data = {};
+    Product.update(
+     {
+        ...req.body,  // ADD USER ID FROM SESSION
+        user_id: req.session.user_id
+    },{
+        where:{
+            id: req.params.id
+        }
+        
+    })
+        .then(product => {
+            data.product = product;
+            if (req.body.retailerIds.length) {
+                const productRetIdArr = req.body.retailerIds.map((retailer_id) => {
+                    return {
+                        product_id: product.id,
+                        retailer_id,
+                    };
+                });
+                return ProductRet.bulkCreate(productRetIdArr);
+            }
+            return;
+        })
+        .then((productRetData) => {
+            data.productRet = productRetData;
+            res.status(201).json(data);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Update a product 
 // router.put('/:id', (req, res) => {
 //     // update a post by its `id`
 //     Post.update(req.body, {
@@ -140,6 +200,8 @@ router.post('/', (req, res) => {
 //             id: req.params.id
 //         }
 //     })
+
+
 //         .then(dbPostData => {
 //             if (!dbPostData[0]) {
 //                 res.status(404).json({ message: 'No Post found with this id' });
@@ -153,25 +215,25 @@ router.post('/', (req, res) => {
 //         });
 // });
 
-// // Delete a post
-// router.delete('/:id', (req, res) => {
-//     // delete a post by its `id`
-//     Post.destroy({
-//         where: {
-//             id: req.params.id
-//         }
-//     })
-//         .then(dbPostData => {
-//             if (!dbPostData) {
-//                 res.status(404).json({ message: 'No post found with this id' });
-//                 return;
-//             }
-//             res.json(dbPostData);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+// Delete a post
+router.delete('/:id', (req, res) => {
+    // delete a post by its `id`
+    Product.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbProductData => {
+            if (!dbProductData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(dbProductData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 module.exports = router;

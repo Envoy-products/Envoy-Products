@@ -20,14 +20,14 @@ Product.init(
             allowNull: false
         },
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT
         },
         website: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
-            validate: {
-                isUrl: true
-            }
+            // validate: {
+            //     isUrl: true
+            // }
         },
         product_img: {
             type: DataTypes.STRING,

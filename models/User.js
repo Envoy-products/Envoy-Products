@@ -55,7 +55,8 @@ User.init(
         },  
         admin: {
             type: BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: false
         }      
     },
     {

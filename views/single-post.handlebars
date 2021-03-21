@@ -1,0 +1,44 @@
+
+<article class="post">
+    <h2>{{post.title}}</h2>
+    {{> meta post}}
+    <div class="content">
+        <p>{{&format_posts post.post_content}}</p>
+    </div>
+    {{#if post.post_url}}
+    <h3>Read more</h3>
+    <a href="{{post.post_url}}" target="_blank">{{format_url post.post_url}}</a>
+    {{/if}}
+</article>
+
+<div class="comments">
+    {{#if post.comments}}
+    <h3>{{format_plural "Comment" post.comments.length}}</h3>
+    {{/if}}
+    {{#each post.comments}}
+    <section class="comment">
+        <div>
+            {{comment_text}}
+        </div>
+        <div class="meta">
+            <p class="credit"><img src="{{user.avatar}}" width="25" />
+            Posted by <span class="author">{{user.first_name}} {{user.last_name}}</span> on {{&format_date created_at}}</p>
+        </div>
+    </section>
+    {{/each}}
+</div>
+
+<!--{{#if loggedIn}}
+<h3>Add a comment:</h3>
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">add comment</button>
+    </div>
+</form>
+
+<script src="/javascript/comment.js"></script-->
+{{/if}}

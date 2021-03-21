@@ -73,7 +73,7 @@ router.post('/', (req, res) => {
         last_name: req.body.last_name,
         region_id: req.body.region_id,
         avatar: req.body.avatar,
-        admin: req.body.admin
+        admin: false
     })
     .then(dbUserData => {
         req.session.save(() => {

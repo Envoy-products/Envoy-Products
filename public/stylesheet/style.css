@@ -136,7 +136,7 @@ line-height: 4rem;
 }
 .navbar-nav li a:hover  {
 color: #FFF !important;
-background-color: #63A87C !important;
+background-color: #63a87c !important;
 }
 .navbar-nav li.active a {
 color: #086d38 !important;
@@ -150,6 +150,59 @@ color: #fff !important;
 position: absolute;
 left: 38px;
 top: -16px;
+}
+
+.post .title-bar .title {
+  float: left;
+  width: 65%;
+}
+
+.post .title-bar .meta {
+  float: right;
+  color: #646048;
+  font-style: italic;
+  padding-top: 14px;
+}
+.post .content {
+  clear: both;
+}
+.post, .comments {
+  margin: 70px 50px 0 50px;
+  color: #303030;
+
+}
+.comments {
+  padding: 0 50px 25px 50px;
+  color: #303030;
+}
+.post h2 {
+  padding-left: 0;
+  margin-left: 0;
+  color: #086d38;
+  font-size: 2rem;
+}
+
+.post h3, .comments h3 {
+  color: #086d38;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-bottom: 0;
+  margin-bottom: 3px;
+}
+.post-list {
+  border-bottom: #63a87c 1px solid;
+  padding-bottom: 20px;
+}
+
+
+.credit {
+  font-style: italic;
+}
+
+.author {
+  color: #63a87c;
+  font-weight: bold;
+  font-style: normal;
 }
 
 
@@ -217,6 +270,10 @@ a {
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
+}
+a:hover {
+  color: #63a87c;
+  text-decoration: underline;
 }
 
 h2 {

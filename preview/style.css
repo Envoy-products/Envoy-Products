@@ -342,8 +342,6 @@ input[type=text]:placeholder {
   color: #cccccc;
 }
 
-
-
 /* ANIMATIONS */
 
 /* Simple CSS3 Fade-in-down Animation */
@@ -468,6 +466,16 @@ input[type=text]:placeholder {
 }
 
 .new-blog-form {
+  margin: auto;
+  width: 70%;
+}
+
+.logo-small {
+  color: #086d38;
+  font-size: 50px;
+}
+
+.media {
   margin: auto;
   width: 70%;
 }

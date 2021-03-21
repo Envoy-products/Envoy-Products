@@ -280,6 +280,10 @@ const regionData = [
     {
       region_name: "Wyoming",
       country_id: 3
+    },
+    {
+      region_name: "All",
+      country_id: 1
     }
   ];
 

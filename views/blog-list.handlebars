@@ -1,16 +1,20 @@
-  <section class="post">
-  <h2>User Blog Posts</h2>
-  {{#each posts as |post|}}
-    <article class="post-list">
-      <div class="title-bar">
-        <div class="title">
-          <h3><a href="/blog/{{id}}">{{title}}</a></h3>
-        </div>
-        {{> meta post}}
-      </div>
-      <div class="content">{{format_cut_content post_content}} <a href="/blog/{{id}}"> &hellip; read more</a></div>
+  <div class="container">
+    <div class="row">
+      <section class="post">
+      <h2>Articles</h2>
+      {{#each posts as |post|}}
+        <article class="post-list">
+          <div class="title-bar">
+            <div class="title">
+              <h3><a href="/articles/{{id}}">{{title}}</a></h3>
+            </div>
+            {{> meta post}}
+          </div>
+          <div class="content">{{format_cut_content post_content}} <a href="/article/{{id}}"> &hellip; read more</a></div>
 
-    </article>
-  {{/each}}
-  <p>&nbsp;</p>
-  </section>
+        </article>
+      {{/each}}
+      <p>&nbsp;</p>
+      </section>
+    </div>
+  </div>

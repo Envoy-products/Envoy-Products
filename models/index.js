@@ -195,14 +195,14 @@ Rating.belongsTo(User, {
 
 // Associations between Rating and Review
 // a review can have one rating, and a rating belongs to one review
-// Review.hasOne(Rating, {
-//     foreignKey: 'rating_id'
-// });
+Review.hasOne(Rating, {
+    foreignKey: 'rating_id'
+});
 
-// Rating.belongsTo(Review, {
-//     foreignKey: 'rating_id',
-//     onDelete: 'SET NULL'
-// });
+Rating.belongsTo(Review, {
+    foreignKey: 'rating_id',
+    onDelete: 'SET NULL'
+});
 
 
 module.exports = {

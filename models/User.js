@@ -19,7 +19,6 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -72,7 +71,6 @@ User.init(
                 return updatedUserData
             }
         },
-
 
         sequelize,
         timestamps: false,

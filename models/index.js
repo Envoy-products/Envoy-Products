@@ -1,3 +1,4 @@
+
 const Category = require('./Category');
 const Comment = require('./Comment');
 const Country = require('./Country');
@@ -5,7 +6,7 @@ const Post = require('./Post');
 const Product = require('./Product');
 const ProductRet = require('./ProductRet');
 const Rating = require('./Rating');
-const Region = require('./Region');
+const Region = require('./region');
 const RegionRet = require('./RegionRet');
 const Retailer = require('./Retailer');
 const Review = require('./Review');
@@ -128,14 +129,14 @@ ProductRet.belongsTo(Retailer, {
 
 Product.belongsToMany(Retailer, {
     through: ProductRet,
-    as: 'retailers',
-    foreignKey: 'product_id'
+    // as: 'products',
+    // foreignKey: 'product_id'
 });
 
 Retailer.belongsToMany(Product, {
     through: ProductRet,
-    as: 'products',
-    foreignKey: 'retailer_id'
+    // as: 'retailers',
+    // foreignKey: 'retailer_id'
 });
 
 // Associations between Product and Review
@@ -195,11 +196,13 @@ Rating.belongsTo(User, {
 
 // Associations between Rating and Review
 // a review can have one rating, and a rating belongs to one review
+
 Review.hasOne(Rating, {
     foreignKey: 'rating_id'
 });
 
 Rating.belongsTo(Review, {
+
     foreignKey: 'rating_id',
     onDelete: 'SET NULL'
 });

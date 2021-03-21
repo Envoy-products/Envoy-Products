@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>ENVOY</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="./index.html"><img class="logo-small" src="./library/images/envoy.svg" alt="Envoy" height="60"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./dashboard.html">DASHBOARD</a></li>
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#products">PRODUCTS</a></li>
+        <li><a href="./blog.html">BLOG</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="./login.html">LOG IN/SIGN UP</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+
+
+<form class="container-fluid bg-grey addproduct new-post-form">
+
+  <div class="form-group col-md-6">
+    <label for="post-product" class="col-2 col-form-label">Product Name</label>
+    <input class="form-control" type="" id="post-product" placeholder="product name" name="post-product">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="post-description" class="col-2 col-form-label">Description</label>
+    <input class="form-control" type="" id="post-description" placeholder="description" name="post-description">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="post-website" class="col-2 col-form-label">Website</label>
+    <input class="form-control" type="url"  id="post-website" placeholder="website" name="post-website">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="post-website" class="col-2 col-form-label">Where To Buy</label>
+    <input class="form-control" type="url"  id="post-website" placeholder="website" name="post-website">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="post-website" class="col-2 col-form-label">Image</label>
+    <input class="form-control" type="url"  id="post-website" placeholder="link for image" name="post-website">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="inputCategory">Category</label>
+    <select id="inputCategory" class="form-control" name="inputCategory">
+      <option selected>Choose...</option>
+      <option>Cleaning Products</option>
+      <option>Electronics</option>
+      <option>Fashion</option>
+      <option>Laundry</option>
+      <option>Personal Hygiene</option>
+      <option>Stationary</option>
+      <option>Vehicle</option>
+    </select>
+  </div>
+  
+  <div class="text-center">
+    <button type="submit" class="btn add" style="color: white">Add Product +</button>
+  </div>
+</form>
+
+  <br>
+  <br>
+  <br>
+
+<footer class="container-fluid text-center" style="height: 25px;">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Made By <a href="">www.Envoy.com</a></p>
+</footer>
+
+</body>
+</html>

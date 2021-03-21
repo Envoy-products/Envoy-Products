@@ -16,14 +16,14 @@ router.get('/', (req, res) => {
                     attributes: ['first_name', 'last_name']
                 }
             },
-            {
-                model: Product,
-                attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id'],
-                include: {
-                    model: User,
-                    attributes: ['first_name', 'last_name']
-                }
-            },
+            // {
+            //     model: Product,
+            //     attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id'],
+            //     include: {
+            //         model: User,
+            //         attributes: ['first_name', 'last_name']
+            //     }
+            // },
             {
                 model: User,
                 attributes: [
@@ -50,6 +50,10 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'title', 'post_content', 'post_url', 'post_status', 'created_at'],
         include: [
             {
+                model: User,
+                attributes: ['first_name', 'last_name', 'avatar']
+            },
+            {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
                 include: {
@@ -57,21 +61,18 @@ router.get('/:id', (req, res) => {
                     attributes: ['first_name', 'last_name']
                 }
             },
-            {
-                model: Product,
-                attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id'],
-                include: {
-                    model: User,
-                    attributes: ['first_name', 'last_name']
-                }
-            },
-            {
-                model: User,
-                attributes: ['first_name', 'last_name']
-            }
-        ]
+            // {
+            //     model: Product,
+            //     attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id'],
+            //     include: {
+            //         model: User,
+            //         attributes: ['first_name', 'last_name']
+            //     }
+            // },
+         ]
     })
         .then(dbPostData => {
+        console.log(dbPostData.user);
             if (!dbPostData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;

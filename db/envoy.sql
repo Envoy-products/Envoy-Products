@@ -35,7 +35,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Stationary'),(2,'Computers/Electronics'),(3,'Vehicles'),(4,'Laundry'),(5,'Cleaning Products'),(6,'Personal Hygiene'),(7,'Fashion');
+INSERT INTO `category` VALUES (1,'Stationary'),(2,'Computers/Electronics'),(3,'Vehicles'),(4,'Laundry'),(5,'Cleaning Products'),(6,'Personal Hygiene'),(7,'Clothing');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,72 +94,6 @@ INSERT INTO `country` VALUES (1,'All'),(2,'Canada'),(3,'United States');
 /*!40000 ALTER TABLE `country` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `post`
---
-
-DROP TABLE IF EXISTS `post`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `post` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `post_content` text,
-  `post_url` varchar(255) NOT NULL,
-  `user_id` int DEFAULT NULL,
-  `post_status` int NOT NULL DEFAULT '0',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `post`
---
-
-LOCK TABLES `post` WRITE;
-/*!40000 ALTER TABLE `post` DISABLE KEYS */;
-/*!40000 ALTER TABLE `post` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `product`
---
-
-DROP TABLE IF EXISTS `product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `product` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  `website` varchar(255) NOT NULL,
-  `product_img` varchar(255) NOT NULL,
-  `status` int NOT NULL DEFAULT '0',
-  `user_id` int DEFAULT NULL,
-  `category_id` int DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `user_id` (`user_id`),
-  KEY `category_id` (`category_id`),
-  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `product_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product`
---
-
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `product_ret`
@@ -358,7 +292,7 @@ CREATE TABLE `Session` (
 
 LOCK TABLES `Session` WRITE;
 /*!40000 ALTER TABLE `Session` DISABLE KEYS */;
-INSERT INTO `Session` VALUES ('G6qZTyT6QmGta2QKF__WkyW2OIVwxYZE','2021-03-20 14:43:59','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}','2021-03-19 14:43:35','2021-03-19 14:43:59'),('gnngbDmf0yJekpy7RYrwAbAchNExfzyw','2021-03-20 19:30:01','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":4,\"user_name\":\"Boob\",\"loggedIn\":true}','2021-03-18 19:46:56','2021-03-19 19:30:01'),('rV_hSw_Q72hGc3yTeZbLAIcq_DEJwNiM','2021-03-20 13:22:51','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}','2021-03-18 22:40:09','2021-03-19 13:22:51');
+INSERT INTO `Session` VALUES ('G6qZTyT6QmGta2QKF__WkyW2OIVwxYZE','2021-03-21 13:16:10','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}','2021-03-19 14:43:35','2021-03-20 13:16:10'),('gnngbDmf0yJekpy7RYrwAbAchNExfzyw','2021-03-21 22:29:19','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":4,\"user_name\":\"Boob\",\"loggedIn\":true}','2021-03-18 19:46:56','2021-03-20 22:29:19'),('rV_hSw_Q72hGc3yTeZbLAIcq_DEJwNiM','2021-03-21 03:41:59','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}','2021-03-18 22:40:09','2021-03-20 03:41:59');
 /*!40000 ALTER TABLE `Session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -404,4 +338,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-19 15:42:33
+-- Dump completed on 2021-03-20 18:39:28

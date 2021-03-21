@@ -8,7 +8,7 @@ const categoryData = [
         category_name: 'Computers/Electronics'
     },
     {
-        category_name: 'Vehicles'
+        category_name: 'Auto-mobile'
     },
     {
         category_name: 'Laundry'
@@ -20,7 +20,13 @@ const categoryData = [
         category_name: 'Personal Hygiene'
     },
     {
-        category_name: 'Fashion'
+        category_name: 'Apparel'
+    },
+    {
+        category_name: 'Household'
+    },
+    {
+        category_name: 'Kitchen'
     }
 ];
 

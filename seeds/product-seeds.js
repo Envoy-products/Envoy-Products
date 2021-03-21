@@ -51,16 +51,6 @@ const productData = [
         retailerIds: [10,11]
     },
     {
-        name:"Biodegradable Jute Bags", 
-        description:"Biodegradable Bags made of 100% natural jute fiber and can hold upto 50 lbs", 
-        website: "https://www.uline.ca/Product/Detail/S-8422/Burlap-and-Cloth-Bags/Burlap-Bags-8-x-12?pricode=YD275&gadtype=pla&id=S-8422&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMyOgHbrA9im8TcmazE7PKN9sz8Rdw-t0-N0pqedmzrq6qqmyqaLb4EaAhg8EALw_wcB&gclsrc=aw.ds", 
-        product_img: "https://www.uline.ca/Product/Detail/S-8422/Burlap-and-Cloth-Bags/Burlap-Bags-8-x-12?pricode=YD275&gadtype=pla&id=S-8422&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMyOgHbrA9im8TcmazE7PKN9sz8Rdw-t0-N0pqedmzrq6qqmyqaLb4EaAhg8EALw_wcB&gclsrc=aw.ds",
-        status:"featured",
-        category_id: 7,
-        user_id: 3,
-        retailerIds: [8,12]
-    },
-    {
         name:"Whiff Bamboo Cloth", 
         description:"Whiff Bamboo Dishcloths & Kitchen Cloths, Sustainable, Scrubbing Power, Naturally Hygienic, Washable Absorbent Durable, Reusable, Cleaning Essentical, Dish Rags, Replace Your Sponge (BDC6X7inch)", 
         website: "https://www.amazon.ca", 
@@ -119,36 +109,6 @@ const productData = [
         category_id: 8,
         user_id: 3,
         retailerIds: [1,3]
-    },
-    {
-        name:"The Clean Up Kit", 
-        description:"Reusable shatterproof bottle, which comes with environmentally safe tables for cleaning once mixed with water",
-        website: "https://www.blueland.com/products/the-clean-up-kit", 
-        product_img: "https://www.blueland.com/collections/our-kits/products/the-clean-up-kit?utm_source=RAN&utm_medium=affiliates&utm_campaign=10&utm_content=TnL5HPStwNw&ranMID=44816&ranEAID=TnL5HPStwNw&ranSiteID=TnL5HPStwNw-nIlvmjNcdES8RTIhyKlI4w",
-        status:"featured",
-        category_id: 5,
-        user_id: 2,
-        retailerIds: [18]
-    },
-    {
-        name:"Shampoo Bar", 
-        description:"All-natural shampoo bar that nourishes your scalp and our planet, eliminating single-use plastic from your routine",
-        website: "https://byhumankind.com/products/shampoo", 
-        product_img: "https://byhumankind.com/products/shampoo?irclickid=Q8sWAdUFVxyLUl80TbWK8Xs3UkEVpn0hrS2cyE0&irgwc=1&utm_source=affiliate&utm_medium=referral&utm_campaign=Skimbit%20Ltd._bestproducts.com&utm_term=Online%20Tracking%20Link",
-        status:"featured",
-        category_id: 6,
-        user_id: 4,
-        retailerIds: [18, 19]
-    },
-    {
-        name:"Pop-up Sponge", 
-        description:"Sqwishful pop up sponges are 100% plant-based and made from natural wood pulp with zero plastic or dyes.",
-        website: "https://sqwishful.com/products/pop-up-sponges", 
-        product_img: "https://sqwishful.com/products/pop-up-sponges",
-        status:"featured",
-        category_id: 5,
-        user_id: 1,
-        retailerIds: [1,20]
     },
     {
         name:"Eco friendly Spaghetti Corn Scrubs", 

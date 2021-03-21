@@ -39,7 +39,7 @@ color: #fff;
 }
 
 .container-fluid {
-padding: 60px 50px;
+padding: 30px 50px;
 }
 .bg-grey {
 background-color: #f6f6f6;
@@ -342,7 +342,17 @@ input[type=text]:placeholder {
   color: #cccccc;
 }
 
+/* .login-modal {
+    height: 100%;
+    z-index: 10000!important;
+}
 
+.login-modal-content {
+    max-width: 450px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+} */
 
 /* ANIMATIONS */
 

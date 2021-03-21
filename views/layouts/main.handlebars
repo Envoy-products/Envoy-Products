@@ -10,6 +10,8 @@
     {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"> --}}
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> --}}
     {{!-- custom styles --}}
     <link rel="stylesheet" href="/stylesheet/style.css">
@@ -35,7 +37,7 @@
                     <!-- logout button here -->
                     <li><a href="/dashboard">DASHBOARD</a></li>
                     <li>
-                        <button id="logoutBtn">LOGOUT</button>
+                        <button class="btn-nav-link" id="logout-btn">LOGOUT</button>
                     </li>
                     {{else}}
                     <li>
@@ -52,7 +54,7 @@
     </nav>
 
     <main>
-        {{> login-modal}}
+        {{> error-modal}}
         {{{ body }}}
     </main>
 
@@ -96,9 +98,7 @@
     </footer>
 
     <script src="/javascript/script.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/javascript/logout.js"></script>
 
 </body>
 

@@ -1,4 +1,4 @@
-const { Product } = require('../models');
+const { Product, ProductRet } = require('../models');
 const productData = [
     {
         name:"Apple M1 MacBook Air", 
@@ -7,6 +7,7 @@ const productData = [
         product_img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-gallery3-20201110?wid=4000&hei=3072&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1603399121000",
         status:"pending",
         category_id: 2,
+        user_id: 1,
         retailerIds: [1, 2]
     },
     {
@@ -16,6 +17,7 @@ const productData = [
         product_img: "https://www.hyundaicanada.com/-/media/hyundai/showroom/2021/kona-electric/featuregrid/exterior/desktop/konaev_exterior_f1.jpg",
         status:"approved",
         category_id: 3,
+        user_id: 4,
         retailerIds: [4]
     },
     {
@@ -25,6 +27,7 @@ const productData = [
         product_img: "https://cdn11.bigcommerce.com/s-4akt4aa4m/images/stencil/1280x1280/products/188/619/mrs_meyers_lavender_laundry_detergent_english_label__75309.1598962406.png?c=2",
         status:"featured",
         category_id: 4,
+        user_id: 2,
         retailerIds: [1,5,6]
     },
     {
@@ -34,6 +37,7 @@ const productData = [
         product_img: "https://cdn.shopify.com/s/files/1/1178/9804/products/biodegradable-bamboo-toothbrush-bkind_1296x.jpg?v=1578410873",
         status:"approved",
         category_id: 6,
+        user_id: 1,
         retailerIds: [7,8,9]
     },
     {
@@ -43,6 +47,7 @@ const productData = [
         product_img: "https://cdn.shopify.com/s/files/1/0081/4255/3199/products/dmf3ws414nviphydm9gl_1001x1300_crop_center.jpg?v=1606246100",
         status:"pending",
         category_id: 7,
+        user_id: 1,
         retailerIds: [10,11]
     },
     {
@@ -52,6 +57,7 @@ const productData = [
         product_img: "https://www.uline.ca/Product/Detail/S-8422/Burlap-and-Cloth-Bags/Burlap-Bags-8-x-12?pricode=YD275&gadtype=pla&id=S-8422&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMyOgHbrA9im8TcmazE7PKN9sz8Rdw-t0-N0pqedmzrq6qqmyqaLb4EaAhg8EALw_wcB&gclsrc=aw.ds",
         status:"featured",
         category_id: 7,
+        user_id: 3,
         retailerIds: [8,12]
     },
     {
@@ -61,6 +67,7 @@ const productData = [
         product_img: "https://www.amazon.ca/dp/B07LFLLBSP?ots=1&ascsubtag=%5Bartid%7C2089.g.1435%5Bsrc%7C%5Bch%7C%5Blt%7C&linkCode=gs2&tag=hearstmagazin-20",
         status:"approved",
         category_id: 7,
+        user_id: 3,
         retailerIds: [1,13]
     },
     {
@@ -70,6 +77,7 @@ const productData = [
         product_img: "https://i.etsystatic.com/24011281/r/il/f1a090/2397916760/il_1588xN.2397916760_np1u.jpg",
         status:"featured",
         category_id: 1,
+        user_id: 1,
         retailerIds: [1,8,14]
     },
     {
@@ -79,6 +87,7 @@ const productData = [
         product_img: "https://secure.img1-fg.wfcdn.com/im/02357781/resize-h800-w800%5Ecompr-r85/4662/46628037/Creager+Oriental+Handmade+Tufted+Wool+Brown+Area+Rug.jpg",
         status:"approved",
         category_id: 8,
+        user_id: 2,
         retailerIds: [3,14,15]
     },
     {
@@ -88,6 +97,7 @@ const productData = [
         product_img: "https://www.mitsubishi-motors.ca/media/showroom_angles/scaled/2020-mitsubishi-outlander-phev-gt-s-awc-red-diamond-right-view-lt-152652.png",
         status:"featured",
         category_id: 3,
+        user_id: 4,
         retailerIds: [16]
     },
     {
@@ -97,6 +107,7 @@ const productData = [
         product_img: "https://secure.img1-fg.wfcdn.com/im/22350863/resize-h800-w800%5Ecompr-r85/1396/139655942/Shallow+Round+10.25%2522+Dinner+Plate.jpg",
         status:"approved",
         category_id: 9,
+        user_id: 3,
         retailerIds: [1,3]
     },
     {
@@ -106,6 +117,7 @@ const productData = [
         product_img: "https://secure.img1-fg.wfcdn.com/im/16493469/resize-h800%5Ecompr-r85/7724/77243218/9.5+Watt+%252860+Watt+Equivalent%2529%252C+A19+LED%252C+Dimmable+Light+Bulb%252C+Warm+White+%25282700K%2529+E26/Medium+%2528Standard%2529+Base.jpg",
         status:"approved",
         category_id: 8,
+        user_id: 3,
         retailerIds: [1,3]
     },
     {
@@ -115,6 +127,7 @@ const productData = [
         product_img: "https://www.blueland.com/collections/our-kits/products/the-clean-up-kit?utm_source=RAN&utm_medium=affiliates&utm_campaign=10&utm_content=TnL5HPStwNw&ranMID=44816&ranEAID=TnL5HPStwNw&ranSiteID=TnL5HPStwNw-nIlvmjNcdES8RTIhyKlI4w",
         status:"featured",
         category_id: 5,
+        user_id: 2,
         retailerIds: [18]
     },
     {
@@ -124,6 +137,7 @@ const productData = [
         product_img: "https://byhumankind.com/products/shampoo?irclickid=Q8sWAdUFVxyLUl80TbWK8Xs3UkEVpn0hrS2cyE0&irgwc=1&utm_source=affiliate&utm_medium=referral&utm_campaign=Skimbit%20Ltd._bestproducts.com&utm_term=Online%20Tracking%20Link",
         status:"featured",
         category_id: 6,
+        user_id: 4,
         retailerIds: [18, 19]
     },
     {
@@ -133,6 +147,7 @@ const productData = [
         product_img: "https://sqwishful.com/products/pop-up-sponges",
         status:"featured",
         category_id: 5,
+        user_id: 1,
         retailerIds: [1,20]
     },
     {
@@ -142,6 +157,7 @@ const productData = [
         product_img: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1609867018-spaghetti-scrubber-1609867015.jpg?crop=1xw:1xh;center,top&resize=480:*",
         status:"featured",
         category_id: 5,
+        user_id: 1,
         retailerIds: [1,21]
     },
     {
@@ -151,6 +167,7 @@ const productData = [
         product_img: "https://www.smead.com/images/product/400/70778e.jpg",
         status:"featured",
         category_id: 1,
+        user_id: 4,
         retailerIds: [1,22,23]
     },
     {
@@ -160,6 +177,7 @@ const productData = [
         product_img: "https://cdn.shopify.com/s/files/1/2009/9335/products/EvolutionHoodieNOBG_1600x.png?v=1612901919",
         status:"featured",
         category_id: 7,
+        user_id: 2,
         retailerIds: [24,25]
     },
     {
@@ -169,6 +187,7 @@ const productData = [
         product_img: "https://cdn.shopify.com/s/files/1/2009/9335/products/nomad-black-1_1600x.jpg?v=1589928053",
         status:"featured",
         category_id: 1,
+        user_id: 2,
         retailerIds: [3,24]
     },
     {
@@ -178,6 +197,7 @@ const productData = [
         product_img: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1609866845-plantable-pencils-1609866841.gif?crop=1xw:1xh;center,top&resize=480:*",
         status:"featured",
         category_id: 1,
+        user_id: 1,
         retailerIds: [1,26]
     },
     {
@@ -187,12 +207,28 @@ const productData = [
         product_img: "https://images.uline.com/is/image/content/dam/images/S/S20000/S-19974.jpg?$MediumRHD$&iccEmbed=1&icc=AdobeRGB",
         status:"featured",
         category_id: 8,
+        user_id: 1,
         retailerIds: [1,12,22]
     },
 
 ];
 
-const seedProducts = () => Product.bulkCreate(productData);
+const seedProducts = async () => {
+    const productTableData = productData.map(({retailerIds, ...rest}) => ({...rest}));
+    const products = await Product.bulkCreate(productTableData);
+    
+    let productRetData = [];
+    products.map(product => {
+        const retailerIdsArr = productData[product.id - 1].retailerIds
+        if (retailerIdsArr.length) {
+            retailerIdsArr.map(retailer_id => productRetData.push({
+                product_id: product.id,
+                retailer_id,
+            }));
+        }
+    });
+    return ProductRet.bulkCreate(productRetData);
+}
 
 module.exports = seedProducts;
 

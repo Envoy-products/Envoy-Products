@@ -80,7 +80,8 @@ router.get('/:id', (req, res) => {
                 model: Review,
                 attributes: [
                     'id',
-                    'content'
+                    'content',
+                    'created_at'
                 ],
                 include: [
                     {
@@ -112,6 +113,7 @@ router.get('/:id', (req, res) => {
             //serialize the data
             const product = dbProductData.get({ plain: true });
             
+            // res.json(product);
             // pass data to template
             res.render('single-product', {
                 product,

@@ -154,7 +154,7 @@ const productData = [
         name:"Sprout Plantable Graphite Pencils", 
         description:"With Sprout's pencil sets, they can enjoy a second life as a plant! Available in both graphite and colored sets, and made of FSC-certified wood, these nontoxic writing utensils can be sharpened and used just like any other pencil, but when they become too stubby to use, you can plant them end-side down, which will release the plant seeds inside of their caps.",
         website: "https://sproutworld.com/plant-a-green-mindset-with-a-sproutpencil/", 
-        product_img: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1609866845-plantable-pencils-1609866841.gif?crop=1xw:1xh;center,top&resize=480:*",
+        product_img: "https://images-na.ssl-images-amazon.com/images/I/71ZHS8scd3L._AC_SL1500_.jpg",
         status:"approved",
         category_id: 1,
         user_id: 1,

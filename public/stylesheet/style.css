@@ -115,9 +115,11 @@ border: 1px solid #63a87c;
 border-radius:0 !important;
 transition: box-shadow 0.5s;
 }
+/*
 .panel-body {
 
 }
+*/
 .product-container {
   display: grid;
   grid-template-columns: auto auto auto;

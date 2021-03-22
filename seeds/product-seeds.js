@@ -52,7 +52,7 @@ const productData = [
     },
     {
         name:"Whiff Bamboo Cloth", 
-        description:"Whiff Bamboo Dishcloths & Kitchen Cloths, Sustainable, Scrubbing Power, Naturally Hygienic, Washable Absorbent Durable, Reusable, Cleaning Essentical, Dish Rags, Replace Your Sponge (BDC6X7inch)", 
+        description:"Whiff Bamboo Dishcloths & Kitchen Cloths, Sustainable, Scrubbing Power, Naturally Hygienic, Washable Absorbent Durable, Reusable, Cleaning Essentical, Dish Rags, Replace Your Sponge.", 
         website: "https://www.amazon.ca", 
         product_img: "https://images-na.ssl-images-amazon.com/images/I/71VjMo-Rz1L._AC_SL1000_.jpg",
         status:"approved",
@@ -62,7 +62,7 @@ const productData = [
     },
     {
         name:"ECO FRIENDLY Bamboo Mechanical Pencils", 
-        description:"Whiff Bamboo Dishcloths & Kitchen Cloths, Sustainable, Scrubbing Power, Naturally Hygienic, Washable Absorbent Durable, Reusable, Cleaning Essentical, Dish Rags, Replace Your Sponge (BDC6X7inch)", 
+        description:"Mechanical Pencils. Made with bamboo and recycled plastic. HB. 0.5mm lead diameter (pack of 2).", 
         website: "https://www.amazon.ca/Whiff-Naturally-Absorbent-Sustainable-Antibacterial/dp/B07LFLLBSP", 
         product_img: "https://i.etsystatic.com/24011281/r/il/f1a090/2397916760/il_1588xN.2397916760_np1u.jpg",
         status:"featured",

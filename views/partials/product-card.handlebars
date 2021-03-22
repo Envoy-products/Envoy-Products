@@ -4,10 +4,11 @@
             <h1>{{name}}</h1>
         </div>
         <div class="panel-body">
-            <img class="product-picture" src="{{product_img}}" alt="" width="150" height="150">
+            <img class="product-picture" src="{{product_img}}" alt="{{name}}" height="150">
                 <p class="product-text">{{description}}</p>
             <hr>
-                <a class="product-text" href="{{website}}">
-                <p>{{website}}</p></a>
+            <div align="center">
+                <a class="button" href="/products/{{id}}">Learn More</a>
+            </div>
         </div>
     </div>

@@ -14,7 +14,13 @@
 
         </article>
       {{/each}}
+
+      {{#if loggedIn}}
+        <a href="/articles/add" class="button">Add an article</a>
+      {{else}}
       <p>&nbsp;</p>
+      {{/if}}
+
       </section>
     </div>
   </div>

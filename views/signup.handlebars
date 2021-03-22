@@ -14,6 +14,7 @@
         <input type="password" id="password-signup" class="fadeIn third" placeholder="password">
         <input type="text" id="avatar-signup" class="fadeIn third" placeholder="avatar image url">
         <select id="region-signup" class="fadeIn third select-signup-form text-center">
+            <option value="-1">select a region</option>
             {{#each regions as |region|}}
                 <option value="{{region.id}}">{{region.region_name}}, {{region.country.country_name}}</option>
             {{/each}}

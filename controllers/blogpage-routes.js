@@ -49,7 +49,10 @@ router.get('/add', (req, res) => {
     if(!req.session.loggedIn){
         res.redirect('/signup');
     }
-    res.render('add-post')
+    res.render('add-post', { 
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id
+    });
 });
 
 // Single post view

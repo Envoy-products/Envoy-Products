@@ -112,7 +112,7 @@ router.get('/signup', async (req, res) => {
         });
         const regions = dbRegionData.map(region => region.get({ plain: true })); // serialize data
         res.render('signup', { regions });
-    } catch(err) {
+    } catch(err) { 
         console.log(err);
         res.status(500).json(err);
     }

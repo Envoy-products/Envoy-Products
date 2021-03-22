@@ -35,7 +35,8 @@ Product.init(
         },
         status: {
             type: DataTypes.ENUM(['pending', 'approved', 'featured']),
-            allowNull: false
+            allowNull: false,
+            defaultValue: 'pending'
         },
         user_id: {
             type: DataTypes.INTEGER,

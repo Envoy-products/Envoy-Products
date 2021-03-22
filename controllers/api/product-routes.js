@@ -1,12 +1,20 @@
 const router = require('express').Router();
 const { Product, User, Category, ProductRet, Rating, Review, Retailer } = require('../../models');
 const sequelize = require('../../config/connection');
+const { auth } = require('../../utils/auth');
 
 // Get all products
 router.get('/', (req, res) => {
     // find all products
     Product.findAll({
-        attributes: ['id', 'name', 'description', 'website', 'product_img', 'status'],
+        attributes: [
+            'id', 
+            'name', 
+            'description', 
+            'website', 
+            'product_img', 
+            'status'
+        ],
         include: [
             {
                 model: User,
@@ -101,12 +109,25 @@ router.get('/:id', (req, res) => {
 });
 
 // Create a new product
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
     // create a new product
-    // expects from req.body: {name:'sample name', description:'sample description', website: 'https://example.com', product_img: 'https://example.com', status: "pending", category_id: 1} 
+    // expects from req.body: 
+    // {
+    //     name:'sample name', 
+    //     description:'sample description', 
+    //     website: 'https://example.com', 
+    //     product_img: 'https://example.com', 
+    //     category_id: 1
+    //     retailerIds: [1,2]
+    // }
     let data = {};
     Product.create({
-        ...req.body,  // ADD USER ID FROM SESSION
+        name: req.body.name,
+        description: req.body.description,
+        website: req.body.website,
+        product_img: req.body.product_img,
+        category_id: req.body.category_id,
+        retailerIds: req.body.retailerIds,
         user_id: req.session.user_id
     })
         .then(product => {
@@ -132,7 +153,7 @@ router.post('/', (req, res) => {
         });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', auth, (req, res) => {
     // create a new product
     // expects from req.body: {name:'sample name', description:'sample description', website: 'https://example.com', product_img: 'https://example.com', status: "pending", category_id: 1} 
     let data = {};
@@ -170,7 +191,7 @@ router.put('/:id', (req, res) => {
 });
 
 // Delete a post
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
     // delete a post by its `id`
     Product.destroy({
         where: {

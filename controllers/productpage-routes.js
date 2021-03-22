@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Product, User, Category, Review, Rating } = require('../models');
+const { Product, User, Category, Review, Retailer, Rating } = require('../models');
 const sequelize = require('../config/connection');
-
+const { auth } = require('../utils/auth');
 
 // get all products that are not in pending status
 router.get('/', (req, res) => {
@@ -46,6 +46,36 @@ router.get('/', (req, res) => {
         });
 });
 
+// Load Add Product page
+router.get('/add', auth, async (req, res) => {
+    try{
+        const dbCategoryNameData = await Category.findAll({
+            attributes: [
+                'id', 
+                'category_name'
+            ]
+        });
+        const categories = dbCategoryNameData.map(category => category.get({ plain: true })); // serialize data
+        
+        const dbRetailerNameData = await Retailer.findAll({
+            attributes: [
+                'id', 
+                'ret_name'
+            ]
+        });
+        const retailers = dbRetailerNameData.map(retailer => retailer.get({ plain: true })); // serialize data
+        
+        res.render('add-product', { 
+            categories,
+            retailers,
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id
+        });
+    } catch(err) { 
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 // Single product view
 router.get('/:id', (req, res) => {
@@ -80,7 +110,8 @@ router.get('/:id', (req, res) => {
                 model: Review,
                 attributes: [
                     'id',
-                    'content'
+                    'content',
+                    'created_at'
                 ],
                 include: [
                     {
@@ -112,10 +143,12 @@ router.get('/:id', (req, res) => {
             //serialize the data
             const product = dbProductData.get({ plain: true });
             
+            // res.json(product);
             // pass data to template
             res.render('single-product', {
                 product,
-                loggedIn: req.session.loggedIn
+                loggedIn: req.session.loggedIn,
+                user_id:  req.session.user_id
             });
         })
         .catch(err => {

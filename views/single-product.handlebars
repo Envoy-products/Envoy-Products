@@ -1,5 +1,63 @@
+<div class="container">
+    <div class="row">
+        <article class="col-sm-8 blog-main post">
+            <h2>{{product.name}}</h2>
+            <div>
+                <img src="{{product.product_img}}" class="card-img" alt="{{product.name}}" height="400">
+            </div>
+            <div class="content">
+                <p>{{&format_posts product.description}}</p>
+            </div>
 
-<article class="post">
-    <h2>{{product.name}}</h2>
-    
-</article>
+        </article>
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar comments">
+            {{#if product.website}}
+            <div class="further-reading">
+                <h3>View in Store</h3>
+                <a href="{{product.website}}" target="_blank">{{format_url product.website}}</a>
+            </div>
+            {{/if}}
+
+            {{#if product.reviews}}
+            <h3>{{format_plural "Review" product.reviews.length}}</h3>
+            {{/if}}
+            {{#each product.reviews}}
+            <section class="comment">
+                <div>
+                    {{content}}
+                </div>
+                {{#if (is_same user.id @root.user_id)}}
+                <div class="remove-btn-container">
+                    <button type="button" class="btn-sm" data-action="remove" data-id="{{id}}">Remove</button>
+                </div>
+                {{/if}}
+                <div class="meta">
+                    <p class="credit"><img src="{{user.avatar}}" width="25" />
+                    Posted by <span class="author">{{user.first_name}} {{user.last_name}}</span>
+                    on&nbsp;{{&format_date created_at}}</p>
+                </div>
+            </section>
+            {{/each}}
+
+            {{#if loggedIn}}
+            <h3>Add a Review:</h3>
+            <form class="comment-form" id="review-form">
+                <div>
+                    <textarea name="comment-body" id="review-content"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Add Review</button>
+                </div>
+            </form>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+{{#if loggedIn}}
+
+
+<script src="/javascript/review.js"></script>
+{{/if}}

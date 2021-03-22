@@ -33,7 +33,7 @@ const loginFormSubmitHandler = async (e) => {
 
     } else {
         $("#login-error").text("Please use valid input");
-        // clear error message after 3s
+        // clear error message after 2s
         setTimeout(() => $("#login-error").text(""), 2000);
     }
 };

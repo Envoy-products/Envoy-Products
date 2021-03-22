@@ -6,6 +6,45 @@ body {
 
 }
 
+/*  PRODUCT PAGE STYLING */
+
+.product-page-grid {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.product-row {
+  margin-bottom: 2rem;
+  padding: 4rem 2rem 4rem 2rem;
+  border-radius: 15px;
+  border: 5px solid black;
+}
+
+.card-picture {
+  border-radius: 15px;
+  background-color: red;
+  background-image: linear-gradient(to bottom right, red, yellow);
+  position: absolute;
+  left: -5rem;
+}
+
+.container {
+  width: 80%;
+}
+
+.website-button {
+  border-radius: 15px;
+  background-color: red;
+  background-image: linear-gradient(to bottom right, yellow, red);
+  padding: 1rem 1rem .5rem 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.title-bold {
+  font-weight: bold;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -782,8 +821,8 @@ h2.active {
 @media screen and (max-width: 768px) {
 
   .container {
-    padding-left: 40px;
-    padding-right: 40px;
+      padding-left: 40px;
+      padding-right: 40px;
   }
 
   .comments {

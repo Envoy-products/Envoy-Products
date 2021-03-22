@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row post">
+    <h2>Add a Product</h2>
+    <form id="add-product-form">
+        <div class="form-column">
+            <label for="name">Name</label><br />
+            <input type="text" id="name" name="name" />
+        </div>
+        <div class="form-column right-column">
+            <label for="website">Product Website</span></label><br />
+            <input type="text" id="website" name="website" />
+        </div>
+        
+        <div class="form-column">
+            <label for="product_img">Product Image Url</label><br />
+            <input type="text" id="product_img" name="product_img" />
+        </div>
+        <div class="form-column right-column">
+            <label for="category">Product Category</span></label><br />
+            <select id="category" name="category" class="form-control">
+                <option value="-1">Select a Category</option>
+                {{#each categories as |category|}}
+                    <option value="{{category.id}}">{{category.category_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-column">
+            <label for="retailers">Product Retailers</span></label><br />
+            <select id="retailers" multiple="true" name="retailers" class="form-control">
+                <option value="-1">Select one or more Retailers</option>
+                {{#each retailers as |retailer|}}
+                    <option value="{{retailer.id}}">{{retailer.ret_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-bottom">
+            <label for="description">Description</label>
+            <textarea class="medium-textarea" id="description" name="description"></textarea>
+        </div>
+     
+        <button type="submit">&nbsp; Add Product &nbsp;</button>
+    </form>
+    </div>
+</div>
+
+<script src="/javascript/add-product.js"></script>

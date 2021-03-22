@@ -18,7 +18,7 @@ async function newFormHandler(event) {
     });
 
     if(response.ok) {
-        document.location.replace('/a');
+        document.location.replace('/articles'); // [TODO - Change this to dashboard]
     } else {
         alert(response.statusText);
     }

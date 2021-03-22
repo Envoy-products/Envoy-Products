@@ -38,7 +38,8 @@ Post.init(
         },
         post_status: {
             type: DataTypes.ENUM(['pending', 'approved', 'featured']),
-            allowNull: false
+            allowNull: false,
+            defaultValue: 'pending'
         }
     },
     {

@@ -268,6 +268,10 @@ textarea {
   min-height: 400px;
 }
 
+.medium-textarea {
+    min-height: 250px;
+  }
+
 textarea:focus, input:focus {
   outline: none;
   border: 2px solid #63a87c;
@@ -353,6 +357,16 @@ padding-top: 2rem;
 padding-bottom: 2rem;
 }
 
+.remove-btn-container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.btn-sm {
+    width: 60px;
+    height: 30px;
+}
 
 .slideanim {visibility:hidden;}
 .slide {

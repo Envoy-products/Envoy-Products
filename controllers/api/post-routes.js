@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Comment, Product } = require('../../models');
+const { auth } = require('../../utils/auth');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -87,13 +88,12 @@ router.get('/:id', (req, res) => {
 
 // Create a post
 
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
     Post.create({
         title: req.body.title,
         post_content: req.body.post_content,
         post_url: req.body.post_url,
-        post_status: req.body.post_status,
-        user_id: req.body.user_id // [TO DO: replace this with session parameter]
+        user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {

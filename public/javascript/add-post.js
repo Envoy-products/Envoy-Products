@@ -1,28 +1,37 @@
-async function newFormHandler(event) {
+const addArticleFormHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="title"]').value;
-    const post_content = document.querySelector('textarea[name="post-content"]').value;
-    const post_url = document.querySelector('textarea[name="post-url"]').value;
+    try {
 
-    const response = await fetch(`/api/posts`, {
-        method: 'POST',
-        body: JSON.stringify({
-            title,
-            post_content,
-            post_url
-        }),
-        headers: {
-            'Content-Type': 'application/json'
+        const title = $("#title").val().trim();
+        const post_content = $("#post-content").val().trim();
+        const post_url = $("#post-url").val().trim();
+
+        if(!title || !post_content || !post_url) {
+            throw new Error("At least one input is invalid!");
         }
-    });
 
-    if(response.ok) {
-        document.location.replace('/articles'); // [TODO - Change this to dashboard]
-    } else {
-        alert(response.statusText);
+        const response = await fetch(`/api/posts`, {
+            method: 'POST',
+            body: JSON.stringify({
+                title,
+                post_content,
+                post_url
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if(response.ok) {
+            document.location.replace('/articles'); // [TODO - Change this to dashboard]
+        } else {
+            throw new Error(response.statusText);
+        }
+    } catch (err) {
+        $("#error-msg").text(err);
+        $("#errorModal").modal();
     }
+};
 
-}
-
-document.querySelector('.btn').addEventListener('click', newFormHandler);
+$("#add-article-form").submit(addArticleFormHandler);

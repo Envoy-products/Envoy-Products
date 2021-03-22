@@ -1,11 +1,11 @@
-  <section class="post">
+{{!--<section class="post">
   <h2>Products</h2>
   {{#each products as |product|}}
 {{product.name}}
 {{product.description}}
   {{/each}}
   <p>&nbsp;</p>
-  </section>
+  </section> --}}
 
 {{!-- <div class="container">
 <h2>PRODUCTS</h2>
@@ -24,3 +24,29 @@
   </div>
 </div>
 <hr> --}}
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="card mb-3 text-center productspage">
+{{#each products as |product|}}
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{product_img}}" class="card-img" alt="..." height="200">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title product-title">{{name}}</h5>
+        <hr>
+        <p class="card-text">{{description}}</p>
+        <hr>
+        <a href="{{website}}" target="_blank"><p class="text-muted">Visit Website</p></a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+    {{/each}}
+</div>

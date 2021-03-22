@@ -221,6 +221,40 @@ top: -16px;
   border-bottom: 3px solid #a3d6b6;
 }
 
+textarea, input{
+  width: 100%;
+  border: solid 1px #63a87c;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  min-height: 150px;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 2px solid #63a87c;
+  background-color: #f1fef7;
+}
+
+button {
+  background-color: #086d38;
+  border: 0;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #044725;
+  color: #FF6;
+  cursor: pointer;
+}
+
 .post h3, .comments h3 {
   color: #086d38;
   font-size: 1.8rem;
@@ -664,5 +698,18 @@ input.login-submit-btn, input.signup-submit-btn {
   .product-container {
     grid-template-columns: auto;
   }
+}
 
+@media screen and (max-width: 768px) {
+
+  .comments {
+    margin: 0;
+  }
+
+  button {
+    width:100%;
+    padding: 15px;
+    font-size: 1.3em;
+    margin-bottom: 12px;
+  }
 }

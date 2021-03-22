@@ -115,7 +115,7 @@ const productData = [
         description:"This product works astonishingly well, and is much less wasteful than having to throw away a cheap cookware scrubber every few weeks. It's comprised of cotton strips and pulverized, dried corn cobs, giving its noodle-like strands a coarse, but not too rough texture. These can even be thrown into the washing machine to continue to use for months on end.",
         website: "https://www.amazon.ca/dp/B07QS5QLXK?slotNum=2&ots=1&ascsubtag=[artid|2089.g.1435[src|[ch|[lt|&linkCode=gs2&imprToken=acbc2975-677e-1ea9-4fc&tag=hearstmagazin-20", 
         product_img: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1609867018-spaghetti-scrubber-1609867015.jpg?crop=1xw:1xh;center,top&resize=480:*",
-        status:"featured",
+        status:"approved",
         category_id: 5,
         user_id: 1,
         retailerIds: [1,21]
@@ -125,7 +125,7 @@ const productData = [
         description:"This 12-pocket expanding file is made of 100% recycled stock and comes in two nature-inspired colors. The expanding file is indexed three ways: Alphabetic (A-Z), Monthly (January-December in English and French) and Daily (1-31) for optimal filing flexibility. ",
         website: "https://www.smead.com/Director.aspx?NodeId=7", 
         product_img: "https://www.smead.com/images/product/400/70778e.jpg",
-        status:"featured",
+        status:"approved",
         category_id: 1,
         user_id: 4,
         retailerIds: [1,22,23]
@@ -135,7 +135,7 @@ const productData = [
         description:"Coalatrees' most innovative product to date, the Evolution Hoodie has over 20 features for everyday wear plus travel and adventure! ",
         website: "https://coalatree.com/products/copy-of-evolution-hoodie-made-from-recycled-coffee-grounds?_pos=2&_sid=1a0368926&_ss=r", 
         product_img: "https://cdn.shopify.com/s/files/1/2009/9335/products/EvolutionHoodieNOBG_1600x.png?v=1612901919",
-        status:"featured",
+        status:"approved",
         category_id: 7,
         user_id: 2,
         retailerIds: [24,25]
@@ -145,7 +145,7 @@ const productData = [
         description:"100% recycled durable ripstop nylon with eco-friendly water-repellent coating.The Nomad Packable Backpack was designed to make life on the go easier.",
         website: "https://coalatree.com/collections/all-no-route/products/nomad-packable-backpack-black", 
         product_img: "https://cdn.shopify.com/s/files/1/2009/9335/products/nomad-black-1_1600x.jpg?v=1589928053",
-        status:"featured",
+        status:"approved",
         category_id: 1,
         user_id: 2,
         retailerIds: [3,24]
@@ -155,7 +155,7 @@ const productData = [
         description:"With Sprout's pencil sets, they can enjoy a second life as a plant! Available in both graphite and colored sets, and made of FSC-certified wood, these nontoxic writing utensils can be sharpened and used just like any other pencil, but when they become too stubby to use, you can plant them end-side down, which will release the plant seeds inside of their caps.",
         website: "https://sproutworld.com/plant-a-green-mindset-with-a-sproutpencil/", 
         product_img: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1609866845-plantable-pencils-1609866841.gif?crop=1xw:1xh;center,top&resize=480:*",
-        status:"featured",
+        status:"approved",
         category_id: 1,
         user_id: 1,
         retailerIds: [1,26]
@@ -165,7 +165,7 @@ const productData = [
         description:"Earth-friendly bags for environmentally conscious shoppers. Meet most U.S. recycled paper bag requirements. 100% recycled with post-consumer content. Matte finish 60 lb. paper. Strong twisted paper handles.",
         website: "https://www.uline.ca/Product/Detail/S-19974/Paper-Shopping-Bags/Recycled-Paper-Shopping-Bags-8-x-4-3-4-x-10-1-4-Cub?pricode=YF152&gadtype=pla&id=S-19974&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMzHk6R-ei54NGQ5NfiI5qrtUz2NvCZ7YM9nOMJLS7fxpw24trpY_WYaAtWzEALw_wcB&gclsrc=aw.ds", 
         product_img: "https://images.uline.com/is/image/content/dam/images/S/S20000/S-19974.jpg?$MediumRHD$&iccEmbed=1&icc=AdobeRGB",
-        status:"featured",
+        status:"approved",
         category_id: 8,
         user_id: 1,
         retailerIds: [1,12,22]

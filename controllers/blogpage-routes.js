@@ -44,6 +44,13 @@ router.get('/', (req, res) => {
         });
 });
 
+//Load Add Article page
+router.get('/add', (req, res) => {
+    if(!req.session.loggedIn){
+        res.redirect('/signup');
+    }
+    res.render('add-post')
+});
 
 // Single post view
 router.get('/:id', (req, res) => {
@@ -96,5 +103,7 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
 
 module.exports = router;

@@ -4,7 +4,6 @@
 <div id="products" class="container-fluid">
     <div class="text-center">
         <h2>FEATURED PRODUCTS</h2>
-        <h4>Some featured products chosen by our admins</h4>
     </div>
     <div class="slideanim product-container">
         {{#each data.featured_products as |product|}}
@@ -17,13 +16,13 @@
 <div id="products" class="container-fluid">
     <div class="text-center">
         <h2>FEATURED BLOGS</h2>
-        <h4>Some featured blogs chosen by our admins</h4>
     </div>
      {{#each data.featured_posts as |post|}}
         {{> post-card post }}
     {{/each}}
     </div>
 </div>
-
+<!--
 {{> about-us}}
 {{> vision-and-services}}
+-->

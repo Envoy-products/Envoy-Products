@@ -1,56 +1,53 @@
 <div class="container">
-          <div class="row">
+    <div class="row">
+        <article class="col-sm-8 blog-main post">
+            <h2>{{post.title}}</h2>
+            {{> meta post}}
+            <div class="content">
+                <p>{{&format_posts post.post_content}}</p>
+            </div>
+        </article>
 
-
-    <article class="col-sm-8 blog-main post">
-        <h2>{{post.title}}</h2>
-        {{> meta post}}
-        <div class="content">
-            <p>{{&format_posts post.post_content}}</p>
-        </div>
-
-    </article>
-
-<div class="col-sm-3 col-sm-offset-1 blog-sidebar comments">
-    {{#if post.post_url}}
-        <div class="further-reading">
-            <h3>Further reading</h3>
-            <a href="{{post.post_url}}" target="_blank">{{format_url post.post_url}}</a>
-        </div>
-     {{/if}}
-
-    {{#if post.comments}}
-    <h3>{{format_plural "Comment" post.comments.length}}</h3>
-    {{/if}}
-    {{#each post.comments}}
-    <section class="comment">
-        <div>
-            {{comment_text}}
-        </div>
-        <div class="meta">
-            <p class="credit"><img src="{{user.avatar}}" width="25" />
-            Posted by <span class="author">{{user.first_name}} {{user.last_name}}</span> on&nbsp;{{&format_date created_at}}</p>
-        </div>
-    </section>
-    {{/each}}
-    
-    
-    {{#if loggedIn}}
-        <h3>Add a comment:</h3>
-            <form class="comment-form">
-                <div>
-                    <textarea name="comment-body"></textarea>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar comments">
+            {{#if post.post_url}}
+                <div class="further-reading">
+                    <h3>Further reading</h3>
+                    <a href="{{post.post_url}}" target="_blank">{{format_url post.post_url}}</a>
                 </div>
+            {{/if}}
 
+            {{#if post.comments}}
+            <h3>{{format_plural "Comment" post.comments.length}}</h3>
+            {{/if}}
+            {{#each post.comments}}
+            <section class="comment">
                 <div>
-                    <button type="submit">add comment</button>
+                    {{comment_text}}
                 </div>
-            </form>
-    {{/if}}
+                <div class="meta">
+                    <p class="credit"><img src="{{user.avatar}}" width="25" />
+                    Posted by <span class="author">{{user.first_name}} {{user.last_name}}</span> on&nbsp;{{&format_date created_at}}</p>
+                </div>
+            </section>
+            {{/each}}
+            
+            
+            {{#if loggedIn}}
+                <h3>Add a comment:</h3>
+                    <form class="comment-form">
+                        <div>
+                            <textarea name="comment-body"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit">add comment</button>
+                        </div>
+                    </form>
+            {{/if}}
+        </div>
     </div>
-  </div>
 </div>
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script-->
+<script src="/javascript/comment.js"></script>
 {{/if}}

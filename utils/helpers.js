@@ -5,6 +5,9 @@ module.exports = {
         }
         return false;
     },
+    get_current_year: () => {
+        return new Date().getFullYear()
+    },
     format_date: date => {
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         return `${months[new Date(date).getMonth()]}&nbsp;${new Date(date).getDate()},&nbsp;${new Date(date).getFullYear()}.`

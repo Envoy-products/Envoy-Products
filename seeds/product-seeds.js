@@ -54,7 +54,7 @@ const productData = [
         name:"Whiff Bamboo Cloth", 
         description:"Whiff Bamboo Dishcloths & Kitchen Cloths, Sustainable, Scrubbing Power, Naturally Hygienic, Washable Absorbent Durable, Reusable, Cleaning Essentical, Dish Rags, Replace Your Sponge (BDC6X7inch)", 
         website: "https://www.amazon.ca", 
-        product_img: "https://www.amazon.ca/dp/B07LFLLBSP?ots=1&ascsubtag=%5Bartid%7C2089.g.1435%5Bsrc%7C%5Bch%7C%5Blt%7C&linkCode=gs2&tag=hearstmagazin-20",
+        product_img: "https://images-na.ssl-images-amazon.com/images/I/71VjMo-Rz1L._AC_SL1000_.jpg",
         status:"approved",
         category_id: 7,
         user_id: 3,

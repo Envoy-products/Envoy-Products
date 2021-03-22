@@ -2,7 +2,36 @@ body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.8;
   color: #818181;
+  margin-bottom: 60px; /* Margin bottom by footer height */
+
 }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  background-color: #63a87c;
+  color: #044725;
+}
+.footer .right-column {
+  text-align: right;
+}
+
+
+.footer a:hover {
+  color: #a3d6b6;
+}
+
+
+
 
 .logo1 {
   width: 40px;
@@ -207,8 +236,11 @@ top: -16px;
 .post h2 {
   padding-left: 0;
   margin-left: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
   color: #086d38;
   font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 .comments .comment {
@@ -225,7 +257,6 @@ textarea, input{
   width: 100%;
   outline: #FFF 1px solid;
   border: solid 1px #63a87c;
-  border-radius: 5px;
   padding: 2px 6px;
 }
 
@@ -243,8 +274,15 @@ textarea:focus, input:focus {
   background-color: #f1fef7;
   outline: none;
 }
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
 
-button {
+  text-decoration: none;
+  color: initial;
+}
+button, a.button {
   background-color: #086d38;
   border: 0;
   padding: 12px;
@@ -253,13 +291,13 @@ button {
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
-  border-radius: 15px;
 }
 
-button:hover {
+button:hover, a.button:hover {
   background-color: #044725;
   color: #DFC;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .post h3, .comments h3 {
@@ -375,12 +413,13 @@ a:hover {
 
 h2 {
   text-align: center;
-  font-size: 16px;
+  font-size: 36px;
   font-weight: 600;
   text-transform: uppercase;
   display:inline-block;
-  margin: 40px 8px 10px 8px; 
-  color: #cccccc;
+  margin: 10px 8px 20px 8px; 
+  color: #63a87c;
+  letter-spacing: 8px;
 }
 
 /* STRUCTURE */
@@ -527,6 +566,8 @@ input.login-submit-btn, input.signup-submit-btn {
     background-color: #086d38;
     height: 100%;
     margin: 0;
+    border-radius: 0;
+    letter-spacing: 3px;
 }
 
 .btn-nav-link:hover {
@@ -726,16 +767,57 @@ input.login-submit-btn, input.signup-submit-btn {
 
 @media screen and (max-width: 768px) {
 
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   .comments {
     margin: 0;
   }
 
-  button {
+  .post .title-bar .title {
+    float: none;
+    width: 100%;
+  }
+  
+  .post .title-bar .title h3{
+    line-height: 1.3em;
+  }
+
+  .post .title-bar .meta {
+    float: none;
+    color: #646048;
+    font-style: italic;
+    padding-top: 14px;
+    margin:0;
+    padding: 0;
+  }
+
+  button, a.button {
     width:100%;
     padding: 15px;
     font-size: 1.3em;
     margin-bottom: 12px;
+    text-align: center;
   }
+  body {
+    margin-bottom: 90px; /* Margin bottom by footer height */
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90px; /* Set the fixed height of the footer here */
+    background-color: #63a87c;
+    color: #044725;
+  }
+  .footer .right-column, .footer .left-column {
+    text-align: center;
+  }
+
+
 }
 
 .productspage {
@@ -746,3 +828,4 @@ input.login-submit-btn, input.signup-submit-btn {
 .product-title {
   font-size: 20px;
 }
+

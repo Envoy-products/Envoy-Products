@@ -14,10 +14,23 @@ body {
 }
 
 .product-row {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   padding: 4rem 2rem 4rem 2rem;
   border-radius: 15px;
-  border: 5px solid black;
+  z-index: 20;
+  background-color: white;
+  border: 0px solid black;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.product-picture-grid {
+  grid-column: 1/ span 1;
+
+}
+
+.product-details-grid {
+  grid-column: 2/ span 1;
 }
 
 .card-picture {
@@ -25,20 +38,29 @@ body {
   background-color: red;
   background-image: linear-gradient(to bottom right, red, yellow);
   position: absolute;
-  left: -5rem;
+  left: 12rem;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-picture:hover {
+  transform: scale(1.2);
+  object-fit: contain;
 }
 
 .container {
   width: 80%;
 }
 
-.website-button {
+.website-link {
   border-radius: 15px;
   background-color: red;
   background-image: linear-gradient(to bottom right, yellow, red);
-  padding: 1rem 1rem .5rem 1rem;
+  padding: 1rem 2rem .5rem 2rem;
   color: white;
   font-weight: bold;
+  text-align: center;
 }
 
 .title-bold {
@@ -147,16 +169,26 @@ margin: 70px 0;
 .item span {
 font-style: normal;
 }
+
+/* HOME PAGE FEATURED PRODUCTS STYLING */
+
+.button-position {
+  position: absolute;
+  bottom: 2rem;
+  left: 0rem;
+  width: 100%;
+}
+.product-description {
+  padding-bottom: 10rem;
+}
 .panel {
 font-size-adjust: 0.50;
 width: 400px;
 border: 1px solid #63a87c; 
 border-radius:0 !important;
 transition: box-shadow 0.5s;
+position: relative;
 }
-/* .panel-body {
-
-} */
 .product-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -172,6 +204,9 @@ transition: box-shadow 0.5s;
 .product-text {
   width: 365px;
   overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .panel:hover {
 box-shadow: 5px 0px 40px rgba(0,0,0, .2);
@@ -816,6 +851,47 @@ h2.active {
   }
 }
 
+@media screen and (max-width: 1235px) {
+
+.container {
+  width: 90%;
+}
+
+.product-row {
+  display: grid;
+  grid-template-columns: auto 0;
+  grid-template-rows: auto auto;
+  width: 100%;
+}
+
+.product-picture-grid {
+  grid-row: 1/ span 1;
+  grid-column: 1/ span 1;
+  padding-bottom: 3rem;
+}
+
+.product-details-grid {
+  grid-row: 2/ span 1;
+  grid-column: 1/ span 1;
+}
+
+.card-picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: static;
+}
+
+.website-button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+}
+
 @media screen and (max-width: 975px) {
 
   .product-container {
@@ -875,7 +951,6 @@ h2.active {
     text-align: center;
   }
 
-
 }
 
 .productspage {
@@ -886,4 +961,5 @@ h2.active {
 .product-title {
   font-size: 20px;
 }
+
 

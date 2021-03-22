@@ -10,10 +10,10 @@
             <div class="slideanim product-page-grid">
                 {{#each products as |product|}}
                 <div class="product-row">
-                    <div class="col-md-4">
+                    <div class="product-picture-grid">
                         <img src="{{product_img}}" class="card-picture" alt="..." height="200" width="">
                     </div>
-                    <div class="col-md-8">
+                    <div class="product-details-grid">
                         <div class="card-body">
                             <h5 class="card-title product-title">
                                 <a class="title-bold" href="/products/{{id}}">{{name}}</a>
@@ -21,8 +21,8 @@
                             <hr>
                             <p class="card-text">{{description}}</p>
                             <hr>
-                            <a href="{{website}}" target="_blank">
-                                <p class="text-muted website-button">Visit Website</p>
+                            <a class="website-button" href="{{website}}" target="_blank">
+                                <p class="text-muted website-link">Visit Website</p>
                             </a>
                         </div>
                     </div>

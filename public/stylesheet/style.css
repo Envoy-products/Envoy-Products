@@ -209,35 +209,42 @@ top: -16px;
 
 textarea, input{
   width: 100%;
+  outline: #FFF 1px solid;
   border: solid 1px #63a87c;
   border-radius: 5px;
-  margin-bottom: 5px;
+  padding: 2px 6px;
 }
 
 textarea {
   min-height: 150px;
 }
 
+.big-textarea {
+  min-height: 400px;
+}
+
 textarea:focus, input:focus {
   outline: none;
   border: 2px solid #63a87c;
   background-color: #f1fef7;
+  outline: none;
 }
 
 button {
   background-color: #086d38;
   border: 0;
   padding: 12px;
+  margin: 10px 0;
   color: white;
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 button:hover {
   background-color: #044725;
-  color: #FF6;
+  color: #DFC;
   cursor: pointer;
 }
 
@@ -253,6 +260,11 @@ button:hover {
   padding-bottom: 20px;
 }
 
+.optional {
+  color: #636363;
+  font-size: .8em;
+  font-weight: normal;
+}
 
 .credit {
   font-style: italic;
@@ -266,7 +278,17 @@ button:hover {
   font-style: normal;
 }
 
-
+.form-column {
+  width: 50%;
+  float: left;
+}
+.right-column {
+  padding-left: 30px;
+}
+.form-bottom {
+  clear:both;
+  padding-top: 20px;
+}
 
 footer .glyphicon {
 font-size: 20px;
@@ -358,6 +380,7 @@ h2 {
   padding: 20px;
 }
 
+/* 
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
@@ -371,7 +394,7 @@ h2 {
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
 }
-
+ */
 .top {
     background-color: #086d38;
 }
@@ -395,7 +418,7 @@ h2.active {
   border-bottom: 2px solid #086d38;
 }
 
-/* FORM TYPOGRAPHY*/
+/* FORM TYPOGRAPHY
 input[type=button], input[type=submit], input[type=reset]  {
   background-color: #086d38;
   border: none;
@@ -463,7 +486,7 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 input.login-submit-btn, input.signup-submit-btn {
     margin-bottom: 10px!important;
 }
-
+*/
 .err-txt {
     color: red;
     font-weight: 600;
@@ -489,6 +512,7 @@ input.login-submit-btn, input.signup-submit-btn {
     border: none;
     background-color: #086d38;
     height: 100%;
+    margin: 0;
 }
 
 .btn-nav-link:hover {

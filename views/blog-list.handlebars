@@ -14,7 +14,11 @@
 
         </article>
       {{/each}}
-      <p>&nbsp;</p>
+
+      {{#if loggedIn}}
+        <a href="/articles/add"><button>Add an article</button></a>
+      {{/if}}
+
       </section>
     </div>
   </div>

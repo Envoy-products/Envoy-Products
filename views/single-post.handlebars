@@ -33,23 +33,24 @@
         </div>
     </section>
     {{/each}}
+    
+    
+    {{#if loggedIn}}
+        <h3>Add a comment:</h3>
+            <form class="comment-form">
+                <div>
+                    <textarea name="comment-body"></textarea>
+                </div>
 
-    <h3>Add a comment:</h3>
-        <form class="comment-form">
-            <div>
-                <textarea name="comment-body"></textarea>
-            </div>
-
-            <div>
-                <button type="submit">add comment</button>
-            </div>
-        </form>
+                <div>
+                    <button type="submit">add comment</button>
+                </div>
+            </form>
+    {{/if}}
     </div>
   </div>
 </div>
 
 {{#if loggedIn}}
-
-
 <script src="/javascript/comment.js"></script-->
 {{/if}}

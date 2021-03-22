@@ -26,7 +26,7 @@ const signupFormSubmitHandler = async (e) => {
     const region = $("#region-signup").val();
 
     // Validate inputs and perform Signup
-    if (firstname && lastname && email && validator.isEmail(email) && password) {
+    if (firstname && lastname && email && validator.isEmail(email) && password && (region != -1)) {
         try {
             const response = await handleSignup(email, password, firstname, lastname, region, avatar) ;
 

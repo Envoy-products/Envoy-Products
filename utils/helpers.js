@@ -19,7 +19,7 @@ module.exports = {
         return word;
     },
     format_cut_content: content => {
-        return content.substring(0,200);
+        return content.substring(0, 200);
     },
     format_posts: content => {
         const regExp = new RegExp('\\n\\n', 'g');
@@ -30,10 +30,11 @@ module.exports = {
     },
     format_url: url => {
         return url
-            .replace('http://','')
+            .replace('http://', '')
             .replace('https://', '')
-            .replace('www.','')
+            .replace('www.', '')
             .split('/')[0]
             .split('?')[0];
-    }
+    },
+    is_same: (input1, input2) => input1 === input2
 }

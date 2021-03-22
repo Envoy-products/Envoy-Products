@@ -1,52 +1,34 @@
-{{!--<section class="post">
-  <h2>Products</h2>
-  {{#each products as |product|}}
-{{product.name}}
-{{product.description}}
-  {{/each}}
-  <p>&nbsp;</p>
-  </section> --}}
+<div class="container">
+    <div class="row">
+        <section class="post">
+            {{#if loggedIn}}
+            <a href="/products/add" class="button">Add a Product</a>
+            {{else}}
+            <p>&nbsp;</p>
+            {{/if}}
 
-{{!-- <div class="container">
-<h2>PRODUCTS</h2>
-<h4>All products</h4><br>
-<div class="media">
-  <div class="media-left media-middle">
-    <img src="https://picsum.photos/200" class="media-object" style="width:300px">{{product_img}}
-  </div>
-  <div class="media-body text-center">
-    <h4 class="media-heading">{{name}}</h4>
-    <img src="{{product_img}}" alt="" width="150" height="150">
-    <p>{{description}}</p>
-    <a href="{{website}}"><p>{{website}}</p></a>
-    <p>{{category}}</p>
-    <p>{{status}}</p>
-  </div>
-</div>
-<hr> --}}
-
-<br>
-<br>
-<br>
-<br>
-
-<div class="card mb-3 text-center productspage">
-{{#each products as |product|}}
-  <div class="row">
-    <div class="col-md-4">
-      <img src="{{product_img}}" class="card-img" alt="..." height="200">
+            <div class="card mb-3 text-center productspage">
+                {{#each products as |product|}}
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{{product_img}}" class="card-img" alt="..." height="200">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">
+                                <a href="/products/{{id}}">{{name}}</a>
+                            </h5>
+                            <hr>
+                            <p class="card-text">{{description}}</p>
+                            <hr>
+                            <a href="{{website}}" target="_blank">
+                                <p class="text-muted">Visit Website</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title product-title">{{name}}</h5>
-        <hr>
-        <p class="card-text">{{description}}</p>
-        <hr>
-        <a href="{{website}}" target="_blank"><p class="text-muted">Visit Website</p></a>
-      </div>
-    </div>
-  </div>
-  <br>
-  <br>
-    {{/each}}
 </div>

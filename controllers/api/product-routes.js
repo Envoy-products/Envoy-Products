@@ -169,52 +169,6 @@ router.put('/:id', (req, res) => {
         });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Update a product 
-// router.put('/:id', (req, res) => {
-//     // update a post by its `id`
-//     Post.update(req.body, {
-//         where: {
-//             id: req.params.id
-//         }
-//     })
-
-
-//         .then(dbPostData => {
-//             if (!dbPostData[0]) {
-//                 res.status(404).json({ message: 'No Post found with this id' });
-//                 return;
-//             }
-//             res.json(dbPostData);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
-
 // Delete a post
 router.delete('/:id', (req, res) => {
     // delete a post by its `id`

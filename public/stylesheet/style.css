@@ -737,3 +737,12 @@ input.login-submit-btn, input.signup-submit-btn {
     margin-bottom: 12px;
   }
 }
+
+.productspage {
+  margin: auto;
+  width: 70%;
+}
+
+.product-title {
+  font-size: 20px;
+}

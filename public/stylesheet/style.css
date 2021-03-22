@@ -22,11 +22,11 @@ body {
   border: 0px solid black;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 20% 80%;
 }
-
 .product-picture-grid {
   grid-column: 1/ span 1;
+
 }
 
 .product-details-grid {
@@ -39,6 +39,14 @@ body {
   background-image: linear-gradient(to bottom right, red, yellow);
   position: absolute;
   left: 12rem;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-picture:hover {
+  transform: scale(1.2);
+  object-fit: contain;
 }
 
 .container {

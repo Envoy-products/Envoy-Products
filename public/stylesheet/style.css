@@ -292,11 +292,16 @@ top: -16px;
   border-bottom: 3px solid #a3d6b6;
 }
 
-textarea, input{
+textarea, input, select.form-control {
   width: 100%;
-  outline: #FFF 1px solid;
-  border: solid 1px #63a87c;
+  outline: solid 1px #63a87c;
+  border: none;
   padding: 2px 6px;
+  border-radius: 0;
+}
+
+input, select.form-control {
+  min-height: 40px;
 }
 
 textarea {
@@ -309,9 +314,9 @@ textarea {
 
 .medium-textarea {
     min-height: 250px;
-  }
+}
 
-textarea:focus, input:focus {
+textarea:focus, input:focus, select.form-control:focus {
   outline: none;
   border: 2px solid #63a87c;
   background-color: #f1fef7;
@@ -486,7 +491,7 @@ h2 {
   padding: 20px;
 }
 
-/* 
+
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
@@ -500,7 +505,7 @@ h2 {
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
 }
- */
+
 .top {
     background-color: #086d38;
 }
@@ -524,8 +529,8 @@ h2.active {
   border-bottom: 2px solid #086d38;
 }
 
-/* FORM TYPOGRAPHY
-input[type=button], input[type=submit], input[type=reset]  {
+ /* FORM TYPOGRAPHY */
+.login-form input[type=button], .login-form input[type=submit], .login-form input[type=reset]  {
   background-color: #086d38;
   border: none;
   color: white;
@@ -535,10 +540,9 @@ input[type=button], input[type=submit], input[type=reset]  {
   display: inline-block;
   text-transform: uppercase;
   font-size: 13px;
+  width: 85%;
   -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
   box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -547,11 +551,12 @@ input[type=button], input[type=submit], input[type=reset]  {
   transition: all 0.3s ease-in-out;
 }
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #086d38;
+.login-form input[type=button]:hover, .login-form input[type=submit]:hover, .login-form input[type=reset]:hover  {
+  background-color: #044725;
+  color: #a3d6b6;
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+.login-form input[type=button]:active, .login-form input[type=submit]:active, .login-form input[type=reset]:active  {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -559,7 +564,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text], input[type=password] {
+.login-form input[type=text], .login-form input[type=password] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -580,19 +585,19 @@ input[type=text], input[type=password] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.login-form input[type=text]:focus, .login-form input[type=password]:focus {
   background-color: #fff;
   border-bottom: 2px solid #086d38;
 }
 
-input[type=text]:placeholder, input[type=password]:placeholder {
+.login-form input[type=text]:placeholder, .login-form input[type=password]:placeholder {
   color: #cccccc;
 }
 
-input.login-submit-btn, input.signup-submit-btn {
+.login-form input.login-submit-btn, .login-form input.signup-submit-btn {
     margin-bottom: 10px!important;
 }
-*/
+
 .err-txt {
     color: red;
     font-weight: 600;
@@ -646,7 +651,7 @@ input.login-submit-btn, input.signup-submit-btn {
     border-radius: 5px;
 }
 
-/* .login-modal {
+.login-modal {
     height: 100%;
     z-index: 10000!important;
 }
@@ -656,7 +661,7 @@ input.login-submit-btn, input.signup-submit-btn {
     margin: 0;
     padding: 0;
     text-align: center;
-} */
+}
 
 /* ANIMATIONS */
 

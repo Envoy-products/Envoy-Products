@@ -11,12 +11,13 @@ body {
 /* =================================== */
 
 .gallery {
-  background: white;
+  background: rgb(203, 203, 203);
+  width: 100%;
 }
 
 .gallery-cell {
   width: 90%;
-  height: 275px;
+  height: auto;
   background-color: #086d38;
   counter-increment: gallery-cell;
   display: grid;
@@ -42,11 +43,12 @@ body {
 
 .user-picture {
   position: absolute;
-  right: 0rem;
+  right: 3rem;
+  top: 3rem;
   margin: 3rem;
   margin-right: 1.5rem;
   border-radius: 50%;
-  border: 6px solid white
+  border: 6px solid white;
 }
 
 .articles-description-container {
@@ -58,6 +60,8 @@ body {
   margin-left: 2rem;
   display: grid;
   grid-template-rows: auto auto auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .articles-title {

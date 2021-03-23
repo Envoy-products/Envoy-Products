@@ -1,30 +1,24 @@
-<div class="gallery js-flickity"
-data-flickity-options='{ "wrapAround": true }'>
-	<div class="gallery-cell">
-		<div class="articles-picture">
-			<img class="user-picture" src="https://avatars.githubusercontent.com/u/75039023?s=88&u=8c4669d9a22aaeb3c8ad0501b41a2521813e7da1&v=4" height="150" width="150">
-		</div>
-		<div class="articles-description-container">
-			<div class="articles-title">
-				<h3 class="articles-font-bold">{{title}}</h3>
-			</div>
-			<h3 class="articles-font-light">
-				<span class="material-icons">format_quote</span>
-				going green has never been easier! this is awesome
-				<span class="material-icons">format_quote</span>
-			</h3>
-			<div>
-			<button class="articles-button" href="">Click For Full Article</button>				
-			</div>
 
+<div class="gallery-cell">
+	<div class="articles-picture">
+		<img class="user-picture" src="https://avatars.githubusercontent.com/u/75039023?s=88&u=8c4669d9a22aaeb3c8ad0501b41a2521813e7da1&v=4" height="150" width="150">
+	</div>
+	<div class="articles-description-container">
+		<div class="articles-title">
+			<h3 class="articles-font-bold">{{title}}</h3>
+		</div>
+		<h3 class="articles-font-light">
+			<span class="material-icons">format_quote</span>
+			{{ post_content }}
+			<span class="material-icons">format_quote</span>
+		</h3>
+		<div>
+		<button class="articles-button" href="/articles/{{id}}">Click For Full Article</button>				
 		</div>
 	</div>
-	<div class="gallery-cell">
-	</div>
-	<div class="gallery-cell"></div>
-	<div class="gallery-cell"></div>
-	<div class="gallery-cell"></div>
 </div>
+
+
 
 
 

@@ -16,7 +16,6 @@ body {
 }
 
 
-/*  PRODUCT PAGE STYLING */
 /* =================================== */
 /*         ARTICLES PAGE STYLING       */
 /* =================================== */
@@ -988,10 +987,10 @@ h2.active {
 
 }
 
-@media screen and (max-width: 975px) {
+/* @media screen and (max-width: 975px) {
 
 
-}
+} */
 
 @media screen and (max-width: 768px) {
 

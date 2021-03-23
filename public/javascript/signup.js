@@ -22,7 +22,13 @@ const signupFormSubmitHandler = async (e) => {
     const lastname = $("#lastname-signup").val().trim();
     const email = $("#email-signup").val().trim();
     const password = $("#password-signup").val().trim();
-    const avatar = $("#avatar-signup").val().trim();
+    let avatar = $("#avatar_url").attr("value");
+    if (!avatar){
+        avatar = $("#avatar-signup").val().trim();
+    } 
+    if (!avatar){
+         avatar = "/images/user-default.png";
+    }
     const region = $("#region-signup").val();
 
     // Validate inputs and perform Signup

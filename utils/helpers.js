@@ -36,5 +36,15 @@ module.exports = {
             .split('/')[0]
             .split('?')[0];
     },
-    is_same: (input1, input2) => input1 === input2
+    is_same: (input1, input2) => input1 === input2,
+    compare_string: (str1, str2) => {
+        if (str1 == str2) return "selected";
+    },
+    is_selected: (val, objArr) => {
+        if (objArr.length) {
+            if(objArr.map(obj => obj.id).includes(val)) return "selected";
+        } else {
+            if(objArr.id == val) return "selected";
+        }
+    }
 }

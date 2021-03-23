@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row post">
+    <h2>Edit Product</h2>
+    <form id="edit-product-form">
+        <div class="form-column">
+            <label for="name">Name</label><br />
+            <input type="text" id="name" name="name" value="{{product.name}}"/>
+        </div>
+        <div class="form-column right-column">
+            <label for="website">Product Website</span></label><br />
+            <input type="text" id="website" name="website" value="{{product.website}}"/>
+        </div>
+        <div class="form-bottom"> </div>
+        <div class="form-column">
+            <label for="product_img">Product Image Url</label><br />
+            <input type="text" id="product_img" name="product_img" value="{{product.product_img}}"/>
+        </div>
+        <div class="form-column right-column">
+            <label for="category">Product Category</span></label><br />
+            <select id="category" name="category" class="form-control">
+                <option value="-1">Select a Category</option>
+                {{#each categories as |category|}}
+                    <option value="{{category.id}}" {{is_selected category.id @root.product.category}}>{{category.category_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-bottom"> </div>
+
+        <div class="form-column">
+            <label for="retailers">Product Retailers</span></label><br />
+            <select id="retailers" multiple="true" name="retailers" class="form-control">
+                <option value="-1">Select one or more Retailers</option>
+                {{#each retailers as |retailer|}}
+                    <option value="{{retailer.id}}" {{is_selected retailer.id @root.product.retailers}}>{{retailer.ret_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{#if isAdmin}}
+        <div class="form-column right-column">
+            <label for="status">Status</span></label><br />
+            <select id="status" name="status" class="form-control">
+                <option value="null">Select a Status</option>
+                <option value="pending" {{compare_string "pending" product.status}}>Pending</option>
+                <option value="approved" {{compare_string "approved" product.status}}>Approved</option>
+                <option value="featured" {{compare_string "featured" product.status}}>Featured</option>
+            </select>
+        </div>
+        {{/if}}
+
+        <div class="form-bottom">
+            <label for="description">Description</label>
+            <textarea class="medium-textarea" id="description" name="description">{{product.description}}</textarea>
+        </div>
+     
+        <div class="edit-form-btn-wrapper">
+            <button type="submit">&nbsp; Update Product &nbsp;</button>
+            <button type="button" name="delete" data-id="{{product.id}}">&nbsp; Delete Product &nbsp;</button>
+        </div>
+    </form>
+    </div>
+</div>
+
+<script src="/javascript/edit-product.js"></script>

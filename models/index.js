@@ -116,7 +116,8 @@ Product.hasMany(ProductRet, {
 });
 
 ProductRet.belongsTo(Product, {
-    foreignKey: 'product_id'
+    foreignKey: 'product_id',
+    onDelete: 'CASCADE'
 });
 
 Retailer.hasMany(ProductRet, {
@@ -124,7 +125,8 @@ Retailer.hasMany(ProductRet, {
 });
 
 ProductRet.belongsTo(Retailer, {
-    foreignKey: 'retailer_id'
+    foreignKey: 'retailer_id',
+    onDelete: 'CASCADE'
 });
 
 Product.belongsToMany(Retailer, {

@@ -34,9 +34,10 @@ body {
 }
 
 .card-picture {
+  border: 1px solid #086d38;
   border-radius: 15px;
-  background-color: red;
-  background-image: linear-gradient(to bottom right, red, yellow);
+  background-color: #fff;
+  /* background-image: linear-gradient(to bottom right, #086d38,  #63a87c); */
   position: absolute;
   left: 12rem;
   width: 200px;
@@ -51,16 +52,6 @@ body {
 
 .container {
   width: 80%;
-}
-
-.website-link {
-  border-radius: 15px;
-  background-color: red;
-  background-image: linear-gradient(to bottom right, yellow, red);
-  padding: 1rem 2rem .5rem 2rem;
-  color: white;
-  font-weight: bold;
-  text-align: center;
 }
 
 .title-bold {
@@ -90,9 +81,6 @@ html {
 .footer a:hover {
   color: #a3d6b6;
 }
-
-
-
 
 .logo1 {
   width: 40px;
@@ -365,7 +353,8 @@ a.button {
   text-decoration: none;
   color: initial;
 }
-button, a.button {
+button, .website-link, a.button {
+  border-radius: 10px;
   background-color: #086d38;
   border: 0;
   padding: 12px;

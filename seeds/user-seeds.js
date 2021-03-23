@@ -11,19 +11,28 @@ const userData = [
     admin: true
   },
   {
-    email: 'rsmith@cbc.ca',
-    password: 'password123',
-    first_name: 'Richard',
-    last_name: 'Smith',
+    email: 'shamim@me.com',
+    password: '12345678',
+    first_name: 'shamim',
+    last_name: 'Imtiaz',
     region_id: 2,
     avatar: "/images/user-default.png",
     admin: true
   },
   {
-    email: 'mkunz@gmail.com',
+    email: 'nathan@cbc.ca',
     password: 'password123',
-    first_name: 'Mac',
-    last_name: 'Kunz',
+    first_name: 'Nathan',
+    last_name: 'Chow',
+    region_id: 2,
+    avatar: "/images/user-default.png",
+    admin: true
+  },
+  {
+    email: 'benn@gmail.com',
+    password: 'password123',
+    first_name: 'Benn',
+    last_name: 'Asabir',
     region_id: 2,
     avatar: "/images/user-default.png",
     admin: false
@@ -38,10 +47,10 @@ const userData = [
     admin: false
   },
   {
-    email: 'mslater@cbc.ca',
+    email: 'samiul@cbc.ca',
     password: 'password123',
-    first_name: 'Michael',
-    last_name: 'Slater',
+    first_name: 'Samiul Haider',
+    last_name: 'Choudhury',
     region_id: 10,
     avatar: "/images/user-default.png",
     admin: false

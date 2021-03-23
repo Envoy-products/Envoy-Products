@@ -1,3 +1,4 @@
+<script src="https://app.simplefileupload.com/buckets/afa7fd6af8e1879aceb8ba0fcf296668.js"></script>
 <div class="container">
     <div class="row post">
     <h2>Add a Product</h2>
@@ -25,11 +26,14 @@
             </select>
         </div>
         <div class="form-bottom"> </div>
-
-        <div class="form-column">
+        <div class="form-column uploader-column">
+            <label for="prod_img">or drag and drop an image to the box below</label><br>
+            <input type="hidden" name="prod_img" id="prod_img" class="simple-file-upload" />
+        </div>
+        <div class="form-column right-column">
             <label for="retailers">Product Retailers</span></label><br />
-            <select id="retailers" multiple="true" name="retailers" class="form-control">
-                <option value="-1">Select one or more Retailers</option>
+            <select id="retailers" multiple="true" name="retailers" class="form-control product-form">
+                <option value="-1">Select one or more Retailers (use ctrl/cmd for multiples)</option>
                 {{#each retailers as |retailer|}}
                     <option value="{{retailer.id}}">{{retailer.ret_name}}</option>
                 {{/each}}

@@ -1,5 +1,21 @@
 <div class="container">
     <div class="row">
+        <div class="col-sm-3">
+            <section class="dashboard-item">
+                <div class="dashboard-item-title-wrapper">
+                    <div class="dashboard-item-title">
+                        <h2>Profile</h2>
+                    </div>
+                </div> 
+                <div class="dashboard-item-body user-column">
+                    <img src="{{user.avatar}}">
+                    <p class="profile-name">{{user.first_name}} {{user.last_name}}</p>
+                    <p>{{user.email}}</p>
+                    <a href="/articles/add" class="button">Update Profile</a>
+                </div> 
+            </section>
+        </div>
+        <div class="col-sm-8">
         <section class="dashboard-item">
             <div class="dashboard-item-title-wrapper">
                 <div class="dashboard-item-title">

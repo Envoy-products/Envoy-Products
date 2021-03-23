@@ -49,9 +49,8 @@ router.get('/add', (req, res) => {
     if(!req.session.loggedIn){
         res.redirect('/signup');
     }
-    res.render('add-post', { 
-        loggedIn: req.session.loggedIn,
-        user_id: req.session.user_id
+    res.render('add-post', {
+        loggedIn: req.session.loggedIn
     });
 });
 
@@ -86,7 +85,6 @@ router.get('/:id', (req, res) => {
         ]
     })
         .then(dbPostData => {
-            console.log(dbPostData);
             if (!dbPostData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;

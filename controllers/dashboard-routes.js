@@ -35,6 +35,22 @@ router.get('/', auth, async (req, res) => {
         const posts_pending = posts.filter(post => post.post_status === 'pending');
         const posts_public = posts.filter(post => post.post_status !== 'pending');
 
+        const dbUserData = await User.findOne({
+            where: {
+                id: req.session.user_id
+            },
+            attributes: [
+                'id',
+                'first_name',
+                'last_name',
+                'avatar',
+                'email'
+            ]
+        })
+        
+        const user = dbUserData.get({ plain: true });
+
+
         // find all products 
         const dbProductData = await Product.findAll({
             where: {
@@ -72,9 +88,11 @@ router.get('/', auth, async (req, res) => {
             posts_pending,
             posts_public,
             products_pending,
-            products_public
+            products_public,
+            user
         }
-
+        console.log(data.posts_pending);
+        console.log(data.user_data)
         if (req.session.isAdmin) {
             const dbPendingPostData = await Post.findAll({
                 where: {

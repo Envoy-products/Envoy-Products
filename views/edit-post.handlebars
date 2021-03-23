@@ -10,6 +10,17 @@
             <label for="post-url">Further Reading link <span class="optional">(Optional)</span></label><br />
             <input type="text" id="post-url" name="post-url" value="{{post.post_url}}"/>
         </div>
+        {{#if isAdmin}}
+        <div class="form-column">
+            <label for="status">Status</span></label><br />
+            <select id="post_status" name="post_status" class="form-control">
+                <option value="null">Select a Status</option>
+                <option value="pending" {{compare_string "pending" post.post_status}}>Pending</option>
+                <option value="approved" {{compare_string "approved" post.post_status}}>Approved</option>
+                <option value="featured" {{compare_string "featured" post.post_status}}>Featured</option>
+            </select>
+        </div>
+        {{/if}}
         <div class="form-bottom">
             <label for="post-content">Post Content</label>
             <textarea class="big-textarea" id="post-content" name="post-content">{{post.post_content}}</textarea>

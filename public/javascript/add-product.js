@@ -18,7 +18,7 @@ const addProductFormHandler = async (e) => {
         }
 
         const response = await fetch('/api/products', {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({
                 name,
                 description,

@@ -8,11 +8,11 @@ router.get('/', (req, res) => {
     // find all products
     Product.findAll({
         attributes: [
-            'id', 
-            'name', 
-            'description', 
-            'website', 
-            'product_img', 
+            'id',
+            'name',
+            'description',
+            'website',
+            'product_img',
             'status'
         ],
         include: [
@@ -81,7 +81,8 @@ router.get('/:id', (req, res) => {
                         attributes: [
                             'id',
                             'avatar',
-                            [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'author']
+                            'first_name',
+                            'last_name'
                         ]
                     },
                     {
@@ -154,34 +155,49 @@ router.post('/', auth, (req, res) => {
 });
 
 router.put('/:id', auth, (req, res) => {
-    // create a new product
+    // updates an existing product
     // expects from req.body: {name:'sample name', description:'sample description', website: 'https://example.com', product_img: 'https://example.com', status: "pending", category_id: 1} 
     let data = {};
-    Product.update(
-     {
-        ...req.body,  // ADD USER ID FROM SESSION
-        user_id: req.session.user_id
-    },{
-        where:{
+    Product.update(req.body, {
+        where: {
             id: req.params.id
         }
-        
     })
         .then(product => {
             data.product = product;
-            if (req.body.retailerIds.length) {
-                const productRetIdArr = req.body.retailerIds.map((retailer_id) => {
+        
+            return ProductRet.findAll({
+                where: {
+                    product_id: req.params.id
+                }
+            });
+        })
+        .then(productRets => {
+            // get list of existing retailer_ids associated with this product id
+            const productRetIds = productRets.map(({ retailer_id }) => retailer_id);
+
+            // create filtered list of new retailer_ids
+            const newProductRets = req.body.retailerIds
+                .filter((retailer_id) => !productRetIds.includes(retailer_id))
+                .map((retailer_id) => {
                     return {
-                        product_id: product.id,
+                        product_id: req.params.id,
                         retailer_id,
                     };
                 });
-                return ProductRet.bulkCreate(productRetIdArr);
-            }
-            return;
+            // create a list of retailer_ids to remove
+            const productRetsToRemove = productRets
+                .filter(({ retailer_id }) => !req.body.retailerIds.includes(retailer_id))
+                .map(({ id }) => id);
+
+            // run both actions as Promises
+            return Promise.all([
+                ProductRet.destroy({ where: { id: productRetsToRemove } }),
+                ProductRet.bulkCreate(newProductRets),
+            ]);
         })
-        .then((productRetData) => {
-            data.productRet = productRetData;
+        .then((updatedProductRetData) => {
+            data.productRet = updatedProductRetData;
             res.status(201).json(data);
         })
         .catch(err => {
@@ -190,9 +206,9 @@ router.put('/:id', auth, (req, res) => {
         });
 });
 
-// Delete a post
+// Delete a product
 router.delete('/:id', auth, (req, res) => {
-    // delete a post by its `id`
+    // delete a product by its `id`
     Product.destroy({
         where: {
             id: req.params.id
@@ -200,7 +216,7 @@ router.delete('/:id', auth, (req, res) => {
     })
         .then(dbProductData => {
             if (!dbProductData) {
-                res.status(404).json({ message: 'No post found with this id' });
+                res.status(404).json({ message: 'No product found with this id' });
                 return;
             }
             res.json(dbProductData);

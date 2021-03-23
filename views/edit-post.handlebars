@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row post">
+    <h2>Edit article</h2>
+    <form id="edit-article-form">
+        <div class="form-column">
+            <label for="title">Title</label><br />
+            <input type="text" id="title" name="title" value="{{post.title}}"/>
+        </div>
+        <div class="form-column right-column">
+            <label for="post-url">Further Reading link <span class="optional">(Optional)</span></label><br />
+            <input type="text" id="post-url" name="post-url" value="{{post.post_url}}"/>
+        </div>
+        <div class="form-bottom">
+            <label for="post-content">Post Content</label>
+            <textarea class="big-textarea" id="post-content" name="post-content">{{post.post_content}}</textarea>
+        </div>
+        <div class="edit-form-btn-wrapper">
+            <button type="submit">&nbsp; Update Article &nbsp;</button>
+            <button type="button" name="delete" data-id="{{post.id}}">&nbsp; Delete Article &nbsp;</button>
+        </div>
+    </form>
+    </div>
+</div>
+
+<script src="/javascript/edit-post.js"></script>

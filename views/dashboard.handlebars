@@ -1,44 +1,88 @@
-  <div class="container">
+<div class="container">
     <div class="row">
-      <section class="post">
-      <h2>Pending Articles</h2>
-      {{#each posts_pending as |post|}}
-        <article class="post-list">
-          <div class="title-bar">
-            <div class="title">
-              <h3><a href="/articles/{{id}}">{{title}}</a></h3>
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Your Articles</h2>
+                </div>
+                <div >
+                    <a href="/articles/add" class="button">Add an Article</a>
+                </div>   
             </div>
-            {{> meta post}}
-          </div>
-          <div class="content">{{format_cut_content post_content}} <a href="/article/{{id}}"> &hellip; read more</a></div>
-
-        </article>
-      {{/each}}
-      </section>
-    <section class="post">
-      <h2>Approved Articles</h2>
-      {{#each posts_public as |post|}}
-        <article class="post-list">
-          <div class="title-bar">
-            <div class="title">
-              <h3><a href="/articles/{{id}}">{{title}}</a></h3>
+            <div class="dashboard-item-body">
+                <h3>Pending Articles</h3>
+                {{#each posts_pending as |post|}}
+                {{> single-post-dashboard post}}
+                {{/each}}
+                {{#unless posts_pending.length}}
+                None
+                {{/unless}}
             </div>
-            {{> meta post}}
-          </div>
-          <div class="content">{{format_cut_content post_content}} <a href="/article/{{id}}"> &hellip; read more</a></div>
+            <div class="dashboard-item-body">
+                <h3>Approved Articles</h3>
+                {{#each posts_public as |post|}}
+                {{> single-post-dashboard post}}
+                {{/each}}
+                {{#unless posts_public.length}}
+                None
+                {{/unless}}
+            </div>
+        </section>
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Your Products</h2>
+                </div>
+                <div >
+                    <a href="/products/add" class="button">Add a Product</a>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Pending Products</h3>
+                {{#each products_pending as |product|}}
+                {{> single-product-dashboard product}}
+                {{/each}}
+                {{#unless products_pending.length}}
+                None
+                {{/unless}}
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Approved Products</h3>
+                {{#each products_public as |product|}}
+                {{> single-product-dashboard product}}
+                {{/each}}
+                {{#unless products_public.length}}
+                None
+                {{/unless}}
+            </div>
+        </section>
+        
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Items to be approved</h2>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Articles to be approved</h4>
+                <ul>
+                    {{#each all_pending_posts as |pending_post|}}
+                    <li><a href="/dashboard/articles/edit/{{pending_post.id}}">{{pending_post.title}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Products to be approved</h4>
+                <ul>
+                    {{#each all_pending_products as |pending_product|}}
+                    <li><a href="/dashboard/products/edit/{{pending_product.id}}">{{pending_product.name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        
 
-        </article>
-      {{/each}}
-
-    </section>
-    <aside>
-      {{#if loggedIn}}
-        <a href="/articles/add" class="button">Add an article</a>
-      {{else}}
-      <p>&nbsp;</p>
-      {{/if}}
-
-      </aside>
     </div>
-  </div>
-{{!-- <script src="/javascript/add-product.js"></script> --}}
+</div>
+{{!--
+<script src="/javascript/add-product.js"></script> --}}

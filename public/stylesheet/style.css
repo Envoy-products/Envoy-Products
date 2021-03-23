@@ -542,6 +542,41 @@ padding-bottom: 2rem;
     height: 30px;
 }
 
+/* Start: Dashboard Styles */
+.dashboard-item {
+    margin: 80px 0px;
+    padding: 15px 20px;
+    border: #63a87c solid 1px;
+}
+
+.dashboard-item-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+    border-bottom: #63a87c solid 2px;
+}
+
+.dashboard-item-title h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display:inline-block;
+    color: #63a87c;
+    letter-spacing: 3px;
+    margin: 15px 0;
+  }
+
+.dashboard-item-body {
+    margin-bottom: 40px;
+}
+
+/* End: Dashboard Styles */
+
+.edit-form-btn-wrapper button:last-child {
+    margin-left: 15px;
+}
+
 .slideanim {visibility:hidden;}
 .slide {
 animation-name: slide;

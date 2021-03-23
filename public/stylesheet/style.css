@@ -10,63 +10,84 @@ body {
 /*         ARTICLES PAGE STYLING       */
 /* =================================== */
 
-
-
-.articles-container {
-  position: relative;
-  height: 600px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+.gallery {
+  background: white;
 }
 
-.articles-card {
-  display: flex;
-  height: 100%;
-  width: 400px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: -1rem 0 3rem #000;
-/*   margin-left: -50px; */
-  transition: 0.4s ease-out;
-  position: relative;
-  left: 0px;
+.gallery-cell {
+  width: 90%;
+  height: 275px;
+  background-color: #086d38;
+  counter-increment: gallery-cell;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border-radius: 20px;
+  margin-left: 10rem;
+  margin-right: 10rem;
 }
 
-.articles-description {
-  padding: 12rem 1.5rem 0 1.5rem;
-}
-
-.articles-card:not(:first-child) {
-    margin-left: -50px;
-}
-
-.articles-title-format {
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
   color: white;
 }
 
-.articles-card:hover {
-  transform: translateY(-20px);
-  transform: scale(1.05);
-  transition: 0.4s ease-out;
-  z-index: 30;
+.articles-picture {
+  grid-column: 1 / span 1;
+  position: relative;
 }
 
-.articles-card:hover ~ .articles-card {
+.user-picture {
+  position: absolute;
+  right: 0rem;
+  margin: 3rem;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+  border: 6px solid white
+}
+
+.articles-description-container {
   position: relative;
-  left: 50px;
-  transition: 0.4s ease-out;
+  grid-column: 2 / span 1;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 2rem;
+  display: grid;
+  grid-template-rows: auto auto auto;
 }
 
 .articles-title {
-  background-color: #086d38;
-  color: white;
-  font-weight: 300;
-  position: absolute;
-  padding-left: 1rem;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  grid-row: 1 / span 1;
 }
+
+.articles-font-bold {
+  color: white;
+  font-weight: bold;
+}
+
+.articles-font-light {
+  color: white;
+  font-size: 1.75rem;
+}
+
+.articles-button {
+  border: 2px solid white;
+  width: auto;
+  background-color: rgb(0, 84, 0);
+  border-radius: 15px;
+  margin: 0 2rem 1rem 2rem;
+}
+
+.articles-button:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
 
 /* =================================== */
 /*          PRODUCT PAGE STYLING       */
@@ -1017,6 +1038,47 @@ h2.active {
   }
   .footer .right-column, .footer .left-column {
     text-align: center;
+  }
+
+  /* ARTICLES SIZING */
+
+  .gallery-cell {
+    height: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: auto 0%;
+    grid-template-rows: auto auto;
+  }
+
+  .articles-picture {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+  .articles-description-container {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .user-picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+  }
+
+  .articles-font-bold {
+    font-size: 2rem;
+  }
+
+  .articles-font-light {
+    font-size: 1.5rem;
+  }
+
+  .articles-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }

@@ -8,8 +8,11 @@ const editArticleFormHandler = async (event) => {
         const post_url = $("#post-url").val().trim();
         const path_segments = window.location.toString().split('/');
         const id = path_segments[path_segments.length - 1];
+        let post_status = $("#post_status").val();
 
-        if(!title || !post_content || !post_url) {
+        if (!post_status) post_status = "pending"; 
+
+        if(!title || !post_content || !post_url || post_status=="null") {
             throw new Error("At least one input is invalid!");
         }
 
@@ -18,7 +21,8 @@ const editArticleFormHandler = async (event) => {
             body: JSON.stringify({
                 title,
                 post_content,
-                post_url
+                post_url,
+                post_status
             }),
             headers: {
                 'Content-Type': 'application/json'

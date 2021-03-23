@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, Product, User, Category, Retailer, Region, Country, ProductRet } = require('../models');
 const sequelize = require('../config/connection');
 const { auth } = require('../utils/auth');
+const { Op } = require('sequelize');
 
 // Get all featured posts and featured products for all users and render homepage handlebars
 router.get('/', auth, async (req, res) => {
@@ -24,7 +25,12 @@ router.get('/', auth, async (req, res) => {
                     model: User,
                     attributes: [
                         'avatar',
+<<<<<<< HEAD
                         [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'author']                    ]
+=======
+                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'full_name']
+                    ]
+>>>>>>> develop
                 }
             ]
         });
@@ -94,7 +100,10 @@ router.get('/', auth, async (req, res) => {
         if (req.session.isAdmin) {
             const dbPendingPostData = await Post.findAll({
                 where: {
-                    post_status: "pending"
+                    post_status: "pending",
+                    // user_id: {
+                    //     [Op.ne]: req.session.user_id
+                    // }
                 },
                 attributes: [
                     'id', 
@@ -105,7 +114,7 @@ router.get('/', auth, async (req, res) => {
                         model: User,
                         attributes: [
                             'id',
-                            [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'author']
+                            [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'full_name']
                         ]
                     }
                 ]
@@ -114,7 +123,10 @@ router.get('/', auth, async (req, res) => {
 
             const dbPendingProductData = await Product.findAll({
                 where: {
-                    status: "pending"
+                    status: "pending",
+                    // user_id: {
+                    //     [Op.ne]: req.session.user_id
+                    // }
                 },
                 attributes: [
                     'id', 
@@ -146,7 +158,8 @@ router.get('/', auth, async (req, res) => {
         res.render('dashboard', { 
             ...data,
             loggedIn: req.session.loggedIn,
-            user_id: req.session.user_id
+            user_id: req.session.user_id,
+            isAdmin: req.session.isAdmin
         });
     } catch(err) { 
         console.log(err);
@@ -171,7 +184,7 @@ router.get('/articles/edit/:id', auth, async (req, res) => {
                     model: User,
                     attributes: [
                         'avatar',
-                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'author']
+                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'full_name']
                     ]
                 }
             ]

@@ -73,6 +73,7 @@
             </div>
         </section>
         
+        {{#if isAdmin}}
         <section class="dashboard-item">
             <div class="dashboard-item-title-wrapper">
                 <div class="dashboard-item-title">
@@ -83,7 +84,7 @@
                 <h4>Articles to be approved</h4>
                 <ul>
                     {{#each all_pending_posts as |pending_post|}}
-                    <li><a href="/dashboard/articles/edit/{{pending_post.id}}">{{pending_post.title}}</a></li>
+                    <li><a href="/dashboard/articles/edit/{{pending_post.id}}">{{pending_post.title}}</a> <span class="credit">(Posted by {{pending_post.user.full_name}})</span></li>
                     {{/each}}
                 </ul>
             </div>
@@ -91,13 +92,12 @@
                 <h4>Products to be approved</h4>
                 <ul>
                     {{#each all_pending_products as |pending_product|}}
-                    <li><a href="/dashboard/products/edit/{{pending_product.id}}">{{pending_product.name}}</a></li>
+                    <li><a href="/dashboard/products/edit/{{pending_product.id}}">{{pending_product.name}}</a><span class="credit">(Posted by {{pending_product.user.full_name}})</li>
                     {{/each}}
                 </ul>
             </div>
         </section>
-        </div>
-
+        {{/if}}
     </div>
 </div>
 {{!--

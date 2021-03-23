@@ -86,6 +86,7 @@ body {
 .articles-font-light {
   color: white;
   font-size: 1.75rem;
+  line-height: 1.6;
 }
 
 .articles-button {

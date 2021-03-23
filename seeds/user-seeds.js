@@ -2,6 +2,7 @@ const { User } = require('../models');
 
 const userData = [
   {
+    id: 1,  
     email: 'eric.n@me.com',
     password: 'home1y15',
     first_name: 'Eric',
@@ -11,33 +12,27 @@ const userData = [
     admin: true
   },
   {
-    email: 'shamim@me.com',
-    password: '12345678',
-    first_name: 'shamim',
-    last_name: 'Imtiaz',
+    id: 2,  
+    email: 'rsmith@cbc.ca',
+    password: 'password123',
+    first_name: 'Richard',
+    last_name: 'Smith',
     region_id: 2,
     avatar: "/images/user-default.png",
     admin: true
   },
   {
-    email: 'nathan@cbc.ca',
+    id: 3,  
+    email: 'mkunz@gmail.com',
     password: 'password123',
-    first_name: 'Nathan',
-    last_name: 'Chow',
-    region_id: 2,
-    avatar: "/images/user-default.png",
-    admin: true
-  },
-  {
-    email: 'benn@gmail.com',
-    password: 'password123',
-    first_name: 'Benn',
-    last_name: 'Asabir',
+    first_name: 'Mac',
+    last_name: 'Kunz',
     region_id: 2,
     avatar: "/images/user-default.png",
     admin: false
   },
   {
+    id: 4,  
     email: 'jsmith@gmail.com',
     password: 'password123',
     first_name: 'Joe',
@@ -47,10 +42,11 @@ const userData = [
     admin: false
   },
   {
-    email: 'samiul@cbc.ca',
+    id: 5,  
+    email: 'mslater@cbc.ca',
     password: 'password123',
-    first_name: 'Samiul Haider',
-    last_name: 'Choudhury',
+    first_name: 'Michael',
+    last_name: 'Slater',
     region_id: 10,
     avatar: "/images/user-default.png",
     admin: false

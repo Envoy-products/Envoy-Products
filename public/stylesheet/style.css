@@ -14,7 +14,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 85%;
-  margin-top: 20rem;
+  margin-top: 10rem;
   background-color: white;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
   border-radius: 15px;
@@ -33,7 +33,6 @@ body {
   grid-template-rows: auto auto;
   background-color: #086d38;
   border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
 }
 
 .single-product-picture {
@@ -80,6 +79,7 @@ body {
 .single-product-reviews-container {
   grid-column: 1 / span 2;
   grid-row: 2 / span 1;
+  padding: 3rem;
 }
 
 .about-box {

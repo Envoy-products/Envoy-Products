@@ -1,48 +1,88 @@
-<form class="container-fluid bg-grey addproduct new-post-form">
+<div class="container">
+    <div class="row">
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Your Articles</h2>
+                </div>
+                <div >
+                    <a href="/articles/add" class="button">Add an Article</a>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Pending Articles</h3>
+                {{#each posts_pending as |post|}}
+                {{> single-post-dashboard post}}
+                {{/each}}
+                {{#unless posts_pending.length}}
+                None
+                {{/unless}}
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Approved Articles</h3>
+                {{#each posts_public as |post|}}
+                {{> single-post-dashboard post}}
+                {{/each}}
+                {{#unless posts_public.length}}
+                None
+                {{/unless}}
+            </div>
+        </section>
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Your Products</h2>
+                </div>
+                <div >
+                    <a href="/products/add" class="button">Add a Product</a>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Pending Products</h3>
+                {{#each products_pending as |product|}}
+                {{> single-product-dashboard product}}
+                {{/each}}
+                {{#unless products_pending.length}}
+                None
+                {{/unless}}
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Approved Products</h3>
+                {{#each products_public as |product|}}
+                {{> single-product-dashboard product}}
+                {{/each}}
+                {{#unless products_public.length}}
+                None
+                {{/unless}}
+            </div>
+        </section>
+        
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Items to be approved</h2>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Articles to be approved</h4>
+                <ul>
+                    {{#each all_pending_posts as |pending_post|}}
+                    <li><a href="/dashboard/articles/edit/{{pending_post.id}}">{{pending_post.title}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Products to be approved</h4>
+                <ul>
+                    {{#each all_pending_products as |pending_product|}}
+                    <li><a href="/dashboard/products/edit/{{pending_product.id}}">{{pending_product.name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        
 
-  <div class="form-group col-md-6">
-    <label for="post-product" class="col-2 col-form-label">Product Name</label>
-    <input class="form-control" type="" id="post-product" placeholder="product name" name="post-product">
-  </div>
-
-  <div class="form-group col-md-6">
-    <label for="post-description" class="col-2 col-form-label">Description</label>
-    <input class="form-control" type="" id="post-description" placeholder="description" name="post-description">
-  </div>
-
-  <div class="form-group col-md-6">
-    <label for="post-website" class="col-2 col-form-label">Website</label>
-    <input class="form-control" type="url"  id="post-website" placeholder="website" name="post-website">
-  </div>
-
-  <div class="form-group col-md-6">
-    <label for="post-website" class="col-2 col-form-label">Where To Buy</label>
-    <input class="form-control" type="url"  id="post-website" placeholder="website" name="post-website">
-  </div>
-
-  <div class="form-group col-md-6">
-    <label for="post-website" class="col-2 col-form-label">Image</label>
-    <input class="form-control" type="url"  id="post-website" placeholder="link for image" name="post-website">
-  </div>
-
-  <div class="form-group col-md-6">
-    <label for="inputCategory">Category</label>
-    <select id="inputCategory" class="form-control" name="inputCategory">
-      <option selected>Choose...</option>
-      <option>Cleaning Products</option>
-      <option>Electronics</option>
-      <option>Fashion</option>
-      <option>Laundry</option>
-      <option>Personal Hygiene</option>
-      <option>Stationary</option>
-      <option>Vehicle</option>
-      <option>Cooking</option>
-    </select>
-  </div>
-  
-  <div class="text-center">
-    <button type="submit" class="btn add" style="color: white">Add Product +</button>
-  </div>
-</form>
-
-<script src="/javascript/add-product.js"></script>
+    </div>
+</div>
+{{!--
+<script src="/javascript/add-product.js"></script> --}}

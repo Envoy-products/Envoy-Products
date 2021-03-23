@@ -2,6 +2,7 @@ const { User } = require('../models');
 
 const userData = [
   {
+    id: 1,  
     email: 'eric.n@me.com',
     password: 'home1y15',
     first_name: 'Eric',
@@ -11,6 +12,7 @@ const userData = [
     admin: true
   },
   {
+    id: 2,  
     email: 'rsmith@cbc.ca',
     password: 'password123',
     first_name: 'Richard',
@@ -20,6 +22,7 @@ const userData = [
     admin: true
   },
   {
+    id: 3,  
     email: 'mkunz@gmail.com',
     password: 'password123',
     first_name: 'Mac',
@@ -29,6 +32,7 @@ const userData = [
     admin: false
   },
   {
+    id: 4,  
     email: 'jsmith@gmail.com',
     password: 'password123',
     first_name: 'Joe',
@@ -38,6 +42,7 @@ const userData = [
     admin: false
   },
   {
+    id: 5,  
     email: 'mslater@cbc.ca',
     password: 'password123',
     first_name: 'Michael',

@@ -451,6 +451,14 @@ input, select.form-control {
   min-height: 40px;
 }
 
+.uploader-column {
+  text-align: center;
+}
+
+select.product-form {
+  min-height: 160px;
+}
+
 textarea {
   min-height: 150px;
 }

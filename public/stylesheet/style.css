@@ -18,6 +18,7 @@ body {
   background-color: white;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
   border-radius: 15px;
+  margin-bottom: 15rem;
 }
 
 .single-product-container {
@@ -91,6 +92,47 @@ body {
   border-radius: 15px;
 }
 
+/* ============================================ */
+/*         SINGLE PRODUCT REVIEWS STYLING       */
+/* ============================================ */
+
+.review-container {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  padding: .75rem;
+  background-color: #086d38;
+}
+
+.review-container-border {
+  background-color: white;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto 10rem;
+  grid-template-rows: auto auto;
+  border-radius: 15px;
+}
+
+.review-content {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+.remove-button-container {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  background-color: white;
+}
+
+.user-info {
+  grid-column: 1 span 2;
+  grid-row: 2 / span 1;
+  border-top: 2px solid #086d38;
+  line-height: 1.6;
+  width: 90%;
+}
 
 /* =================================== */
 /*         ARTICLES PAGE STYLING       */

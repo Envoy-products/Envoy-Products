@@ -1,48 +1,44 @@
-<form class="container-fluid bg-grey addproduct new-post-form">
+  <div class="container">
+    <div class="row">
+      <section class="post">
+      <h2>Pending Articles</h2>
+      {{#each posts_pending as |post|}}
+        <article class="post-list">
+          <div class="title-bar">
+            <div class="title">
+              <h3><a href="/articles/{{id}}">{{title}}</a></h3>
+            </div>
+            {{> meta post}}
+          </div>
+          <div class="content">{{format_cut_content post_content}} <a href="/article/{{id}}"> &hellip; read more</a></div>
 
-  <div class="form-group col-md-6">
-    <label for="post-product" class="col-2 col-form-label">Product Name</label>
-    <input class="form-control" type="" id="post-product" placeholder="product name" name="post-product">
-  </div>
+        </article>
+      {{/each}}
+      </section>
+    <section class="post">
+      <h2>Approved Articles</h2>
+      {{#each posts_public as |post|}}
+        <article class="post-list">
+          <div class="title-bar">
+            <div class="title">
+              <h3><a href="/articles/{{id}}">{{title}}</a></h3>
+            </div>
+            {{> meta post}}
+          </div>
+          <div class="content">{{format_cut_content post_content}} <a href="/article/{{id}}"> &hellip; read more</a></div>
 
-  <div class="form-group col-md-6">
-    <label for="post-description" class="col-2 col-form-label">Description</label>
-    <input class="form-control" type="" id="post-description" placeholder="description" name="post-description">
-  </div>
+        </article>
+      {{/each}}
 
-  <div class="form-group col-md-6">
-    <label for="post-website" class="col-2 col-form-label">Website</label>
-    <input class="form-control" type="url"  id="post-website" placeholder="website" name="post-website">
-  </div>
+    </section>
+    <aside>
+      {{#if loggedIn}}
+        <a href="/articles/add" class="button">Add an article</a>
+      {{else}}
+      <p>&nbsp;</p>
+      {{/if}}
 
-  <div class="form-group col-md-6">
-    <label for="post-website" class="col-2 col-form-label">Where To Buy</label>
-    <input class="form-control" type="url"  id="post-website" placeholder="website" name="post-website">
+      </aside>
+    </div>
   </div>
-
-  <div class="form-group col-md-6">
-    <label for="post-website" class="col-2 col-form-label">Image</label>
-    <input class="form-control" type="url"  id="post-website" placeholder="link for image" name="post-website">
-  </div>
-
-  <div class="form-group col-md-6">
-    <label for="inputCategory">Category</label>
-    <select id="inputCategory" class="form-control" name="inputCategory">
-      <option selected>Choose...</option>
-      <option>Cleaning Products</option>
-      <option>Electronics</option>
-      <option>Fashion</option>
-      <option>Laundry</option>
-      <option>Personal Hygiene</option>
-      <option>Stationary</option>
-      <option>Vehicle</option>
-      <option>Cooking</option>
-    </select>
-  </div>
-  
-  <div class="text-center">
-    <button type="submit" class="btn add" style="color: white">Add Product +</button>
-  </div>
-</form>
-
-<script src="/javascript/add-product.js"></script>
+{{!-- <script src="/javascript/add-product.js"></script> --}}

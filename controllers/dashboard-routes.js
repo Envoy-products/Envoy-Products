@@ -67,16 +67,7 @@ router.get('/', auth, async (req, res) => {
         const products_pending = products.filter(product => product.status === 'pending');
         const products_public = products.filter(product => product.status !== 'pending');
 
-        res.json({ 
-            posts_pending,
-            posts_public,
-            products_pending,
-            products_public,
-            loggedIn: req.session.loggedIn,
-            user_id: req.session.user_id
-        });
-
-        // res.render('dashboard', { 
+        // res.json({ 
         //     posts_pending,
         //     posts_public,
         //     products_pending,
@@ -84,6 +75,15 @@ router.get('/', auth, async (req, res) => {
         //     loggedIn: req.session.loggedIn,
         //     user_id: req.session.user_id
         // });
+
+        res.render('dashboard', { 
+            posts_pending,
+            posts_public,
+            products_pending,
+            products_public,
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id
+        });
     } catch(err) { 
         console.log(err);
         res.status(500).json(err);

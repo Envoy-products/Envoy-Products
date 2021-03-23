@@ -1,3 +1,4 @@
+<script src="https://app.simplefileupload.com/buckets/afa7fd6af8e1879aceb8ba0fcf296668.js"></script>
 <div class="wrapper fadeInDown" style="height: 100vh;">
     <div id="formContent">
   
@@ -8,11 +9,16 @@
   
       <!-- Signup Form -->
       <form class="login-form text-center" id="signup-form">
+      
         <input type="text" id="firstname-signup" class="fadeIn second" placeholder="first name">
         <input type="text" id="lastname-signup" class="fadeIn second" placeholder="last name">
         <input type="text" id="email-signup" class="fadeIn second" placeholder="email">
         <input type="password" id="password-signup" class="fadeIn third" placeholder="password">
         <input type="text" id="avatar-signup" class="fadeIn third" placeholder="avatar image url">
+
+        <div class="fadeIn third">or drag and drop an image to the box below</div>
+        <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload fadeIn third">
+
         <select id="region-signup" class="fadeIn third select-signup-form text-center">
             <option value="-1">select a region</option>
             {{#each regions as |region|}}

@@ -49,7 +49,9 @@ router.get('/add', (req, res) => {
     if(!req.session.loggedIn){
         res.redirect('/signup');
     }
-    res.render('add-post')
+    res.render('add-post', {
+        loggedIn: req.session.loggedIn
+    });
 });
 
 // Single post view

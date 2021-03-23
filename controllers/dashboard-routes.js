@@ -25,12 +25,8 @@ router.get('/', auth, async (req, res) => {
                     model: User,
                     attributes: [
                         'avatar',
-<<<<<<< HEAD
-                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'author']                    ]
-=======
                         [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'full_name']
                     ]
->>>>>>> develop
                 }
             ]
         });

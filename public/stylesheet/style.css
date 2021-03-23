@@ -6,6 +6,16 @@ body {
 
 }
 
+.about-box {
+  margin: 50px auto 0;
+  width: 75%;
+  max-width: 700px;
+  background: rgba(8, 109, 56, 0.7);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+
 /*  PRODUCT PAGE STYLING */
 
 .product-page-grid {
@@ -119,7 +129,7 @@ background-image:url('../images/pexels-felix-mittermeier-957024.jpg');
 background-size: cover;
 background-position: center;
 color: #fff;
-padding: 250px 25px;
+padding: 175px 25px;
 font-family: Montserrat, sans-serif;
 height: 60rem;
 }
@@ -195,6 +205,7 @@ position: relative;
   grid-template-rows: auto auto auto;
   grid-gap: 2rem;
   grid-auto-flow: row;
+  justify-content: space-evenly;
 }
 .product-picture {
   display: block;

@@ -22,6 +22,14 @@ const signupFormSubmitHandler = async (e) => {
     const lastname = $("#lastname-signup").val().trim();
     const email = $("#email-signup").val().trim();
     const password = $("#password-signup").val().trim();
+    console.log($("#avatar_url").attr("value"))
+    if($("#avatar_url").attr("value")) {
+        const avatar = $("#avatar_url").attr("value");
+    } else if ($("#avatar-signup").val().trim()){
+        const avatar = $("#avatar-signup").val().trim();
+    } else {
+        const avatar = "/images/user-default.png";
+    }
     const avatar = $("#avatar-signup").val().trim();
     const region = $("#region-signup").val();
 

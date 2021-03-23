@@ -79,6 +79,7 @@ router.post('/', (req, res) => {
             req.session.user_id = dbUserData.id;
             req.session.user_name = `${dbUserData.first_name} ${dbUserData.last_name}`;
             req.session.loggedIn = true;
+            req.session.isAdmin = dbUserData.admin;
             
             res.json(dbUserData);
         })
@@ -112,6 +113,7 @@ router.post('/login', (req,res) => {
             req.session.user_id = dbUserData.id;
             req.session.user_name = `${dbUserData.first_name} ${dbUserData.last_name}`;
             req.session.loggedIn = true;
+            req.session.isAdmin = dbUserData.admin;
 
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         })

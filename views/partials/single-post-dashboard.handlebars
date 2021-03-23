@@ -1,0 +1,16 @@
+<article class="post-list">
+    <div class="title-bar">
+        <div class="title">
+            <h4><a href="/dashboard/articles/edit/{{id}}">{{title}}</a></h4>
+        </div>
+    </div>
+    {{#unless (is_same post_status "pending")}}
+    <div>
+        Status: {{post_status}}
+    </div>
+    {{/unless}}
+    <div class="content">{{format_cut_content post_content}}
+        <a href="/articles/{{id}}"> &hellip; read more
+        </a>
+    </div>
+</article>

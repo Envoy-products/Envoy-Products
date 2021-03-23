@@ -3,10 +3,189 @@ body {
   line-height: 1.8;
   color: #818181;
   margin-bottom: 60px; /* Margin bottom by footer height */
-
 }
 
-/*  PRODUCT PAGE STYLING */
+/* =================================== */
+/*   SINGLE PRODUCT PAGE STYLING       */
+/* =================================== */
+
+.center-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  margin-top: 20rem;
+  background-color: white;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+}
+
+.single-product-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+
+.single-product-picture-container {
+  grid-column: 1 / span 1;
+  display: grid;
+  padding: 3rem;
+  grid-template-rows: auto auto;
+  background-color: #086d38;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.single-product-picture {
+  object-fit: cover;
+  width: 100%;
+  grid-row: 1 / span 1;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  background-color: white;
+  padding: 2rem;
+}
+
+.single-product-picture-description {
+  grid-row: 2 / span 1;
+  padding-top: 2rem;
+  color: white;
+}
+
+.single-product-details-container {
+  grid-column: 2 / span 1;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding: 2rem;
+}
+
+.single-product-title {
+  grid-row: 1/ span 1;
+}
+
+.single-product-name {
+  border-bottom: 7px solid #086d38;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.single-product-desscription {
+  grid-row: 2/ span 1;
+}
+
+.single-product-store {
+  grid-row: 3/ span 1;
+}
+
+.single-product-reviews-container {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1;
+}
+
+.about-box {
+  margin: 50px auto 0;
+  width: 75%;
+  max-width: 700px;
+  background: rgba(8, 109, 56, 0.7);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+
+/* =================================== */
+/*         ARTICLES PAGE STYLING       */
+/* =================================== */
+
+.gallery {
+  background: white;
+  width: 100%;
+}
+
+.gallery-cell {
+  width: 90%;
+  height: auto;
+  background-color: #086d38;
+  counter-increment: gallery-cell;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border-radius: 20px;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-bottom: 3rem;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+.articles-picture {
+  grid-column: 1 / span 1;
+  position: relative;
+}
+
+.user-picture {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  margin: 3rem;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+  border: 6px solid white;
+}
+
+.articles-description-container {
+  position: relative;
+  grid-column: 2 / span 1;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 2rem;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.articles-title {
+  grid-row: 1 / span 1;
+}
+
+.articles-font-bold {
+  color: white;
+  font-weight: bold;
+}
+
+.articles-font-light {
+  color: white;
+  font-size: 1.75rem;
+  line-height: 1.6;
+}
+
+.articles-button {
+  border: 2px solid white;
+  width: auto;
+  background-color: rgb(0, 154, 0);
+  border-radius: 15px;
+  margin: 0 2rem 1rem 2rem;
+  color: white
+}
+
+.articles-button:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+
+/* =================================== */
+/*          PRODUCT PAGE STYLING       */
+/* =================================== */
 
 .product-page-grid {
   display: grid;
@@ -107,7 +286,7 @@ background-image:url('../images/pexels-felix-mittermeier-957024.jpg');
 background-size: cover;
 background-position: center;
 color: #fff;
-padding: 250px 25px;
+padding: 175px 25px;
 font-family: Montserrat, sans-serif;
 height: 60rem;
 }
@@ -158,13 +337,20 @@ margin: 70px 0;
 font-style: normal;
 }
 
+/* =================================== */
 /* HOME PAGE FEATURED PRODUCTS STYLING */
+/* =================================== */
+.container-fluid {
+  width: 100%;
+}
 
 .button-position {
   position: absolute;
   bottom: 2rem;
-  left: 0rem;
-  width: 100%;
+  width: 90%;
+}
+.button {
+  border-radius: 15px;
 }
 .product-description {
   padding-bottom: 10rem;
@@ -173,16 +359,15 @@ font-style: normal;
 font-size-adjust: 0.50;
 width: 400px;
 border: 1px solid #63a87c; 
-border-radius:0 !important;
+border-radius: 15px;
 transition: box-shadow 0.5s;
 position: relative;
 }
 .product-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  grid-gap: 2rem;
-  grid-auto-flow: row;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .product-picture {
   display: block;
@@ -210,8 +395,8 @@ color: #fff !important;
 background-color: #086d38 !important;
 padding: 25px;
 border-bottom: 1px solid transparent;
-border-top-left-radius: 0px;
-border-top-right-radius: 0px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
 border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;
 text-align: center;
@@ -434,6 +619,41 @@ padding-bottom: 2rem;
 .btn-sm {
     width: 60px;
     height: 30px;
+}
+
+/* Start: Dashboard Styles */
+.dashboard-item {
+    margin: 80px 0px;
+    padding: 15px 20px;
+    border: #63a87c solid 1px;
+}
+
+.dashboard-item-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+    border-bottom: #63a87c solid 2px;
+}
+
+.dashboard-item-title h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display:inline-block;
+    color: #63a87c;
+    letter-spacing: 3px;
+    margin: 15px 0;
+  }
+
+.dashboard-item-body {
+    margin-bottom: 40px;
+}
+
+/* End: Dashboard Styles */
+
+.edit-form-btn-wrapper button:last-child {
+    margin-left: 15px;
 }
 
 .slideanim {visibility:hidden;}
@@ -879,14 +1099,38 @@ h2.active {
   width: 20%;
 }
 
+/* SINGLE PRODUCT STYLING */
+
+.single-product-container {
+  grid-template-columns: auto 0%;
+  grid-template-rows: auto auto auto;
 }
 
-@media screen and (max-width: 975px) {
-
-  .product-container {
-    grid-template-columns: auto;
-  }
+.single-product-picture-container {
+  grid-row: 1 / span 1;
 }
+
+.single-product-details-container {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.single-product-reviews-container {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.single-product-picture-container {
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 15px;
+}
+
+}
+
+/* @media screen and (max-width: 975px) {
+
+
+} */
 
 @media screen and (max-width: 768px) {
 
@@ -938,6 +1182,47 @@ h2.active {
   }
   .footer .right-column, .footer .left-column {
     text-align: center;
+  }
+
+  /* ARTICLES SIZING */
+
+  .gallery-cell {
+    height: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: auto 0%;
+    grid-template-rows: auto auto;
+  }
+
+  .articles-picture {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+  .articles-description-container {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .user-picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+  }
+
+  .articles-font-bold {
+    font-size: 2rem;
+  }
+
+  .articles-font-light {
+    font-size: 1.5rem;
+  }
+
+  .articles-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }

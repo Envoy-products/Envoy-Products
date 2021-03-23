@@ -101,6 +101,8 @@ body {
   border-radius: 20px;
   margin-left: 10rem;
   margin-right: 10rem;
+  margin-bottom: 3rem;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
 }
 
 /* cell number */

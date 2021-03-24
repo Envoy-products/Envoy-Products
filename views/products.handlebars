@@ -2,21 +2,25 @@
     <div class="products-page-container">
         <div class="row">
             <section class="post">
-                {{#if loggedIn}}
-                <a href="/products/add" class="button">Add a Product</a>
-                {{else}}
-                <p>&nbsp;</p>
-                {{/if}}
-                <div>
-                    <label for="filter-category">Filter by Category</span></label>
-                    <select id="filter-category" name="filter-category" class="form-control filter-select">
-                        <option value="0" {{compare_string "0" selected_category}}>All</option>
-                        {{#each categories as |category|}}
-                        <option value="{{category.id}}" {{compare_string category.id @root.selected_category}}>
-                            {{category.category_name}}
-                        </option>
-                        {{/each}}
-                    </select>
+                <div class="product-category-container">
+                    <div class="filter-category-position">
+                        <label for="filter-category">Filter by Category</span></label>
+                        <select id="filter-category" name="filter-category" class="form-control filter-select">
+                            <option value="0" {{compare_string "0" selected_category}}>All</option>
+                            {{#each categories as |category|}}
+                            <option value="{{category.id}}" {{compare_string category.id @root.selected_category}}>
+                                {{category.category_name}}
+                            </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="add-product-position">
+                    {{#if loggedIn}}
+                            <a class="button" href="/products/add">Add a Product</a>
+                            {{else}}
+                            <p>&nbsp;</p>
+                    {{/if}}
+                    </div>                   
                 </div>
                 <div class="form-bottom"></div>
 

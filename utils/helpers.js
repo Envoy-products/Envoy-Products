@@ -18,8 +18,8 @@ module.exports = {
         }
         return word;
     },
-    format_cut_content: content => {
-        return content.substring(0, 200);
+    format_cut_content: (content, length) => {
+        return content.substring(0, length);
     },
     format_posts: content => {
         const regExp = new RegExp('\\n\\n', 'g');

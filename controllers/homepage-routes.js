@@ -15,8 +15,7 @@ router.get('/', (req, res) => {
             'id', 
             'title', 
             'post_content', 
-            'post_url',
-
+            'post_url'
         ],
         include: [
             {

@@ -8,7 +8,7 @@ const { Op } = require('sequelize');
 router.get('/', auth, async (req, res) => {
     try{
         let data = {};
-        // find all posts    
+        // find all posts belonging to logged in user
         const dbPostData = await Post.findAll({
             where: {
                 user_id: req.session.user_id
@@ -35,6 +35,91 @@ router.get('/', auth, async (req, res) => {
         const posts_pending = posts.filter(post => post.post_status === 'pending');
         const posts_public = posts.filter(post => post.post_status !== 'pending');
 
+        // Find all featured posts
+        const dbFeaturedPostData = await Post.findAll({
+            where: {
+                post_status: "featured"
+            },
+            attributes: [
+                'id', 
+                'title'
+            ],
+            include: [
+                {
+                    model: User,
+                    attributes: [
+                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'full_name']
+                    ]
+                }
+            ]
+        }); 
+
+        const featured_posts = dbFeaturedPostData.map(post => post.get({ plain: true })); // serialize data
+
+        // Find all featured products
+        const dbFeaturedProductData = await Product.findAll({
+            where: {
+                status: 'featured'
+            },
+            attributes: [
+                'id', 
+                'name', 
+            ],
+            include: [
+                {
+                    model: User,
+                    attributes: [
+                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = product.user_id)"), 'full_name']
+                    ]
+                }
+            ]
+        });
+        const featured_products = dbFeaturedProductData.map(product => product.get({ plain: true })); // serialize data
+
+        // Find all approved posts
+        const dbApprovedPostData = await Post.findAll({
+            where: {
+                post_status: "approved"
+            },
+            attributes: [
+                'id', 
+                'title'
+            ],
+            include: [
+                {
+                    model: User,
+                    attributes: [
+                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = post.user_id)"), 'full_name']
+                    ]
+                }
+            ]
+        }); 
+
+        const approved_posts = dbApprovedPostData.map(post => post.get({ plain: true })); // serialize data
+
+        // Find all approved products
+        const dbApprovedProductData = await Product.findAll({
+            where: {
+                status: 'approved'
+            },
+            attributes: [
+                'id', 
+                'name', 
+            ],
+            include: [
+                {
+                    model: User,
+                    attributes: [
+                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = product.user_id)"), 'full_name']
+                    ]
+                }
+            ]
+        });
+        const approved_products = dbApprovedProductData.map(product => product.get({ plain: true })); // serialize data
+
+
+
+        // Find logged in user information
         const dbUserData = await User.findOne({
             where: {
                 id: req.session.user_id
@@ -47,11 +132,12 @@ router.get('/', auth, async (req, res) => {
                 'email'
             ]
         })
-        
+
+
         const user = dbUserData.get({ plain: true });
 
 
-        // find all products 
+        // find all products belonging to logged in user
         const dbProductData = await Product.findAll({
             where: {
                 user_id: req.session.user_id
@@ -89,6 +175,10 @@ router.get('/', auth, async (req, res) => {
             posts_public,
             products_pending,
             products_public,
+            featured_posts,
+            featured_products,
+            approved_posts,
+            approved_products,
             user
         }
         console.log(data.posts_pending);

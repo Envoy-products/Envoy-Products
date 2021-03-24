@@ -718,6 +718,11 @@ padding-bottom: 2rem;
 }
 
 /* End: Dashboard Styles */
+.filter-select {
+    display:inline-block;
+    max-width: 200px;
+    margin-left: 15px;
+}
 
 .edit-form-btn-wrapper button:last-child {
     margin-left: 15px;

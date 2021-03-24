@@ -233,6 +233,11 @@ a.articles-button:hover {
 /*          PRODUCT PAGE STYLING       */
 /* =================================== */
 
+.products-page-container {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .product-page-grid {
   display: grid;
   grid-template-columns: auto;
@@ -240,22 +245,24 @@ a.articles-button:hover {
 
 .product-row {
   margin-bottom: 3rem;
-  padding: 4rem 2rem 4rem 2rem;
   border-radius: 15px;
   z-index: 20;
   background-color: white;
   border: 0px solid black;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 30% 70%;
 }
 .product-picture-grid {
   grid-column: 1/ span 1;
-
+  background-color: #086d38;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .product-details-grid {
   grid-column: 2/ span 1;
+  padding: 2rem;
 }
 
 .card-picture {
@@ -267,6 +274,13 @@ a.articles-button:hover {
   width: 200px;
   height: 200px;
   object-fit: cover;
+  padding: .75rem;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+  display: block;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3.5rem;
 }
 
 .card-picture:hover {

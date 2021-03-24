@@ -56,4 +56,4 @@ const removeReviewHandler = async function() {
 };
 
 $("#review-form").click(reviewFormHandler);
-$( ".remove-btn-container button[data-action='remove']" ).on( "click", removeReviewHandler);
+$( ".remove-button-container button[data-action='remove']" ).on( "click", removeReviewHandler);

@@ -97,6 +97,52 @@
                 </ul>
             </div>
         </section>
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Featured Items</h2>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Featured Articles</h4>
+                <ul>
+                    {{#each featured_posts as |featured_post|}}
+                    <li><a href="/dashboard/articles/edit/{{featured_post.id}}">{{featured_post.title}}</a> <span class="credit">(Posted by {{featured_post.user.full_name}})</span></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Featured Products</h4>
+                <ul>
+                    {{#each featured_products as |featured_product|}}
+                    <li><a href="/dashboard/products/edit/{{featured_product.id}}">{{featured_product.name}}</a><span class="credit">(Posted by {{featured_product.user.full_name}})</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Approved Items</h2>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Approved Articles</h4>
+                <ul>
+                    {{#each approved_posts as |approved_post|}}
+                    <li><a href="/dashboard/articles/edit/{{approved_post.id}}">{{approved_post.title}}</a> <span class="credit">(Posted by {{approved_post.user.full_name}})</span></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Approved Products</h4>
+                <ul>
+                    {{#each approved_products as |approved_product|}}
+                    <li><a href="/dashboard/products/edit/{{approved_product.id}}">{{approved_product.name}}</a><span class="credit">(Posted by {{approved_product.user.full_name}})</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
         {{/if}}
     </div>
 </div>

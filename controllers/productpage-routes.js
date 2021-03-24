@@ -2,48 +2,74 @@ const router = require('express').Router();
 const { Product, User, Category, Review, Retailer, Rating } = require('../models');
 const sequelize = require('../config/connection');
 const { auth } = require('../utils/auth');
+const { Op } = require('sequelize');
 
 // get all products that are not in pending status
-router.get('/', (req, res) => {
-    Product.findAll({
-        where: sequelize.literal('status != "pending"'),
-        attributes: [
-            'id', 
-            'name', 
-            'description', 
-            'website', 
-            'product_img',
-            'status'
-        ],
-        include: [
-            {
-                model: User,
-                attributes: [
-                    'id',
-                    'avatar',
-                    [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = product.user_id)"), 'full_name']
+router.get('/', async (req, res) => {
+    try{
+        console.log("req.query", req.query);
+        let category_id = req.query.category_id;
+
+        if (!category_id) {
+            category_id = "%";
+        } else if (parseInt(category_id) == 0){
+            category_id = "%";
+        };
+
+        const dbProductData = await Product.findAll({
+            // where: sequelize.literal('status != "pending"'),
+            where: {
+                [Op.and]: [
+                    sequelize.literal('status != "pending"'),
+                    sequelize.literal(`category_id LIKE "${category_id}"`),
                 ]
             },
-            {
-                model: Category,
-                attributes: [
-                    'category_name'
-                ]
-            }
-        ]
-    })
-        .then(dbProductData => {
-            const products = dbProductData.map(product => product.get({ plain: true })); // serialize data
-            
-            res.render('products', {
-                products,
-                loggedIn: req.session.loggedIn
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+            attributes: [
+                'id', 
+                'name', 
+                'description', 
+                'website', 
+                'product_img',
+                'status'
+            ],
+            include: [
+                {
+                    model: User,
+                    attributes: [
+                        'id',
+                        'avatar',
+                        [sequelize.literal("(SELECT CONCAT(first_name, ' ', last_name) FROM user WHERE user.id = product.user_id)"), 'full_name']
+                    ]
+                },
+                {
+                    model: Category,
+                    attributes: [
+                        'id',
+                        'category_name'
+                    ]
+                }
+            ]
         });
+        const products = dbProductData.map(product => product.get({ plain: true })); // serialize data
+
+        const dbCategoryNameData = await Category.findAll({
+            attributes: [
+                'id', 
+                'category_name'
+            ]
+        });
+        const categories = dbCategoryNameData.map(category => category.get({ plain: true })); // serialize data
+
+        res.render('products', {
+            products,
+            categories,
+            selected_category: parseInt(category_id) ? category_id : "0",
+            loggedIn: req.session.loggedIn
+        });
+    } catch(err) { 
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 // Load Add Product page

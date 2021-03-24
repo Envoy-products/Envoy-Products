@@ -6,54 +6,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="./style.css">
-
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-  <style>
-
-  .jumbotron {
-    background-color: #086d38;
-    color: #fff;
-    padding: 250px 25px;
-    font-family: Montserrat, sans-serif;
-    height: 60rem;
-  }
-  .navbar {
-    margin-bottom: 0;
-    background-color: #086d38;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-    font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #63a87c !important;
-    background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-  }
-
-  .add 
-  {
-    background-color: #086d38;
-  }
-  </style>
+  
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -66,65 +25,81 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage"><img class="logo-small" src="./library/images/envoy.svg" alt="Envoy" height="60"></a>
+      <a class="navbar-brand" href="./index.html"><img class="logo-small" src="./library/images/envoy.svg" alt="Envoy" height="60"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#myPage">HOME</a></li>
+        <li><a href="./dashboard.html">DASHBOARD</a></li>
+        <li><a href="./index.html">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#blog">BLOG</a></li>
+        <li><a href="./products.html">PRODUCTS</a></li>
+        <li><a href="./blog.html">BLOG</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="#log">LOG IN/SIGN UP</a></li>
+        <li><a href="./login.html">LOG IN/SIGN UP</a></li>
       </ul>
     </div>
   </div>
 </nav>
-<head>
-
-
 <br>
 <br>
 
-    <form class="container-fluid bg-grey">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="">Product Name</label>
-            <input type="email" class="form-control" id="" placeholder="product name">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="">Description</label>
-            <input type="password" class="form-control" id="" placeholder="description">
-          </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label for="">Website</label>
-            <input type="email" class="form-control" id="" placeholder="website">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputCategory">Category</label>
-            <select id="inputCategory" class="form-control">
-              <option selected>Choose...</option>
-              <option>etc</option>
-              <option>etc</option>
-              <option>etc</option>
-              <option>etc</option>
-              <option>etc</option>
-            </select>
-          </div>
 
-        <button type="submit" class="btn add" style="color: white">Add Product +</button>
-      </form>
+<form class="container-fluid bg-grey addproduct new-post-form">
 
+  <div class="form-group col-md-6">
+    <label for="post-product" class="col-2 col-form-label">Product Name</label>
+    <input class="form-control" type="" id="post-product" placeholder="product name" name="post-product">
+  </div>
 
+  <div class="form-group col-md-6">
+    <label for="post-description" class="col-2 col-form-label">Description</label>
+    <input class="form-control" type="" id="post-description" placeholder="description" name="post-description">
+  </div>
 
-<footer class="container-fluid footer text-center">
+  <div class="form-group col-md-6">
+    <label for="post-website" class="col-2 col-form-label">Website</label>
+    <input class="form-control" type="url"  id="post-website" placeholder="website" name="post-website">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="post-website" class="col-2 col-form-label">Where To Buy</label>
+    <input class="form-control" type="url"  id="post-website" placeholder="website" name="post-website">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="post-website" class="col-2 col-form-label">Image</label>
+    <input class="form-control" type="url"  id="post-website" placeholder="link for image" name="post-website">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="inputCategory">Category</label>
+    <select id="inputCategory" class="form-control" name="inputCategory">
+      <option selected>Choose...</option>
+      <option>Cleaning Products</option>
+      <option>Electronics</option>
+      <option>Fashion</option>
+      <option>Laundry</option>
+      <option>Personal Hygiene</option>
+      <option>Stationary</option>
+      <option>Vehicle</option>
+    </select>
+  </div>
+  
+  <div class="text-center">
+    <button type="submit" class="btn add" style="color: white">Add Product +</button>
+  </div>
+</form>
+
+  <br>
+  <br>
+  <br>
+
+<footer class="container-fluid text-center" style="height: 25px;">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
   <p>Made By <a href="">www.Envoy.com</a></p>
 </footer>
-
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </body>
 </html>

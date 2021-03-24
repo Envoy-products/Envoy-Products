@@ -20,30 +20,31 @@ Product.init(
             allowNull: false
         },
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT
         },
         website: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
-            validate: {
-                isUrl: true
-            }
+            // validate: {
+            //     isUrl: true
+            // }
         },
         product_img: {
             type: DataTypes.STRING,
             allowNull: false
         },
         status: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.ENUM(['pending', 'approved', 'featured']),
             allowNull: false,
-            defaultValue: false
+            defaultValue: 'pending'
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
-            }
+            },
+            allowNull: false
         },
         category_id: {
             type: DataTypes.INTEGER,

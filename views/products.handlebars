@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="products-page-container">
+        <div class="row">
+            <section class="post">
+                <div class="product-category-container">
+                    <div class="filter-category-position">
+                        <label for="filter-category">Filter by Category</span></label>
+                        <select id="filter-category" name="filter-category" class="form-control filter-select">
+                            <option value="0" {{compare_string "0" selected_category}}>All</option>
+                            {{#each categories as |category|}}
+                            <option value="{{category.id}}" {{compare_string category.id @root.selected_category}}>
+                                {{category.category_name}}
+                            </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="add-product-position">
+                    {{#if loggedIn}}
+                            <a class="button" href="/products/add">Add a Product</a>
+                            {{else}}
+                            <p>&nbsp;</p>
+                    {{/if}}
+                    </div>                   
+                </div>
+                <div class="form-bottom"></div>
+
+                <div class="product-page-grid">
+                    {{#each products as |product|}}
+                    <div class="product-row">
+                        <div class="product-picture-grid">
+                            <img src="{{product_img}}" class="card-picture" alt="..." height="200" width="">
+                        </div>
+                        <div class="product-details-grid">
+                            <div class="card-body">
+                                <h5 class="card-title product-title">
+                                    <a class="title-bold" href="/products/{{id}}">{{name}}</a>
+                                </h5>
+                                <hr>
+                                <p class="card-text">{{description}}</p>
+                                <hr>
+                                <a class="button" href="{{website}}" target="_blank">
+                                    Visit Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="./javascript/products.js"></script>

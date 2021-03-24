@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ENVOY</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{!-- bootstrap, google fonts and jquery --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    {{!-- custom styles --}}
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="/images/envoy.svg" alt="Envoy" height="70"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/products">PRODUCTS</a></li>
+                    <li><a href="/articles">ARTICLES</a></li>
+
+                    {{#if loggedIn}}
+                    <!-- logout button here -->
+                    <li><a href="/dashboard">DASHBOARD</a></li>
+                    <li>
+                        <button class="btn-nav-link" id="logout-btn">LOGOUT</button>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="/login">LOGIN/SIGN UP</a>
+                            {{!-- <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+                            LOGIN / SIGNUP
+                        </button> --}}
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {{> error-modal}}
+        {{{ body }}}
+    </main>
+
+    <!-- Container (Contact Section) -->
+
+
+
+
+    <footer class="footer container">
+        <div class="row">
+            <div class="col-sm-6 left-column">
+                &copy; Envoy {{get_current_year}}
+            </div>
+            <div class="col-sm-6 right-column">
+                Contact us at <a href="mailto:envoyproducts90@gmail.com">envoyproducts90@gmail.com</a> 
+            </div>
+        </div>
+    </footer>
+
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/logout.js"></script>
+
+</body>
+
+</html>

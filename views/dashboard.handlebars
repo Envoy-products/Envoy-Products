@@ -1,0 +1,150 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <section class="dashboard-item">
+                <div class="dashboard-item-title-wrapper">
+                    <div class="dashboard-item-title">
+                        <h2>Profile</h2>
+                    </div>
+                </div> 
+                <div class="dashboard-item-body user-column">
+                    <img src="{{user.avatar}}">
+                    <p class="profile-name">{{user.first_name}} {{user.last_name}}</p>
+                    <p>{{user.email}}</p>
+                    <a href="/articles/add" class="button">Update Profile</a>
+                </div> 
+            </section>
+        </div>
+        <div class="col-sm-8">
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Your Articles</h2>
+                </div>
+                <div >
+                    <a href="/articles/add" class="button">Add an Article</a>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Pending Articles</h3>
+                {{#each posts_pending as |post|}}
+                {{> single-post-dashboard post}}
+                {{/each}}
+                {{#unless posts_pending.length}}
+                None
+                {{/unless}}
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Approved Articles</h3>
+                {{#each posts_public as |post|}}
+                {{> single-post-dashboard post}}
+                {{/each}}
+                {{#unless posts_public.length}}
+                None
+                {{/unless}}
+            </div>
+        </section>
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Your Products</h2>
+                </div>
+                <div >
+                    <a href="/products/add" class="button">Add a Product</a>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Pending Products</h3>
+                {{#each products_pending as |product|}}
+                {{> single-product-dashboard product}}
+                {{/each}}
+                {{#unless products_pending.length}}
+                None
+                {{/unless}}
+            </div>
+            <div class="dashboard-item-body">
+                <h3>Approved Products</h3>
+                {{#each products_public as |product|}}
+                {{> single-product-dashboard product}}
+                {{/each}}
+                {{#unless products_public.length}}
+                None
+                {{/unless}}
+            </div>
+        </section>
+        
+        {{#if isAdmin}}
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Items to be approved</h2>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Articles to be approved</h4>
+                <ul>
+                    {{#each all_pending_posts as |pending_post|}}
+                    <li><a href="/dashboard/articles/edit/{{pending_post.id}}">{{pending_post.title}}</a> <span class="credit">(Posted by {{pending_post.user.full_name}})</span></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Products to be approved</h4>
+                <ul>
+                    {{#each all_pending_products as |pending_product|}}
+                    <li><a href="/dashboard/products/edit/{{pending_product.id}}">{{pending_product.name}}</a><span class="credit">(Posted by {{pending_product.user.full_name}})</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Featured Items</h2>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Featured Articles</h4>
+                <ul>
+                    {{#each featured_posts as |featured_post|}}
+                    <li><a href="/dashboard/articles/edit/{{featured_post.id}}">{{featured_post.title}}</a> <span class="credit">(Posted by {{featured_post.user.full_name}})</span></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Featured Products</h4>
+                <ul>
+                    {{#each featured_products as |featured_product|}}
+                    <li><a href="/dashboard/products/edit/{{featured_product.id}}">{{featured_product.name}}</a><span class="credit">(Posted by {{featured_product.user.full_name}})</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        <section class="dashboard-item">
+            <div class="dashboard-item-title-wrapper">
+                <div class="dashboard-item-title">
+                    <h2>Approved Items</h2>
+                </div>   
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Approved Articles</h4>
+                <ul>
+                    {{#each approved_posts as |approved_post|}}
+                    <li><a href="/dashboard/articles/edit/{{approved_post.id}}">{{approved_post.title}}</a> <span class="credit">(Posted by {{approved_post.user.full_name}})</span></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="dashboard-item-body">
+                <h4>Approved Products</h4>
+                <ul>
+                    {{#each approved_products as |approved_product|}}
+                    <li><a href="/dashboard/products/edit/{{approved_product.id}}">{{approved_product.name}}</a><span class="credit">(Posted by {{approved_product.user.full_name}})</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        {{/if}}
+    </div>
+</div>
+{{!--
+<script src="/javascript/add-product.js"></script> --}}

@@ -19,11 +19,6 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
-            type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
-        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -40,7 +35,7 @@ User.init(
                 len: [8]
             }
         },
-       first_name: {
+        first_name: {
             type: DataTypes.STRING,
             allowNull:false
         },
@@ -51,7 +46,7 @@ User.init(
         region_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'reqion',
+                model: 'region',
                 key: 'id'
             }
         },
@@ -60,7 +55,8 @@ User.init(
         },  
         admin: {
             type: BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: false
         }      
     },
     {
@@ -76,7 +72,6 @@ User.init(
                 return updatedUserData
             }
         },
-
 
         sequelize,
         timestamps: false,

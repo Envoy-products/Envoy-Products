@@ -1,49 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com -->
+
   <title>ENVOY</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
 
-  <style>
-  .jumbotron {
-    background-color: #086d38;
-    color: #fff;
-    padding: 250px 25px;
-    font-family: Montserrat, sans-serif;
-    height: 60rem;
-  }
-  .navbar {
-    margin-bottom: 0;
-    background-color: #086d38;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-    font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #63a87c !important;
-    background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-  }
 
-  </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -55,53 +24,50 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage"><img class="logo-small" src="./library/images/envoy.svg" alt="Envoy" height="60"></a>
+
+      <a class="navbar-brand" href="#myPage"><img src="./library/images/envoy.svg" alt="Envoy" height="70"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="./dashboard.html">DASHBOARD</a></li>
         <li><a href="./index.html">HOME</a></li>
-        <li><a href="./index.html">ABOUT</a></li>
-        <li><a href="./index.html">PRODUCTS</a></li>
-        <li><a href="#blog">BLOG</a></li>
-        <li><a href="./index.html">CONTACT</a></li>
-        <li><a href="./index.html">LOG IN/SIGN UP</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#products">PRODUCTS</a></li>
+        <li><a href="./blog.html">BLOG</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="./login.html">LOG IN/SIGN UP</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<h2>BLOG</h2>
-<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
+<br>
+<br>
 
-  <!-- Wrapper for slides -->
-  <div id="blog" class="carousel-inner" role="listbox">
-    <div class="item active">
-      <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe</span></h4>
-    </div>
-    <div class="item">
-      <h4>"One word... WOW!!"<br><span>John Doe</span></h4>
-    </div>
-    <div class="item">
-      <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing</span></h4>
-    </div>
+<form class="new-blog-form container-fluid bg-grey">
+  <!-- title input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="post-title">Title</label>
+    <input type="" id="post-title" class="form-control" name="post-title"/>
   </div>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+  <!-- name input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="content">Content</label>
+    <textarea class="form-control" id="content" rows="4" name="content"></textarea>
+  </div>
+<br>
+
+  <!-- Submit button -->
+  <div class="text-center">
+    <button type="submit" class="btn add" style="color: white">Post Blog</button>
+  </div>
+</form>
+
+
+
+
+
 
 <!-- Container (Contact Section) -->
 <div id="contact" class="container-fluid bg-grey">

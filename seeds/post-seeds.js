@@ -11,14 +11,14 @@ const postData = [
     },
 
     {
-        title: 'Green and competitive: Influences on environmental new product development performance',
+        title: 'Green and competitive',
         post_content: "This article reports the findings of a large-scale research project on environmental new product development (ENPD) within British manufacturers. A major contribution of this article is the attempt to integrate new product development (NPD) and environmental management philosophies in order to develop and empirically test a theoretical framework for ENPD and performance. As such, it is one of the first studies to go beyond the anecdotal evidence in the extant literature, to empirically research ENPD activities and their impacts. This contributes to the debate about the potential for firms to be “green and competitive” by examining the relationship between ENPD activities and market and eco-performance for environmental new products. Contrary to the popular perception, the results suggest that there is more synergy than conflict between the conventional and environmental product development paradigms.",
         post_url: 'https://www.sciencedirect.com/science/article/abs/pii/S0148296301003101',
         user_id: 5,
         post_status: "featured"
     },
     {
-        title: 'Eighty per cent of small businesses try to go green, without government urging: CFIB study',
+        title: 'Eighty per cent of small businesses try to go green',
         post_content: "While many suggest that Canada’s business community is not doing enough to protect the environment, the Canadian Federation of Independent Business’s new report, Green Growth, shows that going green is a priority for a majority of small businesses. Rather than needing government to force environmental change, the data show small firms are on board because they believe it is the right thing to do. Over 80 per cent of entrepreneurs are motivated to make change because of their personal views, 50 per cent because it helps reduce their costs and one-third because they believe action is important to their customers and employees. Only 22 per cent said they were motivated by government policy.",
         post_url: 'https://financialpost.com/entrepreneur/small-business/0424-biz-dk-cfib',
         user_id: 3,
@@ -30,7 +30,7 @@ const postData = [
         post_content: "A conceptual model is developed to predict how consumers respond to in-store displays as a function of the extent to which a product’s brightness level (i.e., its perceived light-emitting quality) contrasts with that of its background environment and the product’s level of disarray. We show that products whose brightness levels contrast more with those of the retail environment are more preferred because they visually “pop out” (e.g., a dark product in a brightly lit store environment). However, this preference reverses when the products that pop out appear in disarray (i.e., are perceived to have been previously touched by other shoppers). Because most stores are bright environments, darker (vs. lighter) products in disarray are more likely to be perceived as contaminated and less pleasant, leading to avoidance behaviors, evident in reduced sales and preference. Theoretical and managerial implications are discussed.",
         post_url: 'https://www.sciencedirect.com/science/article/abs/pii/S0022435917300295',
         user_id: 4,
-        post_status: "approved"
+        post_status: "pending"
     },
     {
         title: 'Environmental sustainability becoming a business imperative',
@@ -40,14 +40,14 @@ const postData = [
         post_status: "approved"
     },
     {
-        title: 'Restoring urban mobility should not come at the expense of the environment.',
+        title: 'Restoring urban mobility cannot come at the expense of the environment.',
         post_content: "Despite the evident challenges to greening urban transport during this time, concrete policy responses exist to respond to and influence mobility patterns as demand for urban travel returns to pre-crisis levels. Given the significance of the transport sector for the environment, public health, and societal resilience in the long term, the pursuit of sustainable, inclusive transport systems should remain a strong policy focus as the world emerges from the Covid-19 crisis. The OECD has issued a number of policy briefs outlining strategies for policy makers to respond to the Covid-19 crisis. These aim to ensure that recovery policies are compatible with a low-carbon transition and to highlight responses to the various uncertainties posed by the pandemic.",
         post_url: 'https://oecd-environment-focus.blog/2020/07/24/the-challenges-of-greening-urban-mobility-in-the-post-pandemic-era',
         user_id: 5,
         post_status: "approved"
     },
     {
-        title: 'Urban green growth is about asking the right questions at the right time',
+        title: 'Urban green growth is about asking the right questions',
         post_content: "Cities and urban areas represent unrivalled concentrations of people, economic growth, commercial networks, and innovation – and have the potential to make a significant contribution to the transition towards a low-carbon world. A starting point would be to explore multi-level governance solutions that allow cities to continue developing in a sustainable manner. this Forum is about exploring opportunities for local actions that can make a significant contribution to green growth. This includes designing urban green growth policies that range from land-use regulation and planning, taxation, transport, energy efficiency, waste, water management to public procurement. Similarly important is to select adequate green growth indicators and monitoring systems at the subnational levels to track progress. Many cities are aware that there is scope to reduce their energy consumption and overall share of global CO2 emissions by replicating best practices. The GGSD Forum will show that implementing these policies is not only desirable and possible, but that it needs to start now.",
         post_url: 'https://oecdinsights.org/2016/11/04/urban-green-growth-is-about-asking-the-right-questions-at-the-right-time/',
         user_id: 1,
@@ -82,7 +82,7 @@ const postData = [
         post_content: "Air pollution has become the biggest environmental cause of premature death, overtaking poor sanitation and a lack of clean drinking water. According to the WHO, more than 3.5 million people are being killed each year by the air that they breathe in urban areas, and the number is rising. Air pollution now kills twice as many people as HIV/AIDS. That’s the stark message from the latest OECD report, The Cost of Air Pollution: Health Impacts of Road Transport. There is an economic price to pay too. One of the tools used to quantify the costs associated with air pollution is the Value of Statistical Life (VSL), which estimates the value people attach to avoiding premature death from pollution. VSL can thus illustrate relative benefits of different policy options in terms of their effects on people’s wellbeing. On the basis of this methodology, the report shows that the cost of deaths and illness from air pollution increased by about 10% between 2005 and 2010, reaching USD 1.7 trillion in OECD countries alone.",
         post_url: 'http://oecdinsights.org/2014/06/05/air-pollution-the-invisible-killer',
         user_id: 1,
-        post_status: "Approved"
+        post_status: "approved"
     },
 
     {
@@ -90,7 +90,7 @@ const postData = [
         post_content: "Environmental education is a tool for raising awareness and a main driver behind citizen’s engagement in democratic processes concerning the environment. The other components supporting enhanced environmental democracy include citizens’ participation in environmental decision-making, environmental information, and access to environmental justice. Unfortunately, environmental education has received less attention from policy-makers and the wider public, compared to other environmental democracy aspects. This is primarily due to data gaps and the difficulty in establishing sound indicators. However, it is important to note that this can often occur as a result of domestic political challenges and ideological opposition.",
         post_url: null,
         user_id: 2,
-        post_status: "Approved"
+        post_status: "approved"
     },
     {
         title: 'Household Cleaning Products Can Be Harmful to the Environment',
@@ -106,21 +106,7 @@ const postData = [
         post_url: 'http://www.foxnews.com/',
         user_id: 5,
         post_status: "pending"
-    },
-    {
-        title: 'Article 2',
-        post_content: "A couple of years ago I was in the market for a new car, and I had my heart set on getting a fully electric vehicle (EV). But I soon discovered that an EV with a good range, in the size I want and also available in my price range did not exist. So, I compromised and decided to get a plugin hybrid (PHEV). Eventually I settled on the 2018 Mitsubishi Outlander PHEV and while I was mostly happy with the car, I was disappointed that the electric battery held such a small charge. On a good day (one that is mild enough that I don’t need to use the heater or AC, I’m lucky if I can get 40 km out of the car before the battery runs out and the car switches to gas. \n\nAt first, this bothered me. It really didn’t feel like 40km, out of a total range of more than 500km was going to make much of an impact. But what I didn’t consider was my regular driving habits. For the most part, I drive to the train station and back (about 10 kms round trip) and on the weekends I go grocery shopping (about 30 kms total driving, depending on how many stores I hit). So, it was only when I did things out of the ordinary like visit the in-laws in Ajax, that I ended up dipping into the gas tank.\n\nThere are of course climate issues to consider. In the winter, when using the heater (or in the summer when using the AC) the battery range drops quite a bit. But I have found that once the car warms up, if you switch on the seat warmers, you can turn off the heater and still be quite comfortable. In fact, if you have a garage, you'll find sometimes you don't need to turn on the heat at all. Even so, fuel consumption does go up in the winter, because the car will not run off the battery until it is sufficiently warmed. So, even with a full battery, you will use gasoline for the first few minutes of driving.\n\nWith all that said, the amount of gasoline I use has been significantly reduced. My previous car was a Ford Escape and it cost about $60 to fill the tank (with gas at around $1.10/litre). I used to refuel that car about 3 times a month, which means I spent about $2,160/year on gas and used about 1,964 litres of gasoline per year. With my driving habits, I gas up the Outlander at most 11 times per year, and it has a smaller tank, so at $1.10/litre, I’m spending about $40 to fill the tank. I’m only spending about $440 per year on gasoline and using about 400 litres of gas. \n\nIf you’re someone who mostly drives locally and you are looking to reduce your carbon footprint, or even reduce the amount you pay for gasoline, a PHEV might just be the car you’re looking for.",
-        post_url: 'https://www.canadadrives.ca/blog/car-guide/best-plug-in-hybrid-vehicles',
-        user_id: 1,
-        post_status: "pending"
-    },
-    {
-        title: 'Article 3',
-        post_content: "A couple of years ago I was in the market for a new car, and I had my heart set on getting a fully electric vehicle (EV). But I soon discovered that an EV with a good range, in the size I want and also available in my price range did not exist. So, I compromised and decided to get a plugin hybrid (PHEV). Eventually I settled on the 2018 Mitsubishi Outlander PHEV and while I was mostly happy with the car, I was disappointed that the electric battery held such a small charge. On a good day (one that is mild enough that I don’t need to use the heater or AC, I’m lucky if I can get 40 km out of the car before the battery runs out and the car switches to gas. \n\nAt first, this bothered me. It really didn’t feel like 40km, out of a total range of more than 500km was going to make much of an impact. But what I didn’t consider was my regular driving habits. For the most part, I drive to the train station and back (about 10 kms round trip) and on the weekends I go grocery shopping (about 30 kms total driving, depending on how many stores I hit). So, it was only when I did things out of the ordinary like visit the in-laws in Ajax, that I ended up dipping into the gas tank.\n\nThere are of course climate issues to consider. In the winter, when using the heater (or in the summer when using the AC) the battery range drops quite a bit. But I have found that once the car warms up, if you switch on the seat warmers, you can turn off the heater and still be quite comfortable. In fact, if you have a garage, you'll find sometimes you don't need to turn on the heat at all. Even so, fuel consumption does go up in the winter, because the car will not run off the battery until it is sufficiently warmed. So, even with a full battery, you will use gasoline for the first few minutes of driving.\n\nWith all that said, the amount of gasoline I use has been significantly reduced. My previous car was a Ford Escape and it cost about $60 to fill the tank (with gas at around $1.10/litre). I used to refuel that car about 3 times a month, which means I spent about $2,160/year on gas and used about 1,964 litres of gasoline per year. With my driving habits, I gas up the Outlander at most 11 times per year, and it has a smaller tank, so at $1.10/litre, I’m spending about $40 to fill the tank. I’m only spending about $440 per year on gasoline and using about 400 litres of gas. \n\nIf you’re someone who mostly drives locally and you are looking to reduce your carbon footprint, or even reduce the amount you pay for gasoline, a PHEV might just be the car you’re looking for.",
-        post_url: 'https://www.canadadrives.ca/blog/car-guide/best-plug-in-hybrid-vehicles',
-        user_id: 1,
-        post_status: "featured"
-    },
+    }
 ];
 
 const seedPosts = () => Post.bulkCreate(postData);

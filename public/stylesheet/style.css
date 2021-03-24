@@ -261,6 +261,13 @@ a.articles-button:hover {
   padding-right: 3rem;
 }
 
+.product-category-container {
+  display: flex;
+  height: 10rem;
+  padding-top: 2rem;
+  justify-content: space-between;
+}
+
 .product-page-grid {
   display: grid;
   grid-template-columns: auto;
@@ -307,6 +314,12 @@ a.articles-button:hover {
 .card-picture:hover {
   transform: scale(1.2);
   object-fit: contain;
+}
+
+.add-product-position {
+  position: static;
+  top: 10rem;
+  right: 3rem;
 }
 
 .title-bold {

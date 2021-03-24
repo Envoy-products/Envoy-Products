@@ -209,19 +209,23 @@ body {
   line-height: 1.6;
 }
 
-.articles-button {
+a.articles-button {
+  border-radius: 10px;
+  background-color: #63a87c;
   border: 2px solid white;
-  width: auto;
-  background-color: rgb(0, 154, 0);
-  border-radius: 15px;
-  margin: 0 2rem 1rem 2rem;
-  color: white
+  padding: 12px;
+  margin: 0 0 15px;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
 }
 
-.articles-button:hover {
+a.articles-button:hover {
   background-color: white;
-  color: black;
+  color: #044725;
   font-weight: bold;
+  text-decoration: none;
 }
 
 
@@ -258,7 +262,6 @@ body {
   border: 1px solid #086d38;
   border-radius: 15px;
   background-color: #fff;
-  /* background-image: linear-gradient(to bottom right, #086d38,  #63a87c); */
   position: absolute;
   left: 12rem;
   width: 200px;
@@ -269,10 +272,6 @@ body {
 .card-picture:hover {
   transform: scale(1.2);
   object-fit: contain;
-}
-
-.container {
-  width: 80%;
 }
 
 .title-bold {
@@ -597,14 +596,14 @@ textarea:focus, input:focus, select.form-control:focus {
   background-color: #f1fef7;
   outline: none;
 }
-a.button {
+/* a.button, a.articles-button{
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
 
   text-decoration: none;
   color: initial;
-}
+} */
 button, .website-link, a.button {
   border-radius: 10px;
   background-color: #086d38;
@@ -1306,7 +1305,7 @@ h2.active {
     font-size: 1.5rem;
   }
 
-  .articles-button {
+  a.articles-button {
     display: block;
     margin-left: auto;
     margin-right: auto;

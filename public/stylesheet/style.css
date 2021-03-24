@@ -1183,6 +1183,8 @@ h2.active {
   grid-row: 1/ span 1;
   grid-column: 1/ span 1;
   padding-bottom: 3rem;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0px;
 }
 
 .product-details-grid {

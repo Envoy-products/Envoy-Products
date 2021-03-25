@@ -479,6 +479,12 @@ font-style: normal;
 .product-description {
   padding-bottom: 10rem;
 }
+.flickity-viewport {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .panel {
 font-size-adjust: 0.50;
 width: 400px;

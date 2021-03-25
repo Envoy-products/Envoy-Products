@@ -101,7 +101,8 @@ body {
   border-radius: 15px;
   margin-bottom: 2rem;
   padding: .75rem;
-  background-color: #086d38;
+  background-color: white;
+  border-left: 1rem solid #086d38;
 }
 
 .review-container-border {
@@ -285,7 +286,7 @@ a.articles-button:hover {
 }
 .product-picture-grid {
   grid-column: 1/ span 1;
-  background-color: #086d38;
+  border-left: 1rem solid #086d38;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }

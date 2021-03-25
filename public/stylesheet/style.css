@@ -101,7 +101,8 @@ body {
   border-radius: 15px;
   margin-bottom: 2rem;
   padding: .75rem;
-  background-color: #086d38;
+  background-color: white;
+  border-left: 1rem solid #086d38;
 }
 
 .review-container-border {
@@ -285,7 +286,7 @@ a.articles-button:hover {
 }
 .product-picture-grid {
   grid-column: 1/ span 1;
-  background-color: #086d38;
+  border-left: 1rem solid #086d38;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
@@ -317,9 +318,30 @@ a.articles-button:hover {
 }
 
 .add-product-position {
-  position: static;
-  top: 10rem;
-  right: 3rem;
+  position: fixed;
+  top: 15rem;
+  left: -4rem;
+  transform: rotate(90deg);
+  background-color: #086d38;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 7px -7px 25px rgba(0, 0, 0, 0.75);
+}
+
+
+a.add-product-button {
+  background-color: #086d38;
+  border: none;
+  padding: 1rem 1rem 3rem 1rem;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+a.add-product-button:hover {
+  background-color: #044725;
+  color: white;
+  text-decoration: none;
 }
 
 .title-bold {
@@ -449,7 +471,19 @@ font-size-adjust: 0.50;
 width: 400px;
 transition: box-shadow 0.5s;
 position: relative;
-height: 100%;
+height: auto;
+margin-left: 5rem;
+margin-right: 5rem;
+border-radius: 15px;
+box-shadow: 2px 2px 15px rgba(0,0,0,.75);
+border: #63a87c;
+}
+.is-selected {
+  box-shadow: 5px 5px 25px rgba(0,0,0,1);
+  border-radius: 15px;
+  z-index: 99;
+  position: static;
+  border: #63a87c;
 }
 .product-container {
   width: 100%;
@@ -489,7 +523,6 @@ border-bottom-right-radius: 0px;
 text-align: center;
 }
 .panel-body {
-  border: 1px solid #63a87c;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   height: 45rem;

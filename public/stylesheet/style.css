@@ -154,7 +154,8 @@ body {
   border-radius: 20px;
   margin-left: 10rem;
   margin-right: 10rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
 }
 
@@ -231,12 +232,16 @@ a.articles-button {
   border-radius: 10px;
   background-color: #63a87c;
   border: 2px solid white;
-  padding: 12px;
-  margin: 0 0 15px;
   color: white;
+  height: 4rem;
+  margin-bottom: 3rem;
+  padding: 1rem 1rem 2rem 1rem;
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
+  box-shadow: 
+  -1px -1px 8px 0 rgba(0, 0, 0, 0.8),
+  1px 1px 8px rgba(255, 255, 255, 0.7);
 }
 
 a.articles-button:hover {
@@ -486,7 +491,7 @@ background-color: #086d38 !important;
   z-index: 99;
   position: static;
   transform: scale(1.075);
-  transition: 1.5s;
+  transition: 2s;
 }
 
 .product-container {

@@ -154,7 +154,8 @@ body {
   border-radius: 20px;
   margin-left: 10rem;
   margin-right: 10rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
 }
 
@@ -231,12 +232,16 @@ a.articles-button {
   border-radius: 10px;
   background-color: #63a87c;
   border: 2px solid white;
-  padding: 12px;
-  margin: 0 0 15px;
   color: white;
+  height: 4rem;
+  margin-bottom: 3rem;
+  padding: 1rem 1rem 2rem 1rem;
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
+  box-shadow: 
+  -1px -1px 8px 0 rgba(0, 0, 0, 0.8),
+  1px 1px 8px rgba(255, 255, 255, 0.7);
 }
 
 a.articles-button:hover {
@@ -472,19 +477,23 @@ width: 400px;
 transition: box-shadow 0.5s;
 position: relative;
 height: auto;
+margin-top: 5rem;
 margin-left: 5rem;
 margin-right: 5rem;
+margin-bottom: 6rem;
 border-radius: 15px;
 box-shadow: 2px 2px 15px rgba(0,0,0,.75);
-border: #63a87c;
+background-color: #086d38 !important;
 }
 .is-selected {
   box-shadow: 5px 5px 25px rgba(0,0,0,1);
   border-radius: 15px;
   z-index: 99;
   position: static;
-  border: #63a87c;
+  transform: scale(1.075);
+  transition: 2s;
 }
+
 .product-container {
   width: 100%;
   display: flex;
@@ -526,6 +535,7 @@ text-align: center;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   height: 45rem;
+  background-color: white;
 }
 .panel-footer {
 background-color: white !important;

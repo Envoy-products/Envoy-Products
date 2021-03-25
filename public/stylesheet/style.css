@@ -153,9 +153,8 @@ body {
 }
 
 .center-gallery-container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-right: 5rem;
+  margin-left: 5rem;
   width: 80rem;
   height: auto;
   padding: 0;

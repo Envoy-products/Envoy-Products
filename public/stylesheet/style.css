@@ -471,7 +471,19 @@ font-size-adjust: 0.50;
 width: 400px;
 transition: box-shadow 0.5s;
 position: relative;
-height: 100%;
+height: auto;
+margin-left: 5rem;
+margin-right: 5rem;
+border-radius: 15px;
+box-shadow: 2px 2px 15px rgba(0,0,0,.75);
+border: #63a87c;
+}
+.is-selected {
+  box-shadow: 5px 5px 25px rgba(0,0,0,1);
+  border-radius: 15px;
+  z-index: 99;
+  position: static;
+  border: #63a87c;
 }
 .product-container {
   width: 100%;
@@ -511,7 +523,6 @@ border-bottom-right-radius: 0px;
 text-align: center;
 }
 .panel-body {
-  border: 1px solid #63a87c;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   height: 45rem;

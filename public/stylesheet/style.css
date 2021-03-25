@@ -16,7 +16,7 @@ body {
   width: 85%;
   margin-top: 10rem;
   background-color: white;
-  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+  grid-template-rows: auto auto;
   border-radius: 15px;
   margin-bottom: 15rem;
 }
@@ -24,26 +24,31 @@ body {
 .single-product-container {
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  grid-row: 1/ span 1;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
 }
 
 .single-product-picture-container {
   grid-column: 1 / span 1;
   display: grid;
-  padding: 3rem;
+  padding: 2rem;
   grid-template-rows: auto auto;
-  background-color: #086d38;
+  /* background-color: #086d38; */
   border-top-left-radius: 15px;
+  margin: 3rem;
+  background-color: #086d38;
+  border-radius: 15px;
 }
 
 .single-product-picture {
   object-fit: cover;
   width: 100%;
   grid-row: 1 / span 1;
-  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75); */
   border-radius: 15px;
+  padding: 0rem;
   background-color: white;
-  padding: 2rem;
 }
 
 .single-product-picture-description {
@@ -69,7 +74,7 @@ body {
   width: 100%;
 }
 
-.single-product-desscription {
+.single-product-description {
   grid-row: 2/ span 1;
 }
 
@@ -80,7 +85,9 @@ body {
 .single-product-reviews-container {
   grid-column: 1 / span 2;
   grid-row: 2 / span 1;
-  padding: 3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-box {
@@ -91,6 +98,7 @@ body {
   padding: 15px;
   border-radius: 15px;
 }
+
 
 /* ============================================ */
 /*         SINGLE PRODUCT REVIEWS STYLING       */

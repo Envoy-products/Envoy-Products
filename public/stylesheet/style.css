@@ -447,9 +447,10 @@ font-style: normal;
 .panel {
 font-size-adjust: 0.50;
 width: 400px;
+border: 1px solid #63a87c; 
+border-radius: 15px;
 transition: box-shadow 0.5s;
 position: relative;
-height: 100%;
 }
 .product-container {
   width: 100%;
@@ -481,18 +482,13 @@ color: #63a87c;
 height: 175px;
 color: #fff !important;
 background-color: #086d38 !important;
+padding: 25px;
 border-bottom: 1px solid transparent;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
 border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;
 text-align: center;
-}
-.panel-body {
-  border: 1px solid #63a87c;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  height: 45rem;
 }
 .panel-footer {
 background-color: white !important;

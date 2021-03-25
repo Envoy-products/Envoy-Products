@@ -447,10 +447,9 @@ font-style: normal;
 .panel {
 font-size-adjust: 0.50;
 width: 400px;
-border: 1px solid #63a87c; 
-border-radius: 15px;
 transition: box-shadow 0.5s;
 position: relative;
+height: 100%;
 }
 .product-container {
   width: 100%;
@@ -482,13 +481,18 @@ color: #63a87c;
 height: 175px;
 color: #fff !important;
 background-color: #086d38 !important;
-padding: 25px;
 border-bottom: 1px solid transparent;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
 border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;
 text-align: center;
+}
+.panel-body {
+  border: 1px solid #63a87c;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 45rem;
 }
 .panel-footer {
 background-color: white !important;
@@ -679,8 +683,35 @@ button:hover, a.button:hover {
   margin-bottom: 10px;
 }
 .post-list {
-  border-bottom: #63a87c 1px solid;
-  padding-bottom: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-left: 1rem solid #086d38;
+}
+
+.add-articles-button {
+  position: fixed;
+  top: 15rem;
+  left: -5rem;
+  transform: rotate(90deg);
+  background-color: #086d38;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 7px -7px 25px rgba(0, 0, 0, 0.75);
+}
+
+a.articles-button {
+  background-color: #086d38;
+  border: none;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+a.articles-button:hover {
+  background-color: #044725;
+  color: white;
 }
 
 .optional {

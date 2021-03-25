@@ -317,9 +317,30 @@ a.articles-button:hover {
 }
 
 .add-product-position {
-  position: static;
-  top: 10rem;
-  right: 3rem;
+  position: fixed;
+  top: 15rem;
+  left: -4rem;
+  transform: rotate(90deg);
+  background-color: #086d38;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 7px -7px 25px rgba(0, 0, 0, 0.75);
+}
+
+
+a.add-product-button {
+  background-color: #086d38;
+  border: none;
+  padding: 1rem 1rem 3rem 1rem;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+a.add-product-button:hover {
+  background-color: #044725;
+  color: white;
+  text-decoration: none;
 }
 
 .title-bold {

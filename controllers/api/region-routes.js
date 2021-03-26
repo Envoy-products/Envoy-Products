@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Region, Country } = require('../../models');
-
+const { auth } = require('../../utils/auth');
 
 //GET /api/countries
 router.get('/', (req, res)=> {
@@ -8,7 +8,7 @@ router.get('/', (req, res)=> {
         include: [
             {
                 model: Country,
-                attributes: ["country_name"]
+                attributes: ['country_name']
             }
         ]
     })
@@ -40,7 +40,7 @@ router.get('/:id', (req, res)=> {
 });
 
 
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
     Region.create({
        region_name: req.body.region_name,
        country_id: req.body.country_id
@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
     })
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', auth, (req, res) => {
     Region.update(req.body, { 
         where: {
             id: req.params.id
@@ -73,7 +73,7 @@ router.put('/:id', (req, res) => {
     })
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
     Region.destroy ({
         where: {
             id: req.params.id,

@@ -55,14 +55,14 @@ RegionRet.belongsTo(Retailer, {
 
 Region.belongsToMany(Retailer, {
     through: RegionRet,
-    as: 'retailers',
-    foreignKey: 'region_id'
+    // as: 'retailers',
+    // foreignKey: 'region_id'
 });
 
 Retailer.belongsToMany(Region, {
     through: RegionRet,
-    as: 'regions',
-    foreignKey: 'retailer_id'
+    // as: 'regions',
+    // foreignKey: 'retailer_id'
 });
 
 // Associations between Post and Comment
@@ -199,15 +199,15 @@ Rating.belongsTo(User, {
 // Associations between Rating and Review
 // a review can have one rating, and a rating belongs to one review
 
-Rating.hasOne(Review, {
-    foreignKey: 'rating_id'
-});
+// Rating.hasOne(Review, {
+//     foreignKey: 'rating_id'
+// });
 
-Review.belongsTo(Rating, {
+// Review.belongsTo(Rating, {
 
-    foreignKey: 'rating_id',
-    onDelete: 'SET NULL'
-});
+//     foreignKey: 'rating_id',
+//     onDelete: 'SET NULL'
+// });
 
 
 module.exports = {

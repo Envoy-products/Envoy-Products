@@ -8,26 +8,7 @@ const changeCategorySelectHandler = async function() {
             throw new Error("No category was selected!");
         }
 
-        
         document.location.replace(`/products?category_id=${category_id}`); 
-        // const response = await fetch('/api/products', {
-        //     method: 'POST',
-        //     body: JSON.stringify({
-        //         name,
-        //         description,
-        //         website,
-        //         product_img,
-        //         category_id,
-        //         retailerIds
-        //     }),
-        //     headers: { 'Content-Type': 'application/json' }
-        // });
-    
-        // if (response.ok) {
-        //     document.location.replace('/products'); // [TODO - Change this to dashboard]
-        // } else {
-        //     throw new Error(response.statusText);
-        // }
 
     } catch (err) {
         $("#error-msg").text(err);
@@ -36,3 +17,11 @@ const changeCategorySelectHandler = async function() {
 };
 
 $("#filter-category").change(changeCategorySelectHandler);
+
+// $(function() {
+//     $('.star_rating').barrating('show', {
+//       theme: 'fontawesome-stars-o',
+//       initialRating: 2.5, 
+//       readonly: true
+//     });
+//  });

@@ -16,9 +16,11 @@
       {{/each}}
 
       {{#if loggedIn}}
-        <a href="/articles/add" class="button">Add an article</a>
-      {{else}}
-      <p>&nbsp;</p>
+      <div class="add-articles-button">
+          <a href="/articles/add" class="articles-button">Add an Article</a>
+        {{else}}
+        <p>&nbsp;</p>
+      </div>
       {{/if}}
 
       </section>

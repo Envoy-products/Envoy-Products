@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Country } = require('../../models');
+const { auth } = require('../../utils/auth');
 
-
-//GET /api/countries
+// get all countries
 router.get('/', (req, res)=> {
     Country.findAll()
     .then(dbCountryData => res.json(dbCountryData))
@@ -12,7 +12,8 @@ router.get('/', (req, res)=> {
     })
 });
 
-router.post('/', (req, res) => {
+// create a new country item
+router.post('/', auth, (req, res) => {
     Country.create({
         country_name: req.body.country_name
     })
@@ -25,7 +26,8 @@ router.post('/', (req, res) => {
     })
 });
 
-router.put('/:id', (req, res) => {
+// update an item
+router.put('/:id', auth, (req, res) => {
     Country.update(req.body, { 
         where: {
             id: req.params.id
@@ -44,7 +46,8 @@ router.put('/:id', (req, res) => {
     })
 });
 
-router.delete('/:id', (req, res) => {
+// delete an item
+router.delete('/:id', auth, (req, res) => {
     Country.destroy ({
         where: {
             id: req.params.id

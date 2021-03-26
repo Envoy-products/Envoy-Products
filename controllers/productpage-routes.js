@@ -47,6 +47,14 @@ router.get('/', async (req, res) => {
                         'id',
                         'category_name'
                     ]
+                },
+                {
+                    model: Rating,
+                    attributes: [
+                        // 'id',
+                        // 'rating'
+                        [sequelize.literal("(SELECT AVG(rating_val) FROM rating WHERE product.id = rating.product_id)"), 'avg_rating']
+                    ]
                 }
             ]
         });
@@ -59,6 +67,13 @@ router.get('/', async (req, res) => {
             ]
         });
         const categories = dbCategoryNameData.map(category => category.get({ plain: true })); // serialize data
+
+        // res.json({
+        //     products,
+        //     categories,
+        //     selected_category: parseInt(category_id) ? category_id : "0",
+        //     loggedIn: req.session.loggedIn
+        // });
 
         res.render('products', {
             products,
@@ -133,6 +148,14 @@ router.get('/:id', (req, res) => {
                 ]
             },
             {
+                model: Rating,
+                attributes: [
+                    // 'id',
+                    // 'rating'
+                    [sequelize.literal("(SELECT AVG(rating_val) FROM rating WHERE product.id = rating.product_id)"), 'avg_rating']
+                ]
+            },
+            {
                 model: Review,
                 attributes: [
                     'id',
@@ -147,13 +170,6 @@ router.get('/:id', (req, res) => {
                             'avatar',
                             'first_name',
                             'last_name'
-                        ]
-                    },
-                    {
-                        model: Rating,
-                        attributes: [
-                            'id',
-                            'rating'
                         ]
                     }
                 ]
@@ -170,6 +186,7 @@ router.get('/:id', (req, res) => {
             const product = dbProductData.get({ plain: true });
             
             // res.json(product);
+            
             // pass data to template
             res.render('single-product', {
                 product,

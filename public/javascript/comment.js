@@ -25,6 +25,31 @@ async function commentFormHandler(event) {
             alert(response.statusText);
         }
     };
-
 }
+
+const removeCommentHandler = async function() {
+    // Obtain review id from button
+    const id = parseInt($(this).attr('data-id'));
+    
+    if (!id) return;
+
+    try {
+        // perform 'delete' operation
+        const response = await fetch(`/api/comments/${id}`, {
+            method: 'DELETE'
+        });
+
+        // Handle response from 'delete' operation
+        if (response.ok) {
+            document.location.reload(); // for a successful response, reload the page to reflect the update
+        } else {
+            throw new Error(response.statusText);
+        }
+    } catch (err) {
+        $("#error-msg").text(err);
+        $("#errorModal").modal();
+    }
+};
+
 document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+$( ".remove-button-container button[data-action='remove']" ).on( "click", removeCommentHandler);

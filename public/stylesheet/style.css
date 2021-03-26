@@ -161,7 +161,7 @@ body {
   border-radius: 15px;
   margin-bottom: 5rem;
   margin-top: 5rem;
-  opacity: 0.9;
+  opacity: 0;
 }
 
 .gallery-cell {
@@ -255,9 +255,6 @@ a.articles-button {
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
-  box-shadow: 
-  -1px -1px 8px 0 rgba(0, 0, 0, 0.8),
-  1px 1px 8px rgba(255, 255, 255, 0.7);
 }
 
 a.articles-button:hover {
@@ -511,7 +508,7 @@ margin-bottom: 6rem;
 border-radius: 15px;
 box-shadow: 2px 2px 15px rgba(0,0,0,.75);
 background-color: #086d38 !important;
-opacity: .85;
+opacity: 0;
 }
 .is-selected {
   box-shadow: 5px 5px 25px rgba(0,0,0,1);

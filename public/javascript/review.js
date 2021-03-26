@@ -11,7 +11,7 @@ const reviewFormHandler = async (e) => {
 
     try {
         const response = await fetch('/api/reviews', {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({
                 product_id,
                 content

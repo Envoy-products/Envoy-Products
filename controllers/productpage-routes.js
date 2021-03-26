@@ -51,8 +51,6 @@ router.get('/', async (req, res) => {
                 {
                     model: Rating,
                     attributes: [
-                        // 'id',
-                        // 'rating'
                         [sequelize.literal("(SELECT AVG(rating_val) FROM rating WHERE product.id = rating.product_id)"), 'avg_rating']
                     ]
                 }
@@ -150,8 +148,10 @@ router.get('/:id', (req, res) => {
             {
                 model: Rating,
                 attributes: [
-                    // 'id',
-                    // 'rating'
+                    'id',
+                    'user_id',
+                    'product_id',
+                    'rating_val',
                     [sequelize.literal("(SELECT AVG(rating_val) FROM rating WHERE product.id = rating.product_id)"), 'avg_rating']
                 ]
             },

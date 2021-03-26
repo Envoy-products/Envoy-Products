@@ -18,10 +18,17 @@ const changeCategorySelectHandler = async function() {
 
 $("#filter-category").change(changeCategorySelectHandler);
 
-// $(function() {
-//     $('.star_rating').barrating('show', {
-//       theme: 'fontawesome-stars-o',
-//       initialRating: 2.5, 
-//       readonly: true
-//     });
-//  });
+// setting up start ratings
+$(function() {
+    const config = {
+        theme: 'fontawesome-stars-o',
+        readonly: true
+    };
+
+    $('.star_rating').map(function(){
+        $(this).barrating('show', {
+            ...config,
+            initialRating: parseFloat($(this).attr('data-value'))
+        });
+    });
+ });

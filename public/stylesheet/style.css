@@ -870,6 +870,14 @@ padding-bottom: 2rem;
     margin-bottom: 40px;
 }
 
+.disp-none {
+    display: none;
+}
+
+.disp-block {
+    display: inline-block;
+}
+
 /* End: Dashboard Styles */
 .filter-select {
     display:inline-block;

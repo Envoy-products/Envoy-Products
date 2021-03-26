@@ -46,5 +46,19 @@ module.exports = {
         } else {
             if(objArr.id == val) return "selected";
         }
+    },
+    is_included_in_obj_arr: (id, objArr) => {
+        const ids = objArr.map(obj => obj.user_id);
+        return ids.includes(id);
+    },
+    get_id: (id, objArr) => {
+        const ids = objArr.map(obj => obj.user_id);
+        const index = ids.findIndex(item => item == id);
+        return objArr[index].id;
+    },
+    get_val: (id, objArr) => {
+        const ids = objArr.map(obj => obj.user_id);
+        const index = ids.findIndex(item => item == id);
+        return objArr[index].rating_val;
     }
 }

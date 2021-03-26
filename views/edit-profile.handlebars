@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row post">
+    <h2>Edit Profile</h2>
+    <form id="edit-article-form">
+        <div class="form-column">
+            <label for="title">Title</label><br />
+            <input type="text" id="title" name="title" value="{{user.first_name}} {{user.last_name}}"/>
+        </div>
+        {{!-- <div class="form-column right-column">
+            <label for="post-url">Further Reading link <span class="optional">(Optional)</span></label><br />
+            <input type="text" id="post-url" name="post-url" value="{{post.post_url}}"/>
+        </div>
+        {{#if isAdmin}}
+        <div class="form-column">
+            <label for="status">Status</span></label><br />
+            <select id="post_status" name="post_status" class="form-control">
+                <option value="null">Select a Status</option>
+                <option value="pending" {{compare_string "pending" post.post_status}}>Pending</option>
+                <option value="approved" {{compare_string "approved" post.post_status}}>Approved</option>
+                <option value="featured" {{compare_string "featured" post.post_status}}>Featured</option>
+            </select>
+        </div>
+        {{/if}}
+        <div class="form-bottom">
+            <label for="post-content">Post Content</label>
+            <textarea class="big-textarea" id="post-content" name="post-content">{{post.post_content}}</textarea>
+        </div>
+        <div class="edit-form-btn-wrapper">
+            <button type="submit">&nbsp; Update Article &nbsp;</button>
+            <button type="button" name="delete" data-id="{{post.id}}">&nbsp; Delete Article &nbsp;</button>
+        </div> --}}
+    </form>
+    </div>
+</div>
+
+<script src="/javascript/edit-post.js"></script>

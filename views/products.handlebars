@@ -37,14 +37,14 @@
                             <div class="card-body">
                                 <h5 class="card-title product-title">
                                     {{#if ratings}}
-                                    <a class="title-bold" href="/products/{{id}}">{{name}} ({{ratings.0.avg_rating}})</a>
-                                    {{!-- <select class="star_rating">
+                                    <a class="title-bold" href="/products/{{id}}">{{name}}</a>
+                                    <select class="star_rating" data-id={{id}} data-value={{ratings.0.avg_rating}}>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
-                                    </select> --}}
+                                    </select>
                                     {{else}}
                                     <a class="title-bold" href="/products/{{id}}">{{name}}</a>
                                     {{/if}}

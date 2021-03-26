@@ -8,6 +8,7 @@ const commentRoutes = require('./comment-routes');
 const postRoutes = require('./post-routes');
 const productRoutes = require('./product-routes');
 const reviewRoutes = require('./review-routes');
+const ratingRoutes = require('./rating-routes');
 
 
 router.use('/users', userRoutes);
@@ -18,6 +19,7 @@ router.use('/comments', commentRoutes);
 router.use('/posts', postRoutes);
 router.use('/products', productRoutes);
 router.use('/reviews', reviewRoutes);
+router.use('/ratings', ratingRoutes);
 
 
 module.exports = router;

@@ -389,9 +389,14 @@ html {
   text-align: right;
 }
 
-
 .footer a:hover {
   color: #a3d6b6;
+}
+
+.footer .container {
+  margin: 0;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .logo1 {
@@ -636,12 +641,15 @@ top: -16px;
   border: #63a87c solid 1px;
   object-fit: cover
 }
+.profile-column {
+  width:250px;
+  float: left;
+}
 .dashboard-item-body img {
   border-radius: 50%;
   border: #63a87c solid 4px;
-  width: 100%;
-  height: 100%;
-  max-width: 200px;
+  width: 200px;
+  height: 200px;
   object-fit: cover
 }
 .user-column {
@@ -1473,6 +1481,32 @@ h2.active {
   .footer .right-column, .footer .left-column {
     text-align: center;
   }
+
+  .footer .container {
+    padding: 0 10px;
+  }
+
+  .profile-column {
+    width: 93%;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .dashboard-item-title {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .dashboard-item-title-wrapper {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: flex-start;
+  }
+  .dashboard-button {
+    width: 100%;
+  }
+  
 
 }
 

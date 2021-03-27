@@ -7,6 +7,7 @@ A Hub for memebers to post, rate, review and talk about environmentally friendly
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
+* [Demo](#demo)
 * [Questions](#questions)
 
 ## General Info
@@ -44,9 +45,9 @@ Open up MySQL shell and input
 ```terminal
 source db/schema.sql
 ```
-and 
+Use database
 ```terminal
-use envoy_db
+envoy_db
 ```
 Then quit MySQL shell and input the following in your terminal to start running application
 ```terminal
@@ -56,12 +57,58 @@ Once all that is done, navigate to - http://localhost:3001 to begin!
 
 
 ## Usage
-This application is by memebers and non-memebers to post, review and talk about different environmentally friendly products and blogs. 
+This application is deployed on Heroku at https://envoy-guide.herokuapp.com/
+<br>
+There are three types of access
+	<br>
+	*Admin access
+	<br>
+	*General access
+	<br>
+	*Visitor access
+<br>
+Admin status assigned users will have full access to the site which includes <br>
+	-Full access to all content for users
+	<br>
+	-Ability to approve articles posted by general users
+	<br>
+	-Ability to approve products being posted by general users.  
+<br>
+General access allows one to <br>
+	-View all web content including featured/approved product and articles
+	<br>
+	-Products can be viewed by all or product category.
+	<br>
+	-Create user profile
+	<br>
+	-Upload content (which requires approval by admin for others to view)
+	<br>
+	-Post products (which requires approval by admin for others to view)
+	<br>
+	-Create/Edit their profile as needed
+	<br>
+	-Comment on existing articles posted on the site. 
 
+<br>
+Visitor access allows one to <br>
+	-View all web content including featured/approved product and articles
+	<br>
+	-Products can be viewed by product or retailer category.
+	<br>
+	-Has the option to become a member by creating a general access profile. 
+
+ 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <br>
 This repository is licensed under the MIT license.
+
+## Demo
+
+Presentation:
+[Envoy-products-presentation (2).pdf](https://github.com/shamimimtiaz/my-e-commerce/files/6216172/Envoy-products-presentation.2.pdf)
+
+
 
 ## Questions
 Questions about this repository? Please contact us at [envoyproducts90@gmail.com](mailto:envoyproducts90@gmail.com). View more of our work in GitHub at [Envoy-Products](https://github.com/Envoy-products/Envoy-Products) 

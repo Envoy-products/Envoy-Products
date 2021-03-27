@@ -5,16 +5,17 @@
     <div class="text-center">
         <h2>FEATURED PRODUCTS</h2>
     </div>
-    <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
-        {{#each data.featured_products as |product|}}
-        {{> product-card product }}
-        {{/each}}
+        <div class="product-container">
+            {{#each data.featured_products as |product|}}
+            {{> product-card product }}
+            {{/each}}
+        </div>
     </div>
 </div>
 
 <!-- Container (Featured Blogs Section) -->
 
-<div id="articles" class="container-fluid">
+<div id="articles" class="container-fluid"> 
     <div class="text-center">
         <h2>FEATURED ARTICLES</h2>
     </div>

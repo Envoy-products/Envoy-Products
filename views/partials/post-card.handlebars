@@ -2,7 +2,9 @@
 <div class="center-gallery-container">
 <div class="gallery-cell">
 	<div class="articles-picture">
-		<img class="user-picture" src="{{ check_url user.avatar }}" height="200" width="200">
+		<div class="user-picture-container">
+			<img class="user-picture" src="{{ check_url user.avatar }}">
+		</div>
 		<div class="user-name">
 			<p>{{user.author}}</p>
 		</div>

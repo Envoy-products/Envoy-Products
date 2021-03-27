@@ -25,7 +25,7 @@ module.exports = {
         return word;
     },
     format_cut_content: (content, length) => {
-        return content.substring(0, length);
+        return content.split(' ').slice(0, length).join(' ');
     },
     format_posts: content => {
         const regExp = new RegExp('\\n\\n', 'g');

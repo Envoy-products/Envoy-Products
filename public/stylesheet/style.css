@@ -6,6 +6,22 @@ body {
 }
 
 /* =================================== */
+/*    RATING STAR COLOURS              */
+/* =================================== */
+.br-theme-fontawesome-stars-o .br-widget a:after {
+    color: #63a87c;
+}
+.br-theme-fontawesome-stars-o .br-widget a.br-active:after {
+    color: #63a87c;
+}
+.br-theme-fontawesome-stars-o .br-widget a.br-selected:after {
+    color: #63a87c;
+}
+.br-theme-fontawesome-stars-o .br-widget a.br-fractional:after {
+    color: #63a87c;
+}
+
+/* =================================== */
 /*   SINGLE PRODUCT PAGE STYLING       */
 /* =================================== */
 
@@ -34,19 +50,20 @@ body {
   display: grid;
   padding: 2rem;
   grid-template-rows: auto auto;
-  /* background-color: #086d38; */
   border-top-left-radius: 15px;
   margin: 3rem;
   background-color: #086d38;
   border-radius: 15px;
+  justify-content: center;
+  height: fit-content;
 }
 
 .single-product-picture {
   object-fit: cover;
   width: 100%;
+  max-width: 300px;
   grid-row: 1 / span 1;
-  /* box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75); */
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 0rem;
   background-color: white;
 }
@@ -90,6 +107,12 @@ body {
   margin-right: auto;
 }
 
+.single-product-store h3 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 1.3em;
+}
+
 .about-box {
   margin: 50px auto 0;
   width: 75%;
@@ -97,6 +120,10 @@ body {
   background: rgba(8, 109, 56, 0.7);
   padding: 15px;
   border-radius: 15px;
+}
+
+#btn-update-rate-prod  {
+  width: 200px;
 }
 
 
@@ -1350,6 +1377,14 @@ input.left-password, input.right-password {
 .container {
   width: 90%;
 }
+.single-product-container {
+  text-align: center;
+}
+
+.single-product-picture-container {
+  width: fit-content;
+}
+
 
 .product-row {
   display: grid;
@@ -1407,10 +1442,6 @@ input.left-password, input.right-password {
   grid-column: 1 / span 1;
 }
 
-.single-product-picture-container {
-  border-bottom-left-radius: 0px;
-  border-top-right-radius: 15px;
-}
 
 .user-picture {
   width: 80%;
@@ -1596,6 +1627,50 @@ input.left-password, input.right-password {
   #formContent {
     margin-top: 120px;
   }
+  .br-theme-fontawesome-stars-o .br-widget {
+    height: 50px;
+    text-align: center;
+  }
 
+  .br-theme-fontawesome-stars-o .br-widget a {
+    font: normal normal normal 40px/1 FontAwesome;
+    margin-right: 14px;
+  }
+  #btn-update-rate-prod {
+    width: 100%;
+    clear: both;
+    margin: 10px 0;
+  }
+  .btn-sm {
+    width: 49%;
+    font-size: 1.8rem;
+    height: auto;
+    border-radius: 10px;
+    padding: 15px 0;
+  }
+  .btn-solo {
+    width: 100%;
+  }
+  .ratings {
+    text-align: center;
+  }
+  .single-product-store {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
+@media screen and (max-width: 360px) {
+  .single-product-details-container {
+    padding: 10px;
+  }
+  .single-product-name {
+    padding: 0;
+    width: 90%;
+  }
+  h2.single-product-name {
+    font-size: 1.4em;
+  }
+  
+
+}

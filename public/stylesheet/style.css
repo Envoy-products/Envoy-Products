@@ -1104,6 +1104,10 @@ input.left-password, input.right-password {
   padding-right: 10px !important;
 }
 
+.form-item {
+  margin-top: 15px;
+}
+
 .left-password {
   margin-left: 34px !important;
 }

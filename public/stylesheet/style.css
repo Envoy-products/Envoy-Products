@@ -201,8 +201,8 @@ body {
   border-radius: 50%;
   border: 6px solid white;
   margin-top: 3rem;
-  height: 80%;
-  width: auto;
+  height: auto;
+  width: 60%;
 }
 
 .user-name {
@@ -1435,8 +1435,9 @@ input.left-password, input.right-password {
     margin-left: auto;
     margin-right: auto;
     position: static;
-    height: 80%;
-    width: auto;
+    height: auto;
+    width: 50%;
+    margin-bottom: 1rem;
   }
 
   .articles-font-bold {
@@ -1522,9 +1523,14 @@ input.left-password, input.right-password {
     text-align: center;
   }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6d8b7bf9c204ac3c0b2ae5451b60691201fde854
   .user-picture-container {
     grid-row: 2 / span 1;
-    height: 15rem;
+    height: 20rem;
+    width: auto;
   }
 
   .user-picture {
@@ -1538,8 +1544,12 @@ input.left-password, input.right-password {
 
   .articles-picture {
     height: auto;
+<<<<<<< HEAD
+
+=======
   }
   
+>>>>>>> 6d8b7bf9c204ac3c0b2ae5451b60691201fde854
   .footer .container {
     padding: 0 10px;
   }
@@ -1579,7 +1589,10 @@ input.left-password, input.right-password {
   }
   #formContent {
     margin-top: 120px;
+<<<<<<< HEAD
+=======
   }
+>>>>>>> 6d8b7bf9c204ac3c0b2ae5451b60691201fde854
 
 }
 

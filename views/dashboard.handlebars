@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-sm-3">
+        <div class="profile-column">
             <section class="dashboard-item">
                 <div class="dashboard-item-title-wrapper">
                     <div class="dashboard-item-title">
@@ -11,7 +11,7 @@
                     <img src="{{user.avatar}}">
                     <p class="profile-name">{{user.first_name}} {{user.last_name}}</p>
                     <p>{{user.email}}</p>
-                    <a href="/articles/add" class="button">Update Profile</a>
+                    <a href="/profile/" class="button">Update Profile</a>
                 </div> 
             </section>
         </div>
@@ -21,7 +21,7 @@
                 <div class="dashboard-item-title">
                     <h2>Your Articles</h2>
                 </div>
-                <div >
+                <div class="dashboard-button">
                     <a href="/articles/add" class="button">Add an Article</a>
                 </div>   
             </div>
@@ -49,7 +49,7 @@
                 <div class="dashboard-item-title">
                     <h2>Your Products</h2>
                 </div>
-                <div >
+                <div class="dashboard-button">
                     <a href="/products/add" class="button">Add a Product</a>
                 </div>   
             </div>
@@ -146,5 +146,3 @@
         {{/if}}
     </div>
 </div>
-{{!--
-<script src="/javascript/add-product.js"></script> --}}

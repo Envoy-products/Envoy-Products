@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPostData => {
-            console.log(dbPostData);
+            // console.log(dbPostData);
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('blog-list', {
                 posts,
@@ -75,12 +75,12 @@ router.get('/:id', (req, res) => {
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
-                    attributes: ['first_name', 'last_name', 'avatar']
+                    attributes: ['id', 'first_name', 'last_name', 'avatar']
                 }
             },
             {
                 model: User,
-                attributes: ['first_name', 'last_name', 'avatar']
+                attributes: ['id', 'first_name', 'last_name', 'avatar']
             }
         ]
     })
@@ -96,7 +96,8 @@ router.get('/:id', (req, res) => {
             // pass data to template
             res.render('single-post', {
                 post,
-                loggedIn: req.session.loggedIn
+                loggedIn: req.session.loggedIn,
+                user_id: req.session.user_id
             });
         })
         .catch(err => {

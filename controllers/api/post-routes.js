@@ -17,14 +17,6 @@ router.get('/', (req, res) => {
                     attributes: ['first_name', 'last_name']
                 }
             },
-            // {
-            //     model: Product,
-            //     attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id'],
-            //     include: {
-            //         model: User,
-            //         attributes: ['first_name', 'last_name']
-            //     }
-            // },
             {
                 model: User,
                 attributes: [
@@ -61,15 +53,7 @@ router.get('/:id', (req, res) => {
                     model: User,
                     attributes: ['first_name', 'last_name']
                 }
-            },
-            // {
-            //     model: Product,
-            //     attributes: ['id', 'name', 'description', 'website', 'product_img', 'status', 'user_id', 'category_id'],
-            //     include: {
-            //         model: User,
-            //         attributes: ['first_name', 'last_name']
-            //     }
-            // },
+            }
          ]
     })
         .then(dbPostData => {
@@ -102,7 +86,7 @@ router.post('/', auth, (req, res) => {
 });
 
 //Update a post
-router.put('/:id', (req, res) => {
+router.put('/:id', auth, (req, res) => {
     Post.update(req.body,
         {
             where: {

@@ -394,9 +394,14 @@ html {
   text-align: right;
 }
 
-
 .footer a:hover {
   color: #a3d6b6;
+}
+
+.footer .container {
+  margin: 0;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .logo1 {
@@ -601,6 +606,12 @@ border-radius: 0;
 font-family: Montserrat, sans-serif;
 min-height: 70px;
 }
+
+.navbar .container {
+  width: 100%;
+  padding-right: 30px;
+}
+
 .navbar li a, .navbar .navbar-brand {
 font-weight: bold;
 color: #fff !important;
@@ -624,6 +635,10 @@ left: 38px;
 top: -16px;
 }
 
+.blog-main {
+  padding-top: 20px;
+}
+
 .post .title-bar .title {
   float: left;
   width: 65%;
@@ -641,12 +656,15 @@ top: -16px;
   border: #63a87c solid 1px;
   object-fit: cover
 }
+.profile-column {
+  width:250px;
+  float: left;
+}
 .dashboard-item-body img {
   border-radius: 50%;
   border: #63a87c solid 4px;
-  width: 100%;
-  height: 100%;
-  max-width: 200px;
+  width: 200px;
+  height: 200px;
   object-fit: cover
 }
 .user-column {
@@ -666,7 +684,7 @@ p.profile-name {
   color: #303030;
 }
 .comments {
-  margin: 220px 0 25px 10px;
+  margin: 205px 0 25px 10px;
   color: #767b76;
   line-height: 1.9rem;
 }
@@ -875,6 +893,14 @@ padding-bottom: 2rem;
     margin-bottom: 40px;
 }
 
+.disp-none {
+    display: none;
+}
+
+.disp-block {
+    display: inline-block;
+}
+
 /* End: Dashboard Styles */
 .filter-select {
     display:inline-block;
@@ -1004,6 +1030,10 @@ h2.active {
 }
 
  /* FORM TYPOGRAPHY */
+.login-form {
+  padding-top: 20px;
+}
+
 .login-form input[type=button], .login-form input[type=submit], .login-form input[type=reset]  {
   background-color: #086d38;
   border: none;
@@ -1070,6 +1100,17 @@ h2.active {
 
 .login-form input.login-submit-btn, .login-form input.signup-submit-btn {
     margin-bottom: 10px!important;
+}
+
+input.left-password, input.right-password {
+  width: 41.3% !important;
+  float: left;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.left-password {
+  margin-left: 34px !important;
 }
 
 .err-txt {
@@ -1481,6 +1522,7 @@ h2.active {
     text-align: center;
   }
 
+<<<<<<< HEAD
   .user-picture-container {
     grid-row: 2 / span 1;
     height: 15rem;
@@ -1497,6 +1539,47 @@ h2.active {
 
   .articles-picture {
     height: auto;
+=======
+  .footer .container {
+    padding: 0 10px;
+  }
+
+  .profile-column {
+    width: 93%;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .dashboard-item-title {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .dashboard-item-title-wrapper {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: flex-start;
+  }
+  .dashboard-button {
+    width: 100%;
+  }
+  
+
+
+  input.left-password, input.right-password {
+    width: 85% !important;
+    float: unset;
+    padding-left: unset !important;
+    padding-right: unset !important;
+    margin-left: 5px !important;
+  }
+  .login-form input[type=text], .login-form input[type=password] {
+    padding: 5px;
+  }
+  #formContent {
+    margin-top: 120px;
+>>>>>>> e0f62e13708682fb6b299841e16e7914a3968411
   }
 
 }

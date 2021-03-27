@@ -1,7 +1,7 @@
 const reviewFormHandler = async (e) => {
     e.preventDefault();  // prevents default submit behavior
     
-    // Obtain inputs from the form
+    // Obtain inputs
     const content = $("#review-content").val().trim();
     const product_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
@@ -11,7 +11,7 @@ const reviewFormHandler = async (e) => {
 
     try {
         const response = await fetch('/api/reviews', {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({
                 product_id,
                 content

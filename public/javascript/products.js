@@ -1,3 +1,4 @@
+// 'filter by category' handler 
 const changeCategorySelectHandler = async function() {
     try {
         // Obtain inputs from the form
@@ -18,7 +19,7 @@ const changeCategorySelectHandler = async function() {
 
 $("#filter-category").change(changeCategorySelectHandler);
 
-// setting up start ratings
+// setting up star ratings
 $(function() {
     const config = {
         theme: 'fontawesome-stars-o',

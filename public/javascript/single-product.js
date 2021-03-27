@@ -1,4 +1,4 @@
-// setting up start ratings
+// setting up star ratings
 $(function() {
     const config = {
         theme: 'fontawesome-stars-o',

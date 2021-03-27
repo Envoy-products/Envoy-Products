@@ -201,8 +201,8 @@ body {
   border-radius: 50%;
   border: 6px solid white;
   margin-top: 3rem;
-  height: 80%;
-  width: auto;
+  height: auto;
+  width: 60%;
 }
 
 .user-name {
@@ -1324,6 +1324,16 @@ input.left-password, input.right-password {
   margin: auto;
   width: 70%;
 }
+
+.productspage {
+  margin: auto;
+  width: 70%;
+}
+
+.product-title {
+  font-size: 20px;
+}
+
 @media screen and (max-width: 1320px) {
 
   .product-container {
@@ -1439,8 +1449,9 @@ input.left-password, input.right-password {
     margin-left: auto;
     margin-right: auto;
     position: static;
-    height: 80%;
-    width: auto;
+    height: auto;
+    width: 50%;
+    margin-bottom: 1rem;
   }
 
   .articles-font-bold {
@@ -1528,7 +1539,8 @@ input.left-password, input.right-password {
 
   .user-picture-container {
     grid-row: 2 / span 1;
-    height: 15rem;
+    height: 20rem;
+    width: auto;
   }
 
   .user-picture {
@@ -1587,11 +1599,3 @@ input.left-password, input.right-password {
 
 }
 
-.productspage {
-  margin: auto;
-  width: 70%;
-}
-
-.product-title {
-  font-size: 20px;
-}

@@ -601,6 +601,12 @@ border-radius: 0;
 font-family: Montserrat, sans-serif;
 min-height: 70px;
 }
+
+.navbar .container {
+  width: 100%;
+  padding-right: 30px;
+}
+
 .navbar li a, .navbar .navbar-brand {
 font-weight: bold;
 color: #fff !important;
@@ -622,6 +628,10 @@ color: #fff !important;
 position: absolute;
 left: 38px;
 top: -16px;
+}
+
+.blog-main {
+  padding-top: 20px;
 }
 
 .post .title-bar .title {
@@ -669,7 +679,7 @@ p.profile-name {
   color: #303030;
 }
 .comments {
-  margin: 220px 0 25px 10px;
+  margin: 205px 0 25px 10px;
   color: #767b76;
   line-height: 1.9rem;
 }
@@ -1015,6 +1025,10 @@ h2.active {
 }
 
  /* FORM TYPOGRAPHY */
+.login-form {
+  padding-top: 20px;
+}
+
 .login-form input[type=button], .login-form input[type=submit], .login-form input[type=reset]  {
   background-color: #086d38;
   border: none;
@@ -1081,6 +1095,17 @@ h2.active {
 
 .login-form input.login-submit-btn, .login-form input.signup-submit-btn {
     margin-bottom: 10px!important;
+}
+
+input.left-password, input.right-password {
+  width: 41.3% !important;
+  float: left;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.left-password {
+  margin-left: 34px !important;
 }
 
 .err-txt {
@@ -1507,6 +1532,21 @@ h2.active {
     width: 100%;
   }
   
+
+
+  input.left-password, input.right-password {
+    width: 85% !important;
+    float: unset;
+    padding-left: unset !important;
+    padding-right: unset !important;
+    margin-left: 5px !important;
+  }
+  .login-form input[type=text], .login-form input[type=password] {
+    padding: 5px;
+  }
+  #formContent {
+    margin-top: 120px;
+  }
 
 }
 

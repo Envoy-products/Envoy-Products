@@ -1,4 +1,4 @@
-const handleSignup = async (email, password, first_name, last_name, region_id, avatar) => {
+const handleSignup = async (email, password, first_name, last_name, avatar) => {
     return fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
@@ -6,7 +6,7 @@ const handleSignup = async (email, password, first_name, last_name, region_id, a
             password,
             first_name,
             last_name,
-            region_id,
+            region_id: 0,
             avatar,
             admin: false
         }),

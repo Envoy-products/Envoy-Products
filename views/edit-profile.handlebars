@@ -1,0 +1,63 @@
+<script src="https://app.simplefileupload.com/buckets/afa7fd6af8e1879aceb8ba0fcf296668.js"></script>
+<div class="container">
+    <div class="row post">
+    <h2>Edit User Profile</h2>
+    <form id="edit-article-form">
+        <div class="container">
+            <div class="row">
+                <div class="profile-column">
+
+                        <div class="dashboard-item-body user-column">
+                            <img id="avatar-cur" src="{{user_data.avatar}}">
+                            <label for="avatar_url">New Avatar Image URL</label>
+                            <input type="text" name="avatar-url" id="avatar-url" />
+
+                            <div>or drag and drop an image to the box below</div>
+                            <input type="hidden" name="avatar-img" id="avatar-img" class="simple-file-upload" />    
+                        </div>
+                         
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-column">
+                        <label for="first-name">First Name</label><br />
+                        <input type="text" id="first-name" name="first_name" value="{{user_data.first_name}}"/>
+                    </div>
+                    <div class="form-column right-column">
+                        <label for="last-name">Last Name</label><br />
+                        <input type="text" id="last-name" name="last_name" value="{{user_data.last_name}}"/>
+                    </div>
+                    <div class="form-bottom"></div>
+                    <div class="form-column">
+                        <label for="email">Email Address:</span></label><br />
+                        <input type="text" id="email" name="email" value="{{user_data.email}}"/>
+                    </div>
+                    <div class="form-bottom"></div>
+
+                    <div class="form-bottom"></div>
+                    <div class="form-column">
+                        <label for="email">Current Password:</span></label><br />
+                        <input type="password" id="old-password" name="old-password" />
+                    </div>
+                    <div class="form-bottom"></div>
+                    <div class="form-column">
+                        <label for="password">New Password</label><br />
+                        <input type="password" id="password" name="password" />
+                    </div>
+                    <div class="form-column right-column">
+                        <label for="confirm-password">Confirm New Pasword</label><br />
+                        <input type="password" id="confirm-password" name="confirm-password" />
+                    </div>
+                    <div class="edit-form-btn-wrapper">
+                        <button type="submit">&nbsp; Update User &nbsp;</button>
+                        <button type="button" name="delete" data-id="{{user.id}}">&nbsp; Delete User &nbsp;</button>
+                    </div>
+            </div>
+        </div> 
+    </form>
+    <span class="err-txt" id="signup-error"></span>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js"></script>
+<script src="/javascript/confirm-password.js"></script>
+<script src="/javascript/edit-profile.js"></script>

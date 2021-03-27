@@ -8,7 +8,7 @@
                 <div class="profile-column">
 
                         <div class="dashboard-item-body user-column">
-                            <img src="{{user_data.avatar}}">
+                            <img id="avatar-cur" src="{{user_data.avatar}}">
                             <label for="avatar_url">New Avatar Image URL</label>
                             <input type="text" name="avatar-url" id="avatar-url" />
 
@@ -49,7 +49,7 @@
                     </div>
                     <div class="edit-form-btn-wrapper">
                         <button type="submit">&nbsp; Update User &nbsp;</button>
-                        <button type="button" name="delete" data-id="{{user.id}}">&nbsp; Delete Article &nbsp;</button>
+                        <button type="button" name="delete" data-id="{{user.id}}">&nbsp; Delete User &nbsp;</button>
                     </div>
             </div>
         </div> 

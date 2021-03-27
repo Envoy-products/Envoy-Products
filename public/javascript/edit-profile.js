@@ -10,15 +10,12 @@ const editProfileFormHandler = async (e) => {
         if(!avatar) {
             avatar = $("#avatar-url").val().trim();
         }
-        const oldPassword = $("#old-password").val().trim();
+        if(!avatar) {
+            avatar = $("#avatar-cur").attr("src");
+        }
+        //const oldPassword = $("#current-password").val().trim();
         const password = $("#password").val().trim();
-        
-        const retailerIds = retailers.map(item => parseInt(item)).filter(item => item !== -1);
-        const path_segments = window.location.toString().split('/');
-        const id = path_segments[path_segments.length - 1];
-        
-        if (!status) status = "pending"; 
-
+                
         // Input validation
         if (!name || !description || !website || !product_img || (category_id < 0) || retailerIds.length == 0 || status=="null") {
             throw new Error("At least one input is invalid!");

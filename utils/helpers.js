@@ -1,10 +1,16 @@
 module.exports = {
-    test_condition: value => {
-        if (value !== "pending") {
-            return true;
-        }
-        return false;
-    },
+    // test_condition: value => {
+    //     if (value !== "pending") {
+    //         return true;
+    //     }
+    //     return false;
+    // },
+    check_url: url => {
+        if(!url.includes('https://') && !url.includes('http://') && url.indexOf('/') !== 0) {
+            url = 'https://' + url;
+        } 
+        return url;
+    }, 
     get_current_year: () => {
         return new Date().getFullYear()
     },

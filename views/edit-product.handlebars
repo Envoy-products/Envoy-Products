@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-item">
                     <label for="website">Product Website</span></label><br />
-                    <input type="text" id="website" name="website" value="{{product.website}}"/>
+                    <input type="text" id="website" name="website" value="{{check_url product.website}}"/>
                 </div>
 
                 <div class="form-item">
@@ -50,11 +50,11 @@
             <div class="col-sm-6">
                 <div class="form-item">
                     Product Image<br>
-                    <img src="{{product.product_img}}" alt="{{product.name}}" height="120"/>
+                    <img src="{{check_url product.product_img}}" alt="{{product.name}}" height="120"/>
                 </div>
                 <div class="form-item">
                     <label for="product_img">Update Product Image URL</label><br />
-                    <input type="text" id="product_img" name="product_img" value="{{product.product_img}}"/>
+                    <input type="text" id="product_img" name="product_img" value="{{check_url product.product_img}}"/>
                 </div>
                 <div class="form-item">
                     <label for="prod_img">or drag and drop an image to the box below</label><br>

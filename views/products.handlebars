@@ -31,7 +31,7 @@
                     {{#each products as |product|}}
                     <div class="product-row">
                         <div class="product-picture-grid">
-                            <img src="{{product_img}}" class="card-picture" alt={{name}} height="200" width="">
+                            <img src="{{check_url product_img}}" class="card-picture" alt={{name}} height="200" width="">
                         </div>
                         <div class="product-details-grid">
                             <div class="card-body">
@@ -52,7 +52,7 @@
                                 <hr>
                                 <p class="card-text">{{description}}</p>
                                 <hr>
-                                <a class="button" href="{{website}}" target="_blank">
+                                <a class="button" href="{{check_url website}}" target="_blank">
                                     Visit Website
                                 </a>
                             </div>

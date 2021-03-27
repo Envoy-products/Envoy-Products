@@ -1,4 +1,4 @@
-const handleSignup = async (email, password, first_name, last_name, region_id, avatar) => {
+const handleSignup = async (email, password, first_name, last_name, avatar) => {
     return fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
@@ -6,7 +6,7 @@ const handleSignup = async (email, password, first_name, last_name, region_id, a
             password,
             first_name,
             last_name,
-            region_id,
+            region_id: 0,
             avatar,
             admin: false
         }),
@@ -21,7 +21,7 @@ const signupFormSubmitHandler = async (e) => {
     const firstname = $("#firstname-signup").val().trim();
     const lastname = $("#lastname-signup").val().trim();
     const email = $("#email-signup").val().trim();
-    const password = $("#password-signup").val().trim();
+    const password = $("#password").val().trim();
     let avatar = $("#avatar_url").attr("value");
     if (!avatar){
         avatar = $("#avatar-signup").val().trim();
@@ -29,12 +29,11 @@ const signupFormSubmitHandler = async (e) => {
     if (!avatar){
          avatar = "/images/user-default.png";
     }
-    const region = $("#region-signup").val();
 
     // Validate inputs and perform Signup
-    if (firstname && lastname && email && validator.isEmail(email) && password && (region != -1)) {
+    if (firstname && lastname && email && validator.isEmail(email) && password) {
         try {
-            const response = await handleSignup(email, password, firstname, lastname, region, avatar) ;
+            const response = await handleSignup(email, password, firstname, lastname, avatar) ;
 
             if (response.ok) {
                 document.location.replace('/');

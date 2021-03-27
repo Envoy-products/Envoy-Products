@@ -1,3 +1,4 @@
+// function that handles creation of a new product
 const addProductFormHandler = async (e) => {
     e.preventDefault();  // prevents default submit behavior
 
@@ -19,11 +20,21 @@ const addProductFormHandler = async (e) => {
 
         const retailerIds = retailers.map(item => parseInt(item)).filter(item => item !== -1);
 
-        // Input validation
-        if (!name || !description || !website || !product_img || (category_id < 0) || retailerIds.length == 0) {
-            throw new Error("At least one input is invalid!");
+        // input validation
+        const errors = validateInput([
+            {input_title: 'Name', input_val: name, criteria: ['required']},
+            {input_title: 'Description', input_val: description, criteria: ['required']},
+            {input_title: 'Product Image', input_val: product_img, criteria: ['required']},
+            {input_title: 'Website', input_val: website, criteria: ['required','url']},
+            {input_title: 'Product Category', input_val: category_id, criteria: ['positive_num']},
+            {input_title: 'Product Retailer', input_val: retailerIds, criteria: ['non_empty_array']}
+        ]);
+        
+        if (errors) {
+            throw new Error(errors);
         }
 
+        // perform api operation
         const response = await fetch('/api/products', {
             method: 'POST',
             body: JSON.stringify({
@@ -36,7 +47,8 @@ const addProductFormHandler = async (e) => {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-    
+        
+        // handle response
         if (response.ok) {
             document.location.replace('/products'); // [TODO - Change this to dashboard]
         } else {

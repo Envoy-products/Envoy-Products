@@ -61,7 +61,7 @@ body {
 .single-product-picture {
   object-fit: cover;
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   grid-row: 1 / span 1;
   border-radius: 10px;
   padding: 0rem;
@@ -1372,12 +1372,11 @@ input.left-password, input.right-password {
 .container {
   width: 90%;
 }
-.single-product-container {
-  text-align: center;
-}
 
 .single-product-picture-container {
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -1607,8 +1606,6 @@ input.left-password, input.right-password {
     width: 100%;
   }
   
-
-
   input.left-password, input.right-password {
     width: 85% !important;
     float: unset;
@@ -1655,6 +1652,13 @@ input.left-password, input.right-password {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .single-product-picture-container {
+    margin-top: 0;
+  }
+}
+
+
 @media screen and (max-width: 360px) {
   .single-product-details-container {
     padding: 10px;
@@ -1665,7 +1669,5 @@ input.left-password, input.right-password {
   }
   h2.single-product-name {
     font-size: 1.4em;
-  }
-  
-
+  }  
 }

@@ -61,30 +61,25 @@ Once all that is done, navigate to - http://localhost:3001 to begin!
 ## Usage
 This application is deployed on Heroku at https://envoy-guide.herokuapp.com/
 
-There are three types of access
-* Admin access
-* Member access
-* Visitor access
+There are three types of access:
+* **Visitor access**
+* **Member access**
+* **Administrator access**
 
-Admin status assigned users will have full access to the site which includes 
-* Full access to all content for users
-* Ability to set the status of an articles posted by general users to "pending", "approved", or "featured" or to delete the article completely
-* Ability to approve products being posted by general users.  
-
-Member access allows one to 
+**Visitor access** allows one to 
 * View all web content including featured/approved product and articles
-* Products can be viewed by all or product category.
-* Create user profile
-* Upload content (which requires approval by admin for others to view)
-* Post products (which requires approval by admin for others to view)
-* Create/Edit their profile as needed
+* Products can be viewed by category.
+* Has the option to become a member by signing up. 
+
+**Member access** allows one to do all a visitor can, plus:
+* Post articles or products (which requires approval by admin for others to view)
+* Edit or delete articles or products already posted
+* Edit their profile as needed
 * Comment on existing articles posted on the site. 
 
-Visitor access allows one to <br>
-* View all web content including featured/approved product and articles
-* Products can be viewed by product or retailer category.
-* Has the option to become a member by creating a general access profile. 
-
+**Administrator access** allows one to do all a member can, plus:
+* Ability to set the status of an article or product posted by a member to "pending", "approved", or "featured"
+* Ability to edit or delete articles or products post be a member.  
  
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -94,8 +89,6 @@ This repository is licensed under the MIT license.
 ## Demo
 
 [Presentation](public/images/Envoy.pdf)
-
-
 
 ## Questions
 Questions about this repository? Please contact us at [envoyproducts90@gmail.com](mailto:envoyproducts90@gmail.com). View more of our work in GitHub at [Envoy-Products](https://github.com/Envoy-products/Envoy-Products) 

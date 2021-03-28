@@ -347,6 +347,15 @@ footer .container {
   text-transform: none;
 }
 
+a.articles-button {
+  background-color: #086D38;
+  border: none;
+  padding: 1rem 1rem 3rem 1rem;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
 a.articles-btn {
   border-radius: 10px;
   background-color: #63a87c;

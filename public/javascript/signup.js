@@ -30,7 +30,6 @@ const signupFormSubmitHandler = async (e) => {
         if (!avatar) {
             avatar = "/images/user-default.png";
         }
-        // const region = $("#region-signup").val();
 
         // input validation
         const errors = validateInput([
@@ -38,7 +37,6 @@ const signupFormSubmitHandler = async (e) => {
             { input_title: 'Last name', input_val: lastname, criteria: ['required'] },
             { input_title: 'Email', input_val: email, criteria: ['required', 'email'] },
             { input_title: 'Password', input_val: password, criteria: ['required', 'char_len_8'] }
-            // { input_title: 'Region', input_val: region, criteria: ['positive_num'] }
         ]);
 
         if (errors) {

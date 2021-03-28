@@ -15,14 +15,6 @@ router.get('/', (req, res) => {
             'created_at'
         ],
         include: [
-            // {
-            //   model: Comment,
-            //   attributes: ['id', 'comment_text', 'post_id', 'user_id','created_at'],
-            //   include: {
-            //     model: User,
-            //     attributes: ['username']
-            //   }
-            // },
             {
                 model: User,
                 attributes: ['first_name', 'last_name']
@@ -30,7 +22,6 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPostData => {
-            // console.log(dbPostData);
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('blog-list', {
                 posts,
@@ -44,7 +35,7 @@ router.get('/', (req, res) => {
         });
 });
 
-//Load Add Article page
+// load add article form
 router.get('/add', (req, res) => {
     if(!req.session.loggedIn){
         res.redirect('/signup');
@@ -54,7 +45,7 @@ router.get('/add', (req, res) => {
     });
 });
 
-// Single post view
+// single post view
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -105,7 +96,5 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
-
 
 module.exports = router;

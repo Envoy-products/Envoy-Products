@@ -32,14 +32,7 @@ Review.init(
                 key: 'id'
             },
             allowNull: false
-        },
-        // rating_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'rating',
-        //         key: 'id'
-        //     }
-        // } 
+        }
     },
     {
         sequelize,
@@ -48,6 +41,6 @@ Review.init(
         underscored: true,
         modelName: 'review'
     }
-)
+);
 
 module.exports = Review;

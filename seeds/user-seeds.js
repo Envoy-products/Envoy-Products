@@ -93,10 +93,10 @@ const userData = [
   },
   {
     id: 10,  
-    email: 'mslater@cbc.ca',
+    email: 'ssun@cbc.ca',
     password: 'password123',
-    first_name: 'Michelle',
-    last_name: 'Slater',
+    first_name: 'Sheying',
+    last_name: 'Sun',
     region_id: 15,
     avatar: "https://deptmed.queensu.ca/sites/deptmed/files/team/Gibson%2C%20Michelle%202019.jpg",
     admin: false

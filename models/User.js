@@ -12,7 +12,6 @@ class User extends Model {
 //define table columns and configuration
 User.init(
     {
-        // define an id column
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -31,7 +30,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                // this means the password must be at least four characters long
+                // this means the password must be at least eight characters long
                 len: [8]
             }
         },
@@ -79,6 +78,6 @@ User.init(
         underscored: true,
         modelName: 'user'
     }
-)
+);
 
 module.exports = User;

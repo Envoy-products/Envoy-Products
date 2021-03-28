@@ -101,6 +101,5 @@ const deleteProfileHandler = async function() {
     }
 };
 
-
 $("#edit-profile-form").submit(editProfileFormHandler);
 $("button[name=delete]").click(deleteProfileHandler);

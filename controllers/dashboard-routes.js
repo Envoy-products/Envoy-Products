@@ -1,8 +1,7 @@
 const router = require('express').Router();
-const { Post, Product, User, Category, Retailer, Region, Country, ProductRet } = require('../models');
+const { Post, Product, User, Category, Retailer, ProductRet } = require('../models');
 const sequelize = require('../config/connection');
 const { auth } = require('../utils/auth');
-const { Op } = require('sequelize');
 
 // Get all featured posts and featured products for all users and render homepage handlebars
 router.get('/', auth, async (req, res) => {
@@ -117,8 +116,6 @@ router.get('/', auth, async (req, res) => {
         });
         const approved_products = dbApprovedProductData.map(product => product.get({ plain: true })); // serialize data
 
-
-
         // Find logged in user information
         const dbUserData = await User.findOne({
             where: {
@@ -133,9 +130,7 @@ router.get('/', auth, async (req, res) => {
             ]
         })
 
-
         const user = dbUserData.get({ plain: true });
-
 
         // find all products belonging to logged in user
         const dbProductData = await Product.findAll({
@@ -181,15 +176,12 @@ router.get('/', auth, async (req, res) => {
             approved_products,
             user
         }
-        console.log(data.posts_pending);
-        console.log(data.user_data)
+        
+        // for admins only: list of all pending posts and products 
         if (req.session.isAdmin) {
             const dbPendingPostData = await Post.findAll({
                 where: {
-                    post_status: "pending",
-                    // user_id: {
-                    //     [Op.ne]: req.session.user_id
-                    // }
+                    post_status: "pending"
                 },
                 attributes: [
                     'id', 
@@ -209,10 +201,7 @@ router.get('/', auth, async (req, res) => {
 
             const dbPendingProductData = await Product.findAll({
                 where: {
-                    status: "pending",
-                    // user_id: {
-                    //     [Op.ne]: req.session.user_id
-                    // }
+                    status: "pending"
                 },
                 attributes: [
                     'id', 
@@ -233,13 +222,6 @@ router.get('/', auth, async (req, res) => {
             data.all_pending_posts = pendingPosts;
             data.all_pending_products = pendingProducts;
         }   
-        
-
-        // res.json({ 
-        //     ...data,
-        //     loggedIn: req.session.loggedIn,
-        //     user_id: req.session.user_id
-        // });
 
         res.render('dashboard', { 
             ...data,
@@ -288,7 +270,6 @@ router.get('/articles/edit/:id', auth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 // Edit a product
 router.get('/products/edit/:id', auth, async (req, res) => {
@@ -342,14 +323,6 @@ router.get('/products/edit/:id', auth, async (req, res) => {
         });
         const retailers = dbRetailerNameData.map(retailer => retailer.get({ plain: true })); // serialize data
 
-        // res.json({ 
-        //     product,
-        //     categories,
-        //     retailers,
-        //     loggedIn: req.session.loggedIn,
-        //     user_id: req.session.user_id
-        // });
-
         res.render('edit-product', { 
             product,
             categories,
@@ -363,6 +336,5 @@ router.get('/products/edit/:id', auth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 module.exports = router;

@@ -8,7 +8,6 @@ A Hub for members to post, rate, review and talk about environmentally friendly 
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Demo](#demo)
 * [Questions](#questions)
 
 ## Contributors
@@ -20,6 +19,7 @@ A Hub for members to post, rate, review and talk about environmentally friendly 
 
 ## General Info
 The application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+[Presentation](public/images/Envoy.pdf)
 
 ## Technologies
 Project is created with 
@@ -39,9 +39,9 @@ Project is created with
 * [typed.js](https://www.npmjs.com/package/typed.js)
 
 ## Installation
-To install Envoy locally, you will need a copy of M
+to haveTo install Envoy locally, you will need to have MySQL and Node.js installed.
+
 To get started clone this repository using 
-<br>
 ```terminal
 git clone git@github.com:Envoy-products/Envoy-Products.git
 ```
@@ -55,7 +55,11 @@ Open up MySQL shell and input
 ```terminal
 source db/schema.sql
 ```
-Quit MySQL shell and input te following to insert sample data into the database
+Quit MySQL shell and install the necessary library by entering: 
+```terminal
+npm install
+```
+Input the following to insert sample data into the database
 ```terminal
 run np seeds
 ```
@@ -90,13 +94,8 @@ There are three types of access:
 * Ability to edit or delete articles or products post be a member.  
  
 ## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<br>
+  
 This repository is licensed under the MIT license.
-
-## Demo
-
-[Presentation](public/images/Envoy.pdf)
 
 ## Questions
 Questions about this repository? Please contact us at [envoyproducts90@gmail.com](mailto:envoyproducts90@gmail.com). View more of our work in GitHub at [Envoy-Products](https://github.com/Envoy-products/Envoy-Products) 

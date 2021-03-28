@@ -1653,6 +1653,53 @@ input.left-input {
 }
 
 @media screen and (max-width: 768px) {
+  /* HOMEPAGE */
+
+  /*Jumbo tron*/
+  .jumbotron {
+    padding-top: 120px;
+  }
+
+  div.about-box {
+    width:90%
+  }
+  
+  /* FEATURED PRODUCTS */
+  div#products.container-fluid {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .panel {
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p.product-text {
+    width: 100%;
+  }
+  /* FEATURED ARTICLES */
+
+  .flickity-viewport {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  div.center-gallery-container {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+  .gallery-cell {
+    width: 100%
+  }
+  div#articles.container-fluid {
+    padding: 30px 10px 0
+  }
+
+
+
+
+
   .single-product-picture-container {
     margin-top: 0;
   }
@@ -1660,6 +1707,10 @@ input.left-input {
 
 
 @media screen and (max-width: 360px) {
+
+
+
+
   .single-product-details-container {
     padding: 10px;
   }

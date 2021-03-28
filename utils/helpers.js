@@ -1,10 +1,16 @@
 module.exports = {
-    test_condition: value => {
-        if (value !== "pending") {
-            return true;
-        }
-        return false;
-    },
+    // test_condition: value => {
+    //     if (value !== "pending") {
+    //         return true;
+    //     }
+    //     return false;
+    // },
+    check_url: url => {
+        if(!url.includes('https://') && !url.includes('http://') && url.indexOf('/') !== 0) {
+            url = 'https://' + url;
+        } 
+        return url;
+    }, 
     get_current_year: () => {
         return new Date().getFullYear()
     },
@@ -19,7 +25,7 @@ module.exports = {
         return word;
     },
     format_cut_content: (content, length) => {
-        return content.substring(0, length);
+        return content.split(' ').slice(0, length).join(' ');
     },
     format_posts: content => {
         const regExp = new RegExp('\\n\\n', 'g');

@@ -7,7 +7,10 @@ const editProductFormHandler = async (e) => {
         const name = $("#name").val().trim();
         const description = $("#description").val().trim();
         const website = $("#website").val().trim();
-        const product_img = $("#product_img").val().trim();
+        let product_img = $("#prod_img").attr("value");
+        if (!product_img) {
+            product_img = $("#product_img").val().trim();
+        }
         const category_id = parseInt($("#category").val());
         const retailers = $("#retailers").val();
         let status = $("#status").val();

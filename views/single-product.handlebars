@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars-o.css">
 
 <div class="center-container">
 <div class="single-product-container">
@@ -14,7 +12,7 @@
         <div>
             <p>{{&format_posts product.description}}</p>            
         </div>
-        <div>
+        <div class="ratings">
             {{#if product.ratings}}
             Average Rating:
             <select class="star_rating" data-id={{product.id}} data-value={{product.ratings.0.avg_rating}}>
@@ -57,7 +55,7 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button class="btn-sm" type="submit">Submit</button>
+                <button class="btn-sm btn-solo" type="submit">Submit</button>
             </form>
             {{/if}}
          {{/if}}
@@ -65,7 +63,7 @@
         <div class="single-product-store">
             {{#if product.website}}
                 <div class="further-reading">
-                    <h3>View in Store</h3>
+                    <h3>Product Website</h3>
                     <a href="{{product.website}}" target="_blank">{{format_url product.website}}</a>
                 </div>
             {{/if}}

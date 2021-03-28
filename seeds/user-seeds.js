@@ -8,7 +8,7 @@ const userData = [
     first_name: 'Eric',
     last_name: 'Normann',
     region_id: 10,
-    avatar: "/images/eric.jpg",
+    avatar: "https://static.files-simplefileupload.com/rdg3wcscrntqtdn9bw5cndciy3j9/eric.jpg",
     admin: true
   },
   {
@@ -90,7 +90,18 @@ const userData = [
     region_id: 15,
     avatar: "https://deptmed.queensu.ca/sites/deptmed/files/team/Gibson%2C%20Michelle%202019.jpg",
     admin: false
+  },
+  {
+    id: 10,  
+    email: 'mslater@cbc.ca',
+    password: 'password123',
+    first_name: 'Michelle',
+    last_name: 'Slater',
+    region_id: 15,
+    avatar: "https://deptmed.queensu.ca/sites/deptmed/files/team/Gibson%2C%20Michelle%202019.jpg",
+    admin: false
   }
+
 ];
 
 const seedUsers = () => User.bulkCreate(userData, {individualHooks: true});

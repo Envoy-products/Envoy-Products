@@ -1315,6 +1315,16 @@ input.left-password, input.right-password {
   margin: auto;
   width: 70%;
 }
+
+.productspage {
+  margin: auto;
+  width: 70%;
+}
+
+.product-title {
+  font-size: 20px;
+}
+
 @media screen and (max-width: 1320px) {
 
   .product-container {
@@ -1518,10 +1528,6 @@ input.left-password, input.right-password {
     text-align: center;
   }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d8b7bf9c204ac3c0b2ae5451b60691201fde854
   .user-picture-container {
     grid-row: 2 / span 1;
     height: 20rem;
@@ -1539,12 +1545,8 @@ input.left-password, input.right-password {
 
   .articles-picture {
     height: auto;
-<<<<<<< HEAD
-
-=======
   }
   
->>>>>>> 6d8b7bf9c204ac3c0b2ae5451b60691201fde854
   .footer .container {
     padding: 0 10px;
   }
@@ -1584,18 +1586,7 @@ input.left-password, input.right-password {
   }
   #formContent {
     margin-top: 120px;
-<<<<<<< HEAD
-=======
   }
->>>>>>> 6d8b7bf9c204ac3c0b2ae5451b60691201fde854
 
 }
 
-.productspage {
-  margin: auto;
-  width: 70%;
-}
-
-.product-title {
-  font-size: 20px;
-}

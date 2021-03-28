@@ -78,7 +78,7 @@ router.get('/about', (req, res) => {
     res.render('about', { loggedIn: req.session.loggedIn });
 });
 
-// login request
+// login page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -88,7 +88,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// signup request
+// signup page
 router.get('/signup', async (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');

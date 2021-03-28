@@ -37,6 +37,6 @@ ProductRet.init(
         underscored: true,
         modelName: 'product_ret'
     }
-)
+);
 
 module.exports = ProductRet;

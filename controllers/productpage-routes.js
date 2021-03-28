@@ -66,13 +66,6 @@ router.get('/', async (req, res) => {
         });
         const categories = dbCategoryNameData.map(category => category.get({ plain: true })); // serialize data
 
-        // res.json({
-        //     products,
-        //     categories,
-        //     selected_category: parseInt(category_id) ? category_id : "0",
-        //     loggedIn: req.session.loggedIn
-        // });
-
         res.render('products', {
             products,
             categories,
@@ -184,8 +177,6 @@ router.get('/:id', (req, res) => {
 
             //serialize the data
             const product = dbProductData.get({ plain: true });
-            
-            // res.json(product);
             
             // pass data to template
             res.render('single-product', {

@@ -93,6 +93,16 @@ const userData = [
   },
   {
     id: 10,  
+    email: 'ssun@cbc.ca',
+    password: 'password123',
+    first_name: 'Sheying',
+    last_name: 'Sun',
+    region_id: 15,
+    avatar: "https://deptmed.queensu.ca/sites/deptmed/files/team/Gibson%2C%20Michelle%202019.jpg",
+    admin: false
+  },
+  {
+    id: 11,  
     email: 'edward.apostol@utoronto.ca',
     password: 'password',
     first_name: 'Edward',

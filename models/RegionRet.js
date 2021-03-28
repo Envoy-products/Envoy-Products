@@ -37,6 +37,6 @@ RegionRet.init(
         underscored: true,
         modelName: 'region_ret'
     }
-)
+);
 
 module.exports = RegionRet;

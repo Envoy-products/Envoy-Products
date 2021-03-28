@@ -11,7 +11,7 @@ A Hub for members to post, rate, review and talk about environmentally friendly 
 * [Questions](#questions)
 
 ## Contributors
-|Eric Normann|Samiul Hayder Choudhury|Benn Asabir|Nathan Chow|Shamim Imtiaz|
+|Eric Normann|Samiul Choudhury|Benn Asabir|Nathan Chow|Shamim Imtiaz|
 |:---:|:---:|:---:|:---:|:---:|
 |![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FFJX35EH-8853f39f557f-512)|![myImage](https://avatars.githubusercontent.com/u/3344833?s=460&u=46efd9bd90904237b452dbaefdb03a57156ef84b&v=4)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FR9XTTN0-9995038c9f3b-512)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FGC3DAN7-41377ad60b24-512)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01F9AY18T0-ad94549a1f86-512)|
 |<a href="https://github.com/e-p-n" target="_blank">Eric's Github</a>| <a href="https://github.com/samiul1988"> Samiul's Github</a>|<a href="https://github.com/BennAsabir">Benn's Github</a>|<a href="https://github.com/nchow18">Nathan's Github</a>|<a href="https://github.com/shamimimtiaz">Shamimim's Github|""|

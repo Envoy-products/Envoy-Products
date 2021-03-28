@@ -3,7 +3,7 @@ const { User, Post, Comment, Product, Review } = require('../../models');
 const { auth } = require('../../utils/auth');
 
 
-// GET /api/users
+// get all users
 router.get('/', (req, res)=> {
     // Access our User model and run .findAll() method)
     User.findAll({
@@ -16,7 +16,7 @@ router.get('/', (req, res)=> {
         });
 });
 
-// GET /api/users/1
+// get a single user
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { 
@@ -63,7 +63,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// POST /api/users
+// create a new user
 router.post('/', (req, res) => {
     User.create({
         email: req.body.email,
@@ -90,7 +90,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// POST /login
+// user login
 router.post('/login', (req,res) => {
     User.findOne({
         where: {
@@ -120,7 +120,7 @@ router.post('/login', (req,res) => {
     })
 });
 
-// POST /logout
+// user logout
 router.post('/logout', (req,res) => {
     if(req.session.loggedIn){
         req.session.destroy(() => {
@@ -131,14 +131,14 @@ router.post('/logout', (req,res) => {
     }
 })
 
-// PUT /api/users/1
+// update an existing user
 router.put('/:id', auth, async (req, res) => {
     try {
         let body;
         let updatedUserData;
         if (req.body.currentPassword && req.body.currentPassword != '') {
-            console.log("CURRENT", req.body.currentPassword);
-            const user = await User.findByPk(req.params.id); // find the user by id
+            // find the user by id
+            const user = await User.findByPk(req.params.id); 
 
             // check if the current password is valid
             const validPassword = user.checkPassword(req.body.currentPassword);
@@ -146,6 +146,8 @@ router.put('/:id', auth, async (req, res) => {
                 res.status(400).json({ message: "Current password is incorrect!"});
                 return;
             }
+
+            // set body with password field
             body = {
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
@@ -153,7 +155,8 @@ router.put('/:id', auth, async (req, res) => {
                 password: req.body.newPassword,
                 avatar: req.body.avatar
             };
-            // perform update operation (only grab the fields allowed to be updated)
+
+            // perform update operation with password hashing
             updatedUserData = await User.update(body,{
                 individualHooks: true,
                 where: {
@@ -161,12 +164,15 @@ router.put('/:id', auth, async (req, res) => {
                 }
             });
         } else {
+            // set body without password field
             body = {
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 email: req.body.email,
                 avatar: req.body.avatar
             };
+
+            // perform update operation without password hashing
             updatedUserData = await User.update(body,{
                 individualHooks: false,
                 where: {
@@ -186,7 +192,7 @@ router.put('/:id', auth, async (req, res) => {
     }
 });
 
-// DELETE /api/users/1
+// delete a user
 router.delete('/:id', auth, async (req, res) => {
     try {
         const dbUserData = await User.destroy({
@@ -209,7 +215,6 @@ router.delete('/:id', auth, async (req, res) => {
             res.status(404).end();
         }
 
-        // res.json(dbUserData);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

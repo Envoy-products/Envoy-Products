@@ -1,10 +1,8 @@
 const router = require('express').Router();
-const { User, Region, Country } = require('../models');
+const { User } = require('../models');
 const { auth } = require('../utils/auth');
-const sequelize = require('../config/connection');
-const { Op } = require('sequelize');
 
-// get all posts that are not in pending status
+// load edit profile page
 router.get('/', auth, async (req, res) => {
     try {
         let data = {};
@@ -25,8 +23,6 @@ router.get('/', auth, async (req, res) => {
 
         const user_data = dbUserData.get({ plain: true });
 
-        console.log(user_data);
-
         data = {
             user_data
         }
@@ -42,7 +38,5 @@ router.get('/', auth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-
 
 module.exports = router;

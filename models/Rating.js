@@ -43,6 +43,6 @@ Rating.init(
         underscored: true,
         modelName: 'rating'
     }
-)
+);
 
 module.exports = Rating;

@@ -10,8 +10,8 @@ router.use('/', homePageRoutes);
 router.use('/dashboard', dashboardPageRoutes);
 router.use('/articles', blogPageRoutes);
 router.use('/products', productPageRoutes);
-router.use('/api', apiRoutes);
 router.use('/profile', profileRoutes);
+router.use('/api', apiRoutes);
 
 router.use((req, res) => {
     res.status(404).end();

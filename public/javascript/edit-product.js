@@ -88,6 +88,5 @@ const deleteProductHandler = async function() {
     }
 };
 
-
 $("#edit-product-form").submit(editProductFormHandler);
 $("button[name=delete]").click(deleteProductHandler);

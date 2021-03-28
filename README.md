@@ -1,4 +1,6 @@
 # Envoy
+<img src="/public/images/envoy.svg" height="60" style="background-color: #044725">
+
 A Hub for members to post, rate, review and talk about environmentally friendly products!
 
 ## Table Of Content
@@ -69,7 +71,7 @@ npm install
 ```
 Input the following to insert sample data into the database
 ```terminal
-run np seeds
+npm run seeds
 ```
 Enter the following to launch the server
 ```terminal
@@ -101,6 +103,9 @@ There are three types of access:
 * Ability to set the status of an article or product posted by a member to "pending", "approved", or "featured"
 * Ability to edit or delete articles or products post be a member.  
  
+## Screenshot
+![screenshot](./public/images/envoy-screenshot-homepage.jpg)
+
 ## License
   
 This repository is licensed under the MIT license.

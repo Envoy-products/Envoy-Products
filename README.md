@@ -1,5 +1,4 @@
-# Envoy
-<img src="/public/images/envoy.svg" height="60" style="background-color: #044725">
+# <img src="public/images/envoy2.svg" height="90" alt="Envoy" title="Envoy">
 
 A Hub for members to post, rate, review and talk about environmentally friendly products!
 
@@ -9,6 +8,8 @@ A Hub for members to post, rate, review and talk about environmentally friendly 
 * [Technologies](#technologies)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Future Development](#future-development)
+* [Screenshot](#screenshot)
 * [License](#license)
 * [Questions](#questions)
 
@@ -16,7 +17,7 @@ A Hub for members to post, rate, review and talk about environmentally friendly 
 |Eric Normann|Samiul Choudhury|Benn Asabir|Nathan Chow|Shamim Imtiaz|
 |:---:|:---:|:---:|:---:|:---:|
 |![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FFJX35EH-8853f39f557f-512)|![myImage](https://avatars.githubusercontent.com/u/3344833?s=460&u=46efd9bd90904237b452dbaefdb03a57156ef84b&v=4)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FR9XTTN0-9995038c9f3b-512)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FGC3DAN7-41377ad60b24-512)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01F9AY18T0-ad94549a1f86-512)|
-|<a href="https://github.com/e-p-n" target="_blank">Eric's Github</a>| <a href="https://github.com/samiul1988"> Samiul's Github</a>|<a href="https://github.com/BennAsabir">Benn's Github</a>|<a href="https://github.com/nchow18">Nathan's Github</a>|<a href="https://github.com/shamimimtiaz">Shamimim's Github|""|
+|<a href="https://github.com/e-p-n" target="_blank">Eric's Github</a>| <a href="https://github.com/samiul1988"> Samiul's Github</a>|<a href="https://github.com/BennAsabir">Benn's Github</a>|<a href="https://github.com/nchow18">Nathan's Github</a>|<a href="https://github.com/shamimimtiaz">Shamim's Github|""|
 
 
 ## General Info
@@ -102,7 +103,14 @@ There are three types of access:
 **Administrator access** allows one to do all a member can, plus:
 * Ability to set the status of an article or product posted by a member to "pending", "approved", or "featured"
 * Ability to edit or delete articles or products post be a member.  
- 
+
+## Future Development
+Upcoming features:
+* Add retailers to single product view page
+* Collect region information from users and filter their view of Retailers to ones that serve their region
+* Allow users to add categories and retailers when they add a product
+* Allow admins to delete comments/reviews from all users and to suspend users
+
 ## Screenshot
 ![screenshot](./public/images/envoy-screenshot-homepage.jpg)
 

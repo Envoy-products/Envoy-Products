@@ -1,7 +1,10 @@
 
+<div class="center-gallery-container">
 <div class="gallery-cell">
 	<div class="articles-picture">
-		<img class="user-picture" src="{{ user.avatar }}" height="200" width="200">
+		<div class="user-picture-container">
+			<img class="user-picture" src="{{ check_url user.avatar }}">
+		</div>
 		<div class="user-name">
 			<p>{{user.author}}</p>
 		</div>
@@ -13,12 +16,14 @@
 		</div>
 		<h3 class="articles-font-light">
 			<img class="quotes" src="https://img.icons8.com/ios-filled/50/ffffff/quote-left.png" height="20"/>
-			{{format_cut_content post_content 450}} ... 
+			{{format_cut_content post_content 90}} ... 
 			<img class="quotes" src="https://img.icons8.com/ios-filled/50/ffffff/quote-right.png" height="20"/>
 		</h3>
 		<div>
-		<a class="articles-button" href="/articles/{{id}}">Full Article</a>			
+			<a class="articles-btn" href="/articles/{{id}}">Full Article</a>			
 		</div>
 	</div>
 </div>
+</div>
+
 

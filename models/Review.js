@@ -22,22 +22,17 @@ Review.init(
             references: {
                 model: 'user',
                 key: 'id'
-            }
+            },
+            allowNull: false
         },
         product_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'product',
                 key: 'id'
-            }
-        },
-        rating_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'rating',
-                key: 'id'
-            }
-        } 
+            },
+            allowNull: false
+        }
     },
     {
         sequelize,
@@ -46,6 +41,6 @@ Review.init(
         underscored: true,
         modelName: 'review'
     }
-)
+);
 
 module.exports = Review;

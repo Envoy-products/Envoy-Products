@@ -24,10 +24,7 @@ Product.init(
         },
         website: {
             type: DataTypes.TEXT,
-            allowNull: false,
-            // validate: {
-            //     isUrl: true
-            // }
+            allowNull: false
         },
         product_img: {
             type: DataTypes.STRING,
@@ -61,6 +58,6 @@ Product.init(
         underscored: true,
         modelName: 'product'
     }
-)
+);
 
 module.exports = Product;

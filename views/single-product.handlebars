@@ -1,3 +1,4 @@
+
 <div class="center-container">
 <div class="single-product-container">
     <div class="single-product-picture-container">
@@ -11,22 +12,71 @@
         <div>
             <p>{{&format_posts product.description}}</p>            
         </div>
+        <div class="ratings">
+            {{#if product.ratings}}
+            Average Rating:
+            <select class="star_rating" data-id={{product.id}} data-value={{product.ratings.0.avg_rating}}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            {{else}}
+            Average Rating: None
+            {{/if}}
+        </div>
+        
+         {{#if loggedIn}}
+            {{#if (is_included_in_obj_arr user_id product.ratings)}}
+            <button id="btn-update-rate-prod">Change your rating</button>
+            <form id="star_rating_update_form" class="disp-none">
+                <select 
+                    id="star_rating_update_form_select" 
+                    data-id={{get_id user_id product.ratings}}
+                    data-val={{get_val user_id product.ratings}}
+                >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button class="btn-sm" type="submit">Submit</button>
+                <button class="btn-sm" type="button" id="remove-rating-btn" data-id={{get_id user_id product.ratings}}>Remove</button>
+            </form>
+            {{else}}
+            <button id="btn-rate-prod">Rate this product</button>
+            <form id="star_rating_form" class="disp-none">
+                <select id="star_rating_form_select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button class="btn-sm btn-solo" type="submit">Submit</button>
+            </form>
+            {{/if}}
+         {{/if}}
+
         <div class="single-product-store">
             {{#if product.website}}
                 <div class="further-reading">
-                    <h3>View in Store</h3>
+                    <h3>Product Website</h3>
                     <a href="{{product.website}}" target="_blank">{{format_url product.website}}</a>
                 </div>
             {{/if}}
         </div>
     </div>
+</div>
     <div class="single-product-reviews-container">
         {{#if product.reviews}}
         <h3>{{format_plural "Review" product.reviews.length}}</h3>
         {{/if}}
         {{#each product.reviews}}
 
-        <!--- REVIEW CONTAINER ---->
+        <!--- REVIEW CONTAINER -->
 
         <section class="review-container">
             <div class="review-container-border">
@@ -40,7 +90,7 @@
                 {{/if}}
                 <div class="user-info">
                     <div class="meta">
-                        <p class="credit"><img src="{{user.avatar}}" width="25" />
+                        <p class="credit"><img src="{{user.avatar}}" width="25" height="25" />
                         Posted by <span class="author">{{user.first_name}} {{user.last_name}}</span>
                         on&nbsp;{{&format_date created_at}}</p>
                     </div>
@@ -63,10 +113,12 @@
         {{/if}}     
     </div>
 </div>
-</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
+<script src="/javascript/single-product.js"></script>
 {{#if loggedIn}}
     <script src="/javascript/review.js"></script>
+    <script src="/javascript/rate-product.js"></script>
 {{/if}}
 
 

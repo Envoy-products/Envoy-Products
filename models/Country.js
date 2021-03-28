@@ -25,6 +25,6 @@ Country.init(
         underscored: true,
         modelName: 'country'
     }
-)
+);
 
 module.exports = Country;

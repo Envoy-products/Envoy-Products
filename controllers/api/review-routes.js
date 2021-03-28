@@ -84,7 +84,7 @@ router.post('/', auth, (req, res) => {
       });
 });
 
-// Delete a comment
+// Delete a review
 router.delete('/:id', auth, (req, res) => {
     Review.destroy({
         where: {

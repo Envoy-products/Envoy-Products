@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-sm-3">
+        <div class="profile-column">
             <section class="dashboard-item">
                 <div class="dashboard-item-title-wrapper">
                     <div class="dashboard-item-title">
@@ -11,7 +11,7 @@
                     <img src="{{user.avatar}}">
                     <p class="profile-name">{{user.first_name}} {{user.last_name}}</p>
                     <p>{{user.email}}</p>
-                    <a href="/articles/add" class="button">Update Profile</a>
+                    <a href="/profile" class="button">Update Profile</a>
                 </div> 
             </section>
         </div>
@@ -21,7 +21,7 @@
                 <div class="dashboard-item-title">
                     <h2>Your Articles</h2>
                 </div>
-                <div >
+                <div class="dashboard-button">
                     <a href="/articles/add" class="button">Add an Article</a>
                 </div>   
             </div>
@@ -49,7 +49,7 @@
                 <div class="dashboard-item-title">
                     <h2>Your Products</h2>
                 </div>
-                <div >
+                <div class="dashboard-button">
                     <a href="/products/add" class="button">Add a Product</a>
                 </div>   
             </div>
@@ -77,11 +77,11 @@
         <section class="dashboard-item">
             <div class="dashboard-item-title-wrapper">
                 <div class="dashboard-item-title">
-                    <h2>Items to be approved</h2>
+                    <h2>Items to&nbsp;be approved</h2>
                 </div>   
             </div>
             <div class="dashboard-item-body">
-                <h4>Articles to be approved</h4>
+                <h4>Articles to&nbsp;be approved</h4>
                 <ul>
                     {{#each all_pending_posts as |pending_post|}}
                     <li><a href="/dashboard/articles/edit/{{pending_post.id}}">{{pending_post.title}}</a> <span class="credit">(Posted by {{pending_post.user.full_name}})</span></li>
@@ -89,7 +89,7 @@
                 </ul>
             </div>
             <div class="dashboard-item-body">
-                <h4>Products to be approved</h4>
+                <h4>Products to&nbsp;be approved</h4>
                 <ul>
                     {{#each all_pending_products as |pending_product|}}
                     <li><a href="/dashboard/products/edit/{{pending_product.id}}">{{pending_product.name}}</a><span class="credit">(Posted by {{pending_product.user.full_name}})</li>
@@ -146,5 +146,3 @@
         {{/if}}
     </div>
 </div>
-{{!--
-<script src="/javascript/add-product.js"></script> --}}

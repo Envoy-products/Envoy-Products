@@ -47,6 +47,12 @@ router.get('/', async (req, res) => {
                         'id',
                         'category_name'
                     ]
+                },
+                {
+                    model: Rating,
+                    attributes: [
+                        [sequelize.literal("(SELECT AVG(rating_val) FROM rating WHERE product.id = rating.product_id)"), 'avg_rating']
+                    ]
                 }
             ]
         });
@@ -133,6 +139,16 @@ router.get('/:id', (req, res) => {
                 ]
             },
             {
+                model: Rating,
+                attributes: [
+                    'id',
+                    'user_id',
+                    'product_id',
+                    'rating_val',
+                    [sequelize.literal("(SELECT AVG(rating_val) FROM rating WHERE product.id = rating.product_id)"), 'avg_rating']
+                ]
+            },
+            {
                 model: Review,
                 attributes: [
                     'id',
@@ -148,13 +164,6 @@ router.get('/:id', (req, res) => {
                             'first_name',
                             'last_name'
                         ]
-                    },
-                    {
-                        model: Rating,
-                        attributes: [
-                            'id',
-                            'rating'
-                        ]
                     }
                 ]
             }
@@ -169,7 +178,6 @@ router.get('/:id', (req, res) => {
             //serialize the data
             const product = dbProductData.get({ plain: true });
             
-            // res.json(product);
             // pass data to template
             res.render('single-product', {
                 product,

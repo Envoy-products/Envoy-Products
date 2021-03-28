@@ -13,8 +13,10 @@ Rating.init(
             primaryKey: true,
             autoIncrement: true
         },
-        rating: {
+        rating_val: {
             type: DataTypes.INTEGER,
+            min: 0,
+            max: 5,
             allowNull: false
         },
         user_id: {
@@ -22,14 +24,16 @@ Rating.init(
             references: {
                 model: 'user',
                 key: 'id'
-            }
+            },
+            allowNull: false
         },
         product_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'product',
                 key: 'id'
-            }
+            },
+            allowNull: false
         }
     },
     {
@@ -39,6 +43,6 @@ Rating.init(
         underscored: true,
         modelName: 'rating'
     }
-)
+);
 
 module.exports = Rating;

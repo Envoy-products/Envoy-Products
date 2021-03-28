@@ -10,15 +10,17 @@
             </div>
             {{> meta post}}
           </div>
-          <div class="content">{{format_cut_content post_content 200}} <a href="/articles/{{id}}"> &hellip; read more</a></div>
+          <div class="content">{{format_cut_content post_content 35}} <a href="/articles/{{id}}"> &hellip; read more</a></div>
 
         </article>
       {{/each}}
 
       {{#if loggedIn}}
-        <a href="/articles/add" class="button">Add an article</a>
-      {{else}}
-      <p>&nbsp;</p>
+      <div class="add-articles-button">
+          <a href="/articles/add" class="articles-button">Add an Article</a>
+        {{else}}
+        <p>&nbsp;</p>
+      </div>
       {{/if}}
 
       </section>

@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="products-page-container">
         <div class="row">
@@ -16,7 +17,7 @@
                     </div>
                     <div class="add-product-position">
                     {{#if loggedIn}}
-                            <a class="button" href="/products/add">Add a Product</a>
+                            <a class="add-product-button" href="/products/add">Add a Product</a>
                             {{else}}
                             <p>&nbsp;</p>
                     {{/if}}
@@ -28,12 +29,23 @@
                     {{#each products as |product|}}
                     <div class="product-row">
                         <div class="product-picture-grid">
-                            <img src="{{product_img}}" class="card-picture" alt="..." height="200" width="">
+                            <img src="{{product_img}}" class="card-picture" alt={{name}} height="200" width="">
                         </div>
                         <div class="product-details-grid">
                             <div class="card-body">
                                 <h5 class="card-title product-title">
+                                    {{#if ratings}}
                                     <a class="title-bold" href="/products/{{id}}">{{name}}</a>
+                                    <select class="star_rating" data-id={{id}} data-value={{ratings.0.avg_rating}}>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    {{else}}
+                                    <a class="title-bold" href="/products/{{id}}">{{name}}</a>
+                                    {{/if}}
                                 </h5>
                                 <hr>
                                 <p class="card-text">{{description}}</p>
@@ -51,4 +63,5 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
 <script src="./javascript/products.js"></script>

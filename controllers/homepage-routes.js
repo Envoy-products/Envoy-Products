@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, Product, User, Category, Region, Country } = require('../models');
 const sequelize = require('../config/connection');
-
+const { Op } = require('sequelize');
 
 // Get all featured posts and featured products for all users and render homepage handlebars
 router.get('/', (req, res) => {
@@ -78,7 +78,7 @@ router.get('/about', (req, res) => {
     res.render('about', { loggedIn: req.session.loggedIn });
 });
 
-// login request
+// login page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -88,7 +88,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// signup request
+// signup page
 router.get('/signup', async (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -97,6 +97,11 @@ router.get('/signup', async (req, res) => {
 
     try{
         const dbRegionData = await Region.findAll({
+            where: {
+                region_name: {
+                    [Op.notLike]: 'All%'
+                }
+            },
             attributes: [
                 'id', 
                 'region_name'

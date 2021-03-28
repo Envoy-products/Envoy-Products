@@ -64,7 +64,7 @@ const editProductFormHandler = async (e) => {
 };
 
 // function that handles deletion of an existing product
-const deleteProducthandler = async function() {
+const deleteProductHandler = async function() {
     // Obtain product id from button
     const id = parseInt($(this).attr('data-id'));
     
@@ -90,4 +90,4 @@ const deleteProducthandler = async function() {
 
 
 $("#edit-product-form").submit(editProductFormHandler);
-$("button[name=delete]").click(deleteProducthandler);
+$("button[name=delete]").click(deleteProductHandler);

@@ -22,7 +22,7 @@ const signupFormSubmitHandler = async (e) => {
         const firstname = $("#firstname-signup").val().trim();
         const lastname = $("#lastname-signup").val().trim();
         const email = $("#email-signup").val().trim();
-        const password = $("#password-signup").val().trim();
+        const password = $("#password").val().trim();
         let avatar = $("#avatar_url").attr("value");
         if (!avatar) {
             avatar = $("#avatar-signup").val().trim();
@@ -30,15 +30,15 @@ const signupFormSubmitHandler = async (e) => {
         if (!avatar) {
             avatar = "/images/user-default.png";
         }
-        const region = $("#region-signup").val();
+        // const region = $("#region-signup").val();
 
         // input validation
         const errors = validateInput([
             { input_title: 'First name', input_val: firstname, criteria: ['required'] },
             { input_title: 'Last name', input_val: lastname, criteria: ['required'] },
             { input_title: 'Email', input_val: email, criteria: ['required', 'email'] },
-            { input_title: 'Password', input_val: password, criteria: ['required', 'char_len_8'] },
-            { input_title: 'Region', input_val: region, criteria: ['positive_num'] }
+            { input_title: 'Password', input_val: password, criteria: ['required', 'char_len_8'] }
+            // { input_title: 'Region', input_val: region, criteria: ['positive_num'] }
         ]);
 
         if (errors) {
@@ -46,7 +46,7 @@ const signupFormSubmitHandler = async (e) => {
         }
 
         // perform api operation
-        const response = await handleSignup(email, password, firstname, lastname, region, avatar);
+        const response = await handleSignup(email, password, firstname, lastname, avatar);
 
         if (response.ok) {
             document.location.replace('/');

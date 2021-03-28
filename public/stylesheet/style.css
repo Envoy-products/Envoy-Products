@@ -1569,12 +1569,14 @@ input.left-input {
   }
 
   .user-picture {
-    object-fit: contain
+    object-fit: contain;
+    height: 90%;
+    width: auto;
   }
 
   .user-name {
     grid-row: 1 / span 1;
-    height: 3rem;;
+    height: 3rem;
   }
 
   .articles-picture {

@@ -39,9 +39,9 @@ Project is created with
 * [typed.js](https://www.npmjs.com/package/typed.js)
 
 ## Installation
-To install Envoy locally, you will need a copy of M
+to haveTo install Envoy locally, you will need to have MySQL and Node.js installed.
+
 To get started clone this repository using 
-<br>
 ```terminal
 git clone git@github.com:Envoy-products/Envoy-Products.git
 ```
@@ -55,7 +55,11 @@ Open up MySQL shell and input
 ```terminal
 source db/schema.sql
 ```
-Quit MySQL shell and input te following to insert sample data into the database
+Quit MySQL shell and install the necessary library by entering: 
+```terminal
+npm install
+```
+Input the following to insert sample data into the database
 ```terminal
 run np seeds
 ```

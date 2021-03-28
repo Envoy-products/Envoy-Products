@@ -1003,14 +1003,14 @@ h2 {
 }
 
 /* STRUCTURE */
-.wrapper {
+.wrapper  {
   display: flex;
   align-items: center;
   flex-direction: column; 
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 20px;
+  padding: 100px 0px 20px;
 }
 
 
@@ -1020,8 +1020,8 @@ h2 {
   background: #fff;
   padding: 30px;
   width: 90%;
-  max-width: 450px;
   position: relative;
+  max-width: 450px;
   padding: 0px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -1051,7 +1051,8 @@ h2.active {
   border-bottom: 2px solid #086d38;
 }
 
- /* FORM TYPOGRAPHY */
+ /* LOGIN/SIGNUP FORM */
+
 .login-form {
   padding-top: 20px;
 }
@@ -1124,20 +1125,22 @@ h2.active {
     margin-bottom: 10px!important;
 }
 
-input.left-password, input.right-password {
-  width: 41.3% !important;
+input.left-input, input.right-input {
+  width: 41.65% !important;
   float: left;
   padding-left: 10px !important;
   padding-right: 10px !important;
+}
+
+input.left-input {
+  margin-left: 7.5% !important;
 }
 
 .form-item {
   margin-top: 15px;
 }
 
-.left-password {
-  margin-left: 34px !important;
-}
+
 
 .err-txt {
     color: red;
@@ -1597,7 +1600,7 @@ input.left-password, input.right-password {
   }
 
 
-  .dashboard-item-title-wrapper {
+  .dashboard-item-title-- {
     flex-direction: column;
     justify-content: unset;
     align-items: flex-start;
@@ -1606,7 +1609,7 @@ input.left-password, input.right-password {
     width: 100%;
   }
   
-  input.left-password, input.right-password {
+  input.left-input, input.right-input {
     width: 85% !important;
     float: unset;
     padding-left: unset !important;
@@ -1615,9 +1618,6 @@ input.left-password, input.right-password {
   }
   .login-form input[type=text], .login-form input[type=password] {
     padding: 5px;
-  }
-  #formContent {
-    margin-top: 120px;
   }
   .br-theme-fontawesome-stars-o .br-widget {
     height: 50px;

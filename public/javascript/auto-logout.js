@@ -1,5 +1,5 @@
 // set timer to check idle time and logout if the user is authenticated and idle for a set time
-const IDLE_TIME_IN_MINUTES = 1; 
+const IDLE_TIME_IN_MINUTES = 10; 
 $(document).ready(function () {
     var idleTime = 0;
 

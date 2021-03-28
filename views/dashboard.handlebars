@@ -77,11 +77,11 @@
         <section class="dashboard-item">
             <div class="dashboard-item-title-wrapper">
                 <div class="dashboard-item-title">
-                    <h2>Items to be approved</h2>
+                    <h2>Items to&nbsp;be approved</h2>
                 </div>   
             </div>
             <div class="dashboard-item-body">
-                <h4>Articles to be approved</h4>
+                <h4>Articles to&nbsp;be approved</h4>
                 <ul>
                     {{#each all_pending_posts as |pending_post|}}
                     <li><a href="/dashboard/articles/edit/{{pending_post.id}}">{{pending_post.title}}</a> <span class="credit">(Posted by {{pending_post.user.full_name}})</span></li>
@@ -89,7 +89,7 @@
                 </ul>
             </div>
             <div class="dashboard-item-body">
-                <h4>Products to be approved</h4>
+                <h4>Products to&nbsp;be approved</h4>
                 <ul>
                     {{#each all_pending_products as |pending_product|}}
                     <li><a href="/dashboard/products/edit/{{pending_product.id}}">{{pending_product.name}}</a><span class="credit">(Posted by {{pending_product.user.full_name}})</li>

@@ -6,7 +6,7 @@ const handleSignup = async (email, password, first_name, last_name, avatar) => {
             password,
             first_name,
             last_name,
-            region_id: 0,
+            region_id: 1,
             avatar,
             admin: false
         }),

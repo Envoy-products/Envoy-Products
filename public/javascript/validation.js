@@ -1,3 +1,4 @@
+// validates inputs based on different criteria and generates error messages 
 const validateInput = (inputArr) => {
     let errors = [];
     inputArr.forEach(( {input_title, input_val, criteria} )=> {

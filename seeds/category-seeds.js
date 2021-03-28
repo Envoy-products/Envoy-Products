@@ -8,7 +8,7 @@ const categoryData = [
         category_name: 'Computers/Electronics'
     },
     {
-        category_name: 'Auto-mobile'
+        category_name: 'Vehicles'
     },
     {
         category_name: 'Laundry'

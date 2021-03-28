@@ -1,37 +1,47 @@
-# Envoy-Product
-A Hub for memebers to post, rate, review and talk about environmentally friendly products!
+# Envoy
+A Hub for members to post, rate, review and talk about environmentally friendly products!
 
 ## Table Of Content
+* [Contributors](#contributors)
 * [General Info](#general-info)
 * [Technologies](#technologies)
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Demo](#demo)
 * [Questions](#questions)
+
+## Contributors
+|Eric Normann|Samiul Choudhury|Benn Asabir|Nathan Chow|Shamim Imtiaz|
+|:---:|:---:|:---:|:---:|:---:|
+|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FFJX35EH-8853f39f557f-512)|![myImage](https://avatars.githubusercontent.com/u/3344833?s=460&u=46efd9bd90904237b452dbaefdb03a57156ef84b&v=4)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FR9XTTN0-9995038c9f3b-512)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01FGC3DAN7-41377ad60b24-512)|![myImage](https://ca.slack-edge.com/T01EXTZCZ44-U01F9AY18T0-ad94549a1f86-512)|
+|<a href="https://github.com/e-p-n" target="_blank">Eric's Github</a>| <a href="https://github.com/samiul1988"> Samiul's Github</a>|<a href="https://github.com/BennAsabir">Benn's Github</a>|<a href="https://github.com/nchow18">Nathan's Github</a>|<a href="https://github.com/shamimimtiaz">Shamimim's Github|""|
+
 
 ## General Info
 The application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+[Presentation](public/images/Envoy.pdf)
 
 ## Technologies
 Project is created with 
-* [Bootstrap](https://getbootstrap.com/)
-* [Javascript](https://www.javascript.com/)
+* [MySQL](https://dev.mysql.com/downloads/)
+* Javascript
 * [Node.js](https://nodejs.org/en/)
+* [Express](https://www.npmjs.com/package/express)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 * [MySQL2](https://www.npmjs.com/package/mysql2)
-* [Express](https://www.npmjs.com/package/express)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
+* [Bootstrap](https://getbootstrap.com/)
 * [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
 * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 * [Flickity](https://www.npmjs.com/package/flickity)
-* [bcrypt](https://www.npmjs.com/package/bcrypt)
-* [jquery-bar-rating](https://www.npmjs.com/package/jquery-bar-rating)
+* [jQuery Bar Rating](https://www.npmjs.com/package/jquery-bar-rating)
 * [typed.js](https://www.npmjs.com/package/typed.js)
 
 ## Installation
+to haveTo install Envoy locally, you will need to have MySQL and Node.js installed.
+
 To get started clone this repository using 
-<br>
 ```terminal
 git clone git@github.com:Envoy-products/Envoy-Products.git
 ```
@@ -45,11 +55,15 @@ Open up MySQL shell and input
 ```terminal
 source db/schema.sql
 ```
-Use database
+Quit MySQL shell and install the necessary library by entering: 
 ```terminal
-envoy_db
+npm install
 ```
-Then quit MySQL shell and input the following in your terminal to start running application
+Input the following to insert sample data into the database
+```terminal
+run np seeds
+```
+Enter the following to launch the server
 ```terminal
 npm start
 ```
@@ -58,57 +72,30 @@ Once all that is done, navigate to - http://localhost:3001 to begin!
 
 ## Usage
 This application is deployed on Heroku at https://envoy-guide.herokuapp.com/
-<br>
-There are three types of access
-	<br>
-	*Admin access
-	<br>
-	*General access
-	<br>
-	*Visitor access
-<br>
-Admin status assigned users will have full access to the site which includes <br>
-	-Full access to all content for users
-	<br>
-	-Ability to approve articles posted by general users
-	<br>
-	-Ability to approve products being posted by general users.  
-<br>
-General access allows one to <br>
-	-View all web content including featured/approved product and articles
-	<br>
-	-Products can be viewed by all or product category.
-	<br>
-	-Create user profile
-	<br>
-	-Upload content (which requires approval by admin for others to view)
-	<br>
-	-Post products (which requires approval by admin for others to view)
-	<br>
-	-Create/Edit their profile as needed
-	<br>
-	-Comment on existing articles posted on the site. 
 
-<br>
-Visitor access allows one to <br>
-	-View all web content including featured/approved product and articles
-	<br>
-	-Products can be viewed by product or retailer category.
-	<br>
-	-Has the option to become a member by creating a general access profile. 
+There are three types of access:
+* **Visitor access**
+* **Member access**
+* **Administrator access**
 
+**Visitor access** allows one to 
+* View all web content including featured/approved product and articles
+* Products can be viewed by category.
+* Has the option to become a member by signing up. 
+
+**Member access** allows one to do all a visitor can, plus:
+* Post articles or products (which requires approval by admin for others to view)
+* Edit or delete articles or products already posted
+* Edit their profile as needed
+* Comment on existing articles posted on the site. 
+
+**Administrator access** allows one to do all a member can, plus:
+* Ability to set the status of an article or product posted by a member to "pending", "approved", or "featured"
+* Ability to edit or delete articles or products post be a member.  
  
 ## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<br>
+  
 This repository is licensed under the MIT license.
-
-## Demo
-
-Presentation:
-[Envoy-products-presentation (2).pdf](https://github.com/shamimimtiaz/my-e-commerce/files/6216172/Envoy-products-presentation.2.pdf)
-
-
 
 ## Questions
 Questions about this repository? Please contact us at [envoyproducts90@gmail.com](mailto:envoyproducts90@gmail.com). View more of our work in GitHub at [Envoy-Products](https://github.com/Envoy-products/Envoy-Products) 

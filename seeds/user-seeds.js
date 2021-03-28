@@ -4,11 +4,11 @@ const userData = [
   {
     id: 1,  
     email: 'eric.n@me.com',
-    password: 'home1y15',
+    password: 'password',
     first_name: 'Eric',
     last_name: 'Normann',
     region_id: 10,
-    avatar: "/images/eric.jpg",
+    avatar: "https://static.files-simplefileupload.com/rdg3wcscrntqtdn9bw5cndciy3j9/eric.jpg",
     admin: true
   },
   {
@@ -90,7 +90,28 @@ const userData = [
     region_id: 15,
     avatar: "https://deptmed.queensu.ca/sites/deptmed/files/team/Gibson%2C%20Michelle%202019.jpg",
     admin: false
+  },
+  {
+    id: 10,  
+    email: 'ssun@cbc.ca',
+    password: 'password123',
+    first_name: 'Sheying',
+    last_name: 'Sun',
+    region_id: 15,
+    avatar: "https://deptmed.queensu.ca/sites/deptmed/files/team/Gibson%2C%20Michelle%202019.jpg",
+    admin: false
+  },
+  {
+    id: 11,  
+    email: 'edward.apostol@utoronto.ca',
+    password: 'password',
+    first_name: 'Edward',
+    last_name: 'Apostol',
+    region_id: 1,
+    avatar: "https://ca.slack-edge.com/T01EXTZCZ44-U01ES0SMKKM-a9063bea113d-512",
+    admin: true
   }
+
 ];
 
 const seedUsers = () => User.bulkCreate(userData, {individualHooks: true});

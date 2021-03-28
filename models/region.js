@@ -32,6 +32,6 @@ Region.init(
         underscored: true,
         modelName: 'region'
     }
-)
+);
 
 module.exports = Region;

@@ -32,6 +32,6 @@ Retailer.init(
         underscored: true,
         modelName: 'retailer'
     }
-)
+);
 
 module.exports = Retailer;

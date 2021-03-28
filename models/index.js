@@ -54,15 +54,11 @@ RegionRet.belongsTo(Retailer, {
 });
 
 Region.belongsToMany(Retailer, {
-    through: RegionRet,
-    // as: 'retailers',
-    // foreignKey: 'region_id'
+    through: RegionRet
 });
 
 Retailer.belongsToMany(Region, {
-    through: RegionRet,
-    // as: 'regions',
-    // foreignKey: 'retailer_id'
+    through: RegionRet
 });
 
 // Associations between Post and Comment
@@ -130,15 +126,11 @@ ProductRet.belongsTo(Retailer, {
 });
 
 Product.belongsToMany(Retailer, {
-    through: ProductRet,
-    // as: 'products',
-    // foreignKey: 'product_id'
+    through: ProductRet
 });
 
 Retailer.belongsToMany(Product, {
-    through: ProductRet,
-    // as: 'retailers',
-    // foreignKey: 'retailer_id'
+    through: ProductRet
 });
 
 // Associations between Product and Review
@@ -171,7 +163,7 @@ User.hasMany(Product, {
 
 Product.belongsTo(User, {
     foreignKey: 'user_id',
-    onDelete: 'SET NULL'
+    onDelete: 'CASCADE'
 });
 
 // Associations between Rating and Product
@@ -195,20 +187,6 @@ Rating.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
-
-// Associations between Rating and Review
-// a review can have one rating, and a rating belongs to one review
-
-// Rating.hasOne(Review, {
-//     foreignKey: 'rating_id'
-// });
-
-// Review.belongsTo(Rating, {
-
-//     foreignKey: 'rating_id',
-//     onDelete: 'SET NULL'
-// });
-
 
 module.exports = {
     Category,

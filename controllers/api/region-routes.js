@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Region, Country } = require('../../models');
 const { auth } = require('../../utils/auth');
 
-//GET /api/countries
+// get all regions
 router.get('/', (req, res)=> {
     Region.findAll(req.body, {
         include: [
@@ -19,7 +19,7 @@ router.get('/', (req, res)=> {
     })
 });
 
-//GET /api/region
+// get a single region
 router.get('/:id', (req, res)=> {
     Region.findOne(req.body, {
         where: {
@@ -39,7 +39,7 @@ router.get('/:id', (req, res)=> {
     })
 });
 
-
+// create a new region
 router.post('/', auth, (req, res) => {
     Region.create({
        region_name: req.body.region_name,
@@ -54,6 +54,7 @@ router.post('/', auth, (req, res) => {
     })
 });
 
+// update an existing region
 router.put('/:id', auth, (req, res) => {
     Region.update(req.body, { 
         where: {
@@ -73,6 +74,7 @@ router.put('/:id', auth, (req, res) => {
     })
 });
 
+// delete a region
 router.delete('/:id', auth, (req, res) => {
     Region.destroy ({
         where: {

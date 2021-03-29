@@ -237,8 +237,9 @@ footer .container {
   width: 90%;
 }
 
-#btn-update-rate-prod  {
+#btn-update-rate-prod, #btn-rate-prod {
   width: 200px;
+  height: unset;
 }
 
 /* =================================== */
@@ -1482,9 +1483,17 @@ input.left-input {
     margin-right: auto;
   }
 
+  .navbar, .btn-nav-link {
+    letter-spacing: 2px;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
+
+  .navbar, .btn-nav-link {
+    letter-spacing: 3px;
+  }
 
   body {
     margin-bottom: 90px; /* Margin bottom by footer height */
@@ -1631,7 +1640,7 @@ input.left-input {
     font: normal normal normal 40px/1 FontAwesome;
     margin-right: 14px;
   }
-  #btn-update-rate-prod {
+  #btn-update-rate-prod, #btn-rate-prod {
     width: 100%;
     clear: both;
     margin: 10px 0;

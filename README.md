@@ -56,8 +56,7 @@ DB_NAME='envoy_db'
 DB_USER='root' 
 DB_PW='password'
 SESS_SECRET='yoursecrettext'
-
-
+```
 Install dependencies 
 ```terminal
 npm install

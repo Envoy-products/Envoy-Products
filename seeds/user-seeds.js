@@ -103,12 +103,12 @@ const userData = [
   },
   {
     id: 11,  
-    email: 'edward.apostol@utoronto.ca',
+    email: 'test@test.com',
     password: 'password',
-    first_name: 'Edward',
-    last_name: 'Apostol',
+    first_name: 'Test',
+    last_name: 'Account',
     region_id: 1,
-    avatar: "https://ca.slack-edge.com/T01EXTZCZ44-U01ES0SMKKM-a9063bea113d-512",
+    avatar: "/images/user-default.png",
     admin: true
   }
 

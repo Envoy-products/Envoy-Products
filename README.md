@@ -62,7 +62,7 @@ npm run seeds
 ```
 Add a .env file to the root of the app with the following details
 ``` 
-DB_NAME='envoy_product_db' 
+DB_NAME='envoy_db' 
 DB_USER='root' 
 DB_PW='password'
 SESS_SECRET='yoursecrettext'

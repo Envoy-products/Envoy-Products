@@ -23,7 +23,8 @@
                 <option value="5">5</option>
             </select>
             {{else}}
-            Average Rating: None
+            Average Rating:<br />
+            No ratings yet.
             {{/if}}
         </div>
         
@@ -85,7 +86,7 @@
                 </div>
                 {{#if (is_same user.id @root.user_id)}}
                 <div class="remove-button-container">
-                    <button type="button" class="btn-sm" data-action="remove" data-id="{{id}}">Remove</button>
+                    <button type="button" class="btn-sm comment-btn" data-action="remove" data-id="{{id}}">Remove</button>
                 </div>
                 {{/if}}
                 <div class="user-info">

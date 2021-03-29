@@ -1489,32 +1489,39 @@ input.left-input {
 
 }
 
+
 @media screen and (max-width: 768px) {
 
-  .navbar, .btn-nav-link {
-    letter-spacing: 3px;
-  }
-
   body {
-    margin-bottom: 90px; /* Margin bottom by footer height */
+      margin-bottom: 90px; /* Margin bottom by footer height */
   }
 
+  .navbar, .btn-nav-link {
+      letter-spacing: 3px;
+  }
+  
   footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 90px; /* Set the fixed height of the footer here */
-    background-color: #63a87c;
-    color: #044725;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px; /* Set the fixed height of the footer here */
+  background-color: #63a87c;
+  color: #044725;
   }
 
   footer .container {
-    padding: 0 10px;
+  padding: 0 10px;
   }
 
   footer .right-column, footer .left-column {
-    text-align: center;
+  text-align: center;
   }
+  
+  .container {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+
 
 
   /*homepage*/
@@ -1524,6 +1531,15 @@ input.left-input {
     text-align: center;
   }
 
+  /*Jumbo tron*/
+  .jumbotron {
+    padding-top: 120px;
+  }
+
+  div.about-box {
+    width:90%
+  }
+
   /*dashboard*/
   .dashboard-item-title-wrapper {
     flex-direction: column;
@@ -1531,10 +1547,7 @@ input.left-input {
     align-items: flex-start;
   } 
 
-  .container {
-      padding-left: 20px;
-      padding-right: 20px;
-  }
+
 
   .comments {
     margin: 0;
@@ -1675,19 +1688,7 @@ input.left-input {
   .edit-form-btn-wrapper button:last-child {
     margin-left: 0;
   }
-}
 
-@media screen and (max-width: 768px) {
-  /* HOMEPAGE */
-
-  /*Jumbo tron*/
-  .jumbotron {
-    padding-top: 120px;
-  }
-
-  div.about-box {
-    width:90%
-  }
   
   /* FEATURED PRODUCTS */
   div#products.container-fluid {
@@ -1722,6 +1723,12 @@ input.left-input {
   }
   .single-product-picture-container {
     margin-top: 0;
+  }
+
+  .comment-btn{
+    font-size: 1.1em;
+    width: fit-content;
+    padding: 15px;
   }
 }
 

@@ -1,6 +1,6 @@
 # <img src="public/images/envoy2.svg" height="90" alt="Envoy" title="Envoy">
 
-A Hub for members to post, rate, review and talk about environmentally friendly products!
+A community for members to post, rate and review environmentally responsible products and share their ideas about how to live more sustainably!
 
 ## Table Of Content
 * [Contributors](#contributors)
